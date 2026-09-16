@@ -96,10 +96,90 @@
     $$(".reveal").forEach(function (el) { io.observe(el); });
   } else { $$(".reveal").forEach(function (el) { el.classList.add("is-visible"); }); }
 
+  /* ---------- file downloads (PDF) ---------- */
+  $$("a[data-download]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var href = a.getAttribute("href"), name = a.getAttribute("download") || href.split("/").pop();
+      if (!window.fetch || location.protocol === "file:") { toast("Dina-download ang " + name, "fa-file-arrow-down"); return; }
+      e.preventDefault();
+      fetch(href).then(function (r) { if (!r.ok) throw new Error(); return r.blob(); }).then(function (blob) {
+        var url = URL.createObjectURL(blob), tmp = document.createElement("a");
+        tmp.href = url; tmp.download = name; document.body.appendChild(tmp); tmp.click(); tmp.remove();
+        setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+        toast("Na-download ang " + name, "fa-file-arrow-down");
+      }).catch(function () { window.location.href = href; });
+    });
+  });
+
   /* =========================================================
      PAGE MODULES
      ========================================================= */
   var page = document.body.dataset.page;
+
+  /* ---------- Calendar ---------- */
+  if (page === "kalendaryo") {
+    var cal = $(".calendar");
+    var MONTHS = ["Enero", "Pebrero", "Marso", "Abril", "Mayo", "Hunyo", "Hulyo", "Agosto", "Setyembre", "Oktubre", "Nobyembre", "Disyembre"];
+    var EVENTS = {
+      "2028-1-11": { t: "Simula ng Panahon ng Kampanya", d: "Para sa mga posisyong nasyonal (Senador at Party-list)." },
+      "2028-4-10": { t: "Ban Period", d: "Liquor ban at bawal ang pangangampanya sa bisperas ng halalan.", cls: "is-ban first", label: "Ban Period" },
+      "2028-4-11": { t: "Ban Period", d: "Liquor ban at bawal ang pangangampanya sa bisperas ng halalan.", cls: "is-ban", label: "Ban Period" },
+      "2028-4-12": { t: "Araw ng Halalan 2028", d: "Bumoto mula 6:00 AM hanggang 7:00 PM sa iyong itinalagang presinto.", cls: "is-election", label: "Halalan" },
+      "2028-8-30": { t: "Huling Araw ng Rehistrasyon", d: "Ang huling pagkakataon upang makapag-rehistro sa pinakamalapit na opisina ng COMELEC." }
+    };
+    var state = { y: 2028, m: 4, collapsed: true };
+    var grid = $(".calendar__grid", cal), title = $(".calendar__title", cal), sub = $(".calendar__sub", cal), detail = $(".cal-detail", cal), toggleBtn = $(".calendar__toggle", cal);
+    function render() {
+      title.textContent = MONTHS[state.m] + " " + state.y;
+      sub.textContent = state.y === 2028 && state.m === 4 ? "Buwan ng Halalan" : "Kalendaryo ng Halalan";
+      var first = new Date(state.y, state.m, 1).getDay();
+      var days = new Date(state.y, state.m + 1, 0).getDate();
+      var prevDays = new Date(state.y, state.m, 0).getDate();
+      var cells = [], i;
+      for (i = first - 1; i >= 0; i--) cells.push({ d: prevDays - i, out: true });
+      for (i = 1; i <= days; i++) cells.push({ d: i });
+      var n = 1; while (cells.length % 7) cells.push({ d: n++, out: true });
+      var today = new Date();
+      var html = "";
+      cells.forEach(function (c, idx) {
+        var row = Math.floor(idx / 7);
+        var extra = row >= 3 ? " cal-row-extra" : "";
+        if (c.out) { html += '<div class="cal-day is-out' + extra + '" aria-hidden="true">' + c.d + "</div>"; return; }
+        var key = state.y + "-" + state.m + "-" + c.d, ev = EVENTS[key];
+        var isToday = today.getFullYear() === state.y && today.getMonth() === state.m && today.getDate() === c.d;
+        html += '<button type="button" class="cal-day' + (ev && ev.cls ? " " + ev.cls : "") + (isToday ? " is-today" : "") + extra + '" data-key="' + key + '" aria-label="' + c.d + " " + MONTHS[state.m] + (ev ? " — " + esc(ev.t) : "") + '">' + c.d + (ev && ev.label ? "<small>" + ev.label + "</small>" : "") + "</button>";
+      });
+      grid.innerHTML = html;
+      cal.classList.toggle("is-collapsed", state.collapsed);
+      toggleBtn.textContent = state.collapsed ? "Ipakita ang buong buwan" : "Itago ang ibang linggo";
+      detail.classList.remove("is-open");
+    }
+    grid.addEventListener("click", function (e) {
+      var b = e.target.closest("button.cal-day"); if (!b) return;
+      $$(".cal-day.is-selected", grid).forEach(function (x) { x.classList.remove("is-selected"); });
+      b.classList.add("is-selected");
+      var ev = EVENTS[b.dataset.key], p = b.dataset.key.split("-");
+      detail.innerHTML = "<strong>" + p[2] + " " + MONTHS[+p[1]] + " " + p[0] + "</strong> — " + (ev ? esc(ev.t) + ". " + esc(ev.d) : "Walang nakatakdang aktibidad ng halalan sa petsang ito.");
+      detail.classList.add("is-open");
+    });
+    $(".cal-prev", cal).addEventListener("click", function () { state.m--; if (state.m < 0) { state.m = 11; state.y--; } render(); });
+    $(".cal-next", cal).addEventListener("click", function () { state.m++; if (state.m > 11) { state.m = 0; state.y++; } render(); });
+    toggleBtn.addEventListener("click", function () { state.collapsed = !state.collapsed; render(); });
+    $(".calendar__more", cal).addEventListener("click", function () { state.collapsed = false; render(); });
+    render();
+    $$(".event-card[data-goto]").forEach(function (card) {
+      card.addEventListener("click", function () { var p = card.dataset.goto.split("-"); state.y = +p[0]; state.m = +p[1]; state.collapsed = false; render(); var b = $('[data-key="' + card.dataset.goto + '"]', grid); b && b.click(); cal.scrollIntoView({ behavior: "smooth", block: "center" }); });
+    });
+  }
+
+  /* ---------- Info page checklist (persist) ---------- */
+  $$("[data-checklist]").forEach(function (list) {
+    var key = "kd_check_" + list.dataset.checklist, saved = store.get(key, []);
+    var boxes = $$("input[type=checkbox]", list), prog = list.parentNode.querySelector(".check-progress b");
+    function upd() { var n = 0; boxes.forEach(function (b) { b.closest(".check-item").classList.toggle("is-checked", b.checked); if (b.checked) n++; }); if (prog) prog.textContent = n + "/" + boxes.length; }
+    boxes.forEach(function (b, i) { b.checked = saved.indexOf(i) > -1; b.addEventListener("change", function () { var s = []; boxes.forEach(function (x, j) { if (x.checked) s.push(j); }); store.set(key, s); upd(); if (s.length === boxes.length) toast("Handa ka na para sa araw ng halalan!", "fa-circle-check"); }); });
+    upd();
+  });
 
   /* ---------- Auth forms ---------- */
   function fieldErr(inp, msg) { var fld = inp.closest(".auth-field"); fld.classList.toggle("has-error", !!msg); var fe = $(".field-error", fld); if (fe) fe.textContent = msg || ""; return !msg; }

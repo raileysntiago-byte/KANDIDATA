@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KandiDATA — Maging Handa. Maging Matalino.</title>
-  <meta name="description" content="Ang iyong sentrong impormasyon para sa Eleksyon 2028.">
+  <title>Impormasyon — Paano Bumoto | KandiDATA</title>
+  <meta name="description" content="Lahat ng kailangang impormasyon para sa darating na halalan.">
   <meta name="theme-color" content="#050a30">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/css/pages/kalendaryo.css">
 </head>
 
-<body class="home" data-page="home">
+<body class="info font-jakarta" data-page="impormasyon">
   <a class="sr-only" href="#main">Lumaktaw sa nilalaman</a>
   <header class="site-header">
     <div class="site-header__inner"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
@@ -31,8 +31,8 @@
           </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
       <nav class="main-nav" aria-label="Pangunahing navigation">
         <ul>
-          <li><a href="index.html" class="is-active" aria-current="page">Dashboard</a></li>
-          <li><a href="impormasyon.html">Impormasyon</a></li>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="impormasyon.html" class="is-active" aria-current="page">Impormasyon</a></li>
           <li><a href="kalendaryo.html">Kalendaryo</a></li>
           <li><a href="mga-kandidato.html">Mga Kandidato</a></li>
           <li><a href="mga-panukala.html">Mga Panukala</a></li>
@@ -69,9 +69,9 @@
               <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
             </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a><button type="button"
           class="mobile-menu__close" aria-label="Isara ang menu"><i class="fa-solid fa-xmark"></i></button></div>
-      <nav aria-label="Mobile navigation"><a href="index.html" class="is-active">Dashboard</a><a
-          href="impormasyon.html">Impormasyon</a><a href="kalendaryo.html">Kalendaryo</a><a
-          href="mga-kandidato.html">Mga Kandidato</a><a href="mga-panukala.html">Mga Panukala</a></nav>
+      <nav aria-label="Mobile navigation"><a href="index.html">Dashboard</a><a href="impormasyon.html"
+          class="is-active">Impormasyon</a><a href="kalendaryo.html">Kalendaryo</a><a href="mga-kandidato.html">Mga
+          Kandidato</a><a href="mga-panukala.html">Mga Panukala</a></nav>
       <div class="mobile-menu__auth" data-auth="guest"><a class="btn-auth btn-auth--outline"
           href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
       <div class="mobile-menu__auth is-hidden" data-auth="user"><a class="btn-auth btn-auth--outline"
@@ -82,30 +82,36 @@
   </div>
   <main id="main">
 
-    <section class="hero home-hero">
+    <section class="hero info-hero">
       <div class="container hero__inner">
-        <span class="eyebrow">Tungo sa Matalinong Pagpapasya</span>
-        <h1 class="hero-title"><span class="line l1">Maging Handa.</span><em class="line l2">Maging Matalino.</em></h1>
-        <p class="hero-lead">Ang kandiDATA ay ang iyong sentrong impormasyon para sa Eleksyon 2028. Alamin ang iyong mga
-          karapatan, kilalanin ang mga kandidato, at gawing makabuluhan ang iyong boto.</p>
+        <h1 class="hero-title"><span class="line">Ang Iyong Boto ay</span><em class="line">Iyong Kapangyarihan.</em>
+        </h1>
+        <p class="hero-lead">Alamin ang lahat ng kailangang impormasyon para sa darating na halalan. Mula sa
+          rehistrasyon hanggang sa mismong araw ng pagboto.</p>
+        <div class="hero-actions">
+          <a class="btn btn-red" href="lugar-ng-botohan.html"><i class="fa-solid fa-location-dot"></i> Hanapin ang iyong
+            Lugar ng Botohan</a>
+          <a class="btn btn-ghost-dark" href="assets/docs/KandiDATA-Checklist-ng-Botante.pdf"
+            download="KandiDATA-Checklist-ng-Botante.pdf" data-download>I-download ang Checklist</a>
+        </div>
       </div>
     </section>
-    <div class="home-stats">
+    <div class="info-stats">
       <div class="container">
         <div class="stat-grid ">
           <div class="stat-card reveal">
             <div class="stat-card__icon c-blue"><i class="fa-solid fa-calendar-check"></i></div>
-            <div class="stat-card__label">Rehistrasyon</div>
+            <div class="stat-card__label">Huling Araw ng Rehistrasyon</div>
             <div class="stat-card__value c-blue">Setyembre 30, 2028</div>
           </div>
           <div class="stat-card reveal">
             <div class="stat-card__icon c-red"><i class="fa-solid fa-clock"></i></div>
             <div class="stat-card__label">Oras ng Pagboto</div>
-            <div class="stat-card__value c-red">6:00 AM - 7:00 PM</div>
+            <div class="stat-card__value c-red">6:00 AM – 7:00 PM</div>
           </div>
           <div class="stat-card reveal">
             <div class="stat-card__icon c-yellow"><i class="fa-solid fa-address-card"></i></div>
-            <div class="stat-card__label">Valid ID Requirements</div>
+            <div class="stat-card__label">Dalhin sa Presinto</div>
             <div class="stat-card__value c-ink">Valid ID / Voter's ID</div>
           </div>
           <div class="stat-card reveal">
@@ -117,95 +123,144 @@
       </div>
     </div>
 
-    <section class="participate" aria-labelledby="participate-title">
-      <div class="container participate__grid">
-        <div class="participate__copy reveal">
+    <section class="vote-guide" id="paano-bumoto" aria-labelledby="pb-title">
+      <div class="container vote-guide__grid">
+        <div>
+          <h2 class="section-title" id="pb-title">Paano Bumoto</h2>
           <span class="bar"></span>
-          <h2 class="section-title" id="participate-title">Paano ka<br class="no-mobile"> makakabahagi?</h2>
-          <p class="lead">Ang BotoPinoy ay narito upang gabayan ka sa bawat hakbang. Mula sa pagpaparehistro hanggang sa
-            pagpili ng tamang pinuno.</p>
-          <div class="feature-grid">
-            <a class="feature-card" href="impormasyon.html"><i class="fa-solid fa-magnifying-glass-location c-blue"></i>
-              <h3>Impormasyon</h3>
-              <p>Alamin ang proseso ng pagboto at iyong mga karapatan.</p>
-            </a>
-            <a class="feature-card" href="mga-kandidato.html"><i class="fa-solid fa-magnifying-glass c-red"></i>
-              <h3>Kandidato</h3>
-              <p>Suriin ang track record at plataporma ng bawat isa.</p>
-            </a>
-            <a class="feature-card" href="checklist.html"><i class="fa-solid fa-clipboard-list c-yellow"></i>
-              <h3>Checklist</h3>
-              <p>Siguraduhin na handa ka na sa araw ng eleksyon.</p>
-            </a>
-            <a class="feature-card" href="impormasyon.html#paano-bumoto"><i class="fa-solid fa-print c-green"></i>
-              <h3>Gabay</h3>
-              <p>Tips para sa maayos at ligtas na pagboto.</p>
-            </a>
+          <p class="vote-guide__quote">"Sundin ang mga simpleng hakbang na ito para sa isang maayos at ligtas na
+            pagpapadama ng iyong boses."</p>
+          <div class="step-list">
+            <article class="step-card reveal"><span class="step-card__num" aria-hidden="true">01</span><span
+                class="step-card__icon bg-blue" data-n="01"><i class="fa-solid fa-magnifying-glass-location"></i></span>
+              <div>
+                <h3>Hanapin ang iyong Presinto</h3>
+                <p>Bago ang araw ng eleksyon, alamin ang iyong Cluster at Precinct Number sa pamamagitan ng COMELEC
+                  online precinct finder o sa lokal na opisina ng eleksyon.</p>
+                <a class="link-arrow" href="lugar-ng-botohan.html">Pumunta sa Precinct Finder <i
+                    class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </article>
+            <article class="step-card reveal"><span class="step-card__num" aria-hidden="true">02</span><span
+                class="step-card__icon bg-red" data-n="02"><i class="fa-solid fa-user-check"></i></span>
+              <div>
+                <h3>Beripikasyon ng Identidad</h3>
+                <p>Pagdating sa presinto, hanapin ang iyong pangalan sa Posted Computerized Voters List (PCVL). Ipakita
+                  ang iyong valid ID sa Electoral Board member para sa beripikasyon.</p>
+                <div class="chip-row"><span class="chip">Voter's ID</span><span class="chip">Driver's
+                    License</span><span class="chip">Passport</span></div>
+              </div>
+            </article>
+            <article class="step-card reveal"><span class="step-card__num" aria-hidden="true">03</span><span
+                class="step-card__icon bg-yellow" data-n="03"><i class="fa-solid fa-pen-nib"></i></span>
+              <div>
+                <h3>Markahan ang Balota</h3>
+                <p>Gamitin ang opisyal na marker sa pag-shade ng mga bilog. Siguraduhin na ang shade ay buo at hindi
+                  lumalagpas sa bilog. Huwag mag-overvote (huwag lumampas sa bilang ng kailangang i-boto).</p>
+                <div class="tip-box"><strong><i class="fa-solid fa-lightbulb"></i> Tip para sa Balota</strong>
+                  <p>Huwag punitin, dumiwan, o lagyan ng anumang marka ang balota maliban sa pag-shade ng mga bilog.</p>
+                </div>
+              </div>
+            </article>
+            <article class="step-card reveal" style="position:relative"><span class="step-card__num"
+                aria-hidden="true">04</span><span class="step-card__icon bg-green" data-n="04"><i
+                  class="fa-solid fa-print"></i></span>
+              <div>
+                <h3>Ipasok sa VCM at Suriin</h3>
+                <p>Ipasok ang balota sa Vote Counting Machine (VCM). Hintayin ang Voter Verifiable Paper Audit Trail
+                  (VVPAT) o resibo. Suriin kung tama ang nakasulat bago ito ihulog sa lalagyan.</p>
+                <p class="done-note"><i class="fa-solid fa-check-double"></i> Tapos ka nang bumoto!</p>
+              </div>
+            </article>
           </div>
         </div>
-        <div class="participate__media reveal">
-          <div class="participate__photo"><img src="assets/img/voter.jpg"
-              alt="Isang botanteng nagpapakita ng daliring may tinta matapos bumoto"></div>
-          <div class="stat-float">
-            <div class="stat-float__head"><span class="check-circle"><i
-                  class="fa-solid fa-check"></i></span><strong><span class="no-mobile">85%</span><span
-                  class="only-mobile" style="display:none">85% Participation</span></strong></div>
-            <p>Target na partisipasyon ng kabataang botante ngayong 2025. Maging bahagi nito.</p>
-            <span class="short">Target na partisipasyon ng kabataan.</span>
+        <aside class="side-stack">
+          <div class="reg-card reveal">
+            <h3>Rehistrasyon</h3>
+            <ul>
+              <li><span class="dot"><i class="fa-solid fa-check"></i></span>
+                <div><strong>Sinong Pwedeng Mag-rehistro?</strong><span>Mamamayang Pilipino, 18 taon pataas, at
+                    naninirahan sa Pilipinas ng kahit isang taon.</span></div>
+              </li>
+              <li><span class="dot"><i class="fa-solid fa-check"></i></span>
+                <div><strong>Saan Mag-rerehistro?</strong><span>Sa pinakamalapit na COMELEC Office o sa mga Satellite
+                    Registration sites sa inyong mall.</span></div>
+              </li>
+            </ul>
+            <a class="btn btn-yellow" href="rehistrasyon.html">Alamin ang Steps sa Rehistrasyon</a>
           </div>
-        </div>
+          <div class="check-card reveal">
+            <h3><i class="fa-solid fa-clipboard-list"></i> Checklist para sa Araw ng Botohan</h3>
+            <div class="check-list" data-checklist="info">
+              <label class="check-item"><input type="checkbox"><span>Valid ID (Passport, UMID, etc.)</span></label>
+              <label class="check-item"><input type="checkbox"><span>Precinct Number / Cluster ID</span></label>
+              <label class="check-item"><input type="checkbox"><span>Sariling Ballpen (Opsyonal)</span></label>
+              <label class="check-item"><input type="checkbox"><span>Listahan ng iboboto (Kodigo)</span></label>
+            </div>
+
+          </div>
+          <div class="links-box reveal">
+            <h4>Mahahalagang Link</h4>
+            <ul>
+              <li><a href="https://comelec.gov.ph/" target="_blank" rel="noopener">Opisyal na Website ng COMELEC <i
+                    class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+              <li><a href="https://precinctfinder.comelec.gov.ph/" target="_blank" rel="noopener">Voter Registration
+                  Status <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+              <li><a href="faq.html#magtanong">I-report ang Pandaraya <i
+                    class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            </ul>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section class="meet" aria-labelledby="meet-title">
+    <section class="quote-band" aria-label="Quote">
+      <div class="quote-band__suns" aria-hidden="true"><svg class="" viewBox="0 0 100 100" aria-hidden="true"
+          focusable="false">
+          <polygon
+            points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+            fill="#eceef1" stroke="#eceef1" stroke-width="7" stroke-linejoin="round" />
+          <circle cx="50" cy="50" r="21" fill="#f8fafc" />
+          <circle cx="50" cy="50" r="15.5" fill="#eceef1" />
+        </svg><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <polygon
+            points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+            fill="#eceef1" stroke="#eceef1" stroke-width="7" stroke-linejoin="round" />
+          <circle cx="50" cy="50" r="21" fill="#f8fafc" />
+          <circle cx="50" cy="50" r="15.5" fill="#eceef1" />
+        </svg><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <polygon
+            points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+            fill="#eceef1" stroke="#eceef1" stroke-width="7" stroke-linejoin="round" />
+          <circle cx="50" cy="50" r="21" fill="#f8fafc" />
+          <circle cx="50" cy="50" r="15.5" fill="#eceef1" />
+        </svg></div>
       <div class="container">
-        <div class="meet__head reveal">
-          <div><span class="bar bar--blue"></span>
-            <h2 class="section-title serif" id="meet-title">Kilalanin Sila.</h2>
-            <p class="lead">Suriin ang mga nagnanais maglingkod sa ating bayan.</p>
+        <i class="fa-solid fa-quote-left qmark" aria-hidden="true"></i>
+        <blockquote class="reveal">"Ang ating boto ay hindi lamang marka sa papel, ito ay ating pangako sa susunod na
+          henerasyon ng mga Pilipino."</blockquote>
+        <span class="bar"></span>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-card reveal">
+          <div>
+            <h2>Handa ka na bang bumoto sa 2028?</h2>
+            <p>Maging bahagi ng pagbabago. Simulan ang iyong paglalakbay sa pagboto sa pamamagitan ng pagkakaroon ng
+              tamang impormasyon.</p>
+            <a class="btn btn-yellow" href="signup.html">Gumawa ng Voter Account</a>
           </div>
-          <a class="btn-card" href="mga-kandidato.html">Tingnan ang Lahat <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="cta-sun" aria-hidden="true"><svg class="" viewBox="0 0 100 100" aria-hidden="true"
+              focusable="false">
+              <polygon
+                points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+                fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
+              <circle cx="50" cy="50" r="21" fill="#22408f" />
+              <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
+            </svg></div>
         </div>
-        <div class="cand-grid">
-          <article class="cand-card reveal">
-            <div class="cand-card__img"><span class="tag-role">Presidente</span><img src="assets/img/cand-juan.jpg"
-                alt="Juan De La Cruz" loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Presidente</span>
-              <h3 class="cand-card__name">Juan De La Cruz</h3>
-              <p class="cand-card__party">Partido para sa Pagbabago</p><a class="cand-card__cta"
-                href="kandidato-juan-de-la-cruz.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-          <article class="cand-card reveal">
-            <div class="cand-card__img"><span class="tag-role">Bise Presidente</span><img
-                src="assets/img/cand-maria.jpg" alt="Maria Clara Reyes" loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Bise Presidente</span>
-              <h3 class="cand-card__name">Maria Clara Reyes</h3>
-              <p class="cand-card__party">Lakas ng Bayan Party</p><a class="cand-card__cta"
-                href="kandidato-maria-clara-reyes.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-          <article class="cand-card reveal">
-            <div class="cand-card__img"><span class="tag-role">Senate-President</span><img
-                src="assets/img/cand-antonio.jpg" alt="Antonio Luna Jr." loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Senate-President</span>
-              <h3 class="cand-card__name">Antonio Luna Jr.</h3>
-              <p class="cand-card__party">Nationalist Union</p><a class="cand-card__cta"
-                href="kandidato-antonio-luna-jr.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-          <article class="cand-card reveal">
-            <div class="cand-card__img"><span class="tag-role">Senador</span><img src="assets/img/cand-raymond.jpg"
-                alt="Raymond Hernandez" loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Senador</span>
-              <h3 class="cand-card__name">Raymond Hernandez</h3>
-              <p class="cand-card__party">Independent</p><a class="cand-card__cta"
-                href="kandidato-raymond-hernandez.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-        </div>
-        <a class="meet-all" href="mga-kandidato.html" style="display:none">Tingnan ang Lahat <i
-            class="fa-solid fa-arrow-right"></i></a>
       </div>
     </section>
   </main>
