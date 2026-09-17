@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KandiDATA — Maging Handa. Maging Matalino.</title>
-  <meta name="description" content="Ang iyong sentrong impormasyon para sa Eleksyon 2028.">
+  <title>Antonio Luna Jr. | KandiDATA</title>
+  <meta name="description" content="Profile, track record at plataporma ni Antonio Luna Jr..">
   <meta name="theme-color" content="#050a30">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="assets/css/pages/profile.css">
 </head>
 
-<body class="home" data-page="home">
+<body class="profile-page" data-page="candidate">
   <a class="sr-only" href="#main">Lumaktaw sa nilalaman</a>
   <header class="site-header">
     <div class="site-header__inner"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
@@ -33,10 +33,10 @@
           </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
       <nav class="main-nav" aria-label="Pangunahing navigation">
         <ul>
-          <li><a href="index.html" class="is-active" aria-current="page">Dashboard</a></li>
+          <li><a href="index.html">Dashboard</a></li>
           <li><a href="impormasyon.html">Impormasyon</a></li>
           <li><a href="kalendaryo.html">Kalendaryo</a></li>
-          <li><a href="mga-kandidato.html">Mga Kandidato</a></li>
+          <li><a href="mga-kandidato.html" class="is-active" aria-current="page">Mga Kandidato</a></li>
           <li><a href="mga-panukala.html">Mga Panukala</a></li>
         </ul>
       </nav>
@@ -71,9 +71,9 @@
               <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
             </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a><button type="button"
           class="mobile-menu__close" aria-label="Isara ang menu"><i class="fa-solid fa-xmark"></i></button></div>
-      <nav aria-label="Mobile navigation"><a href="index.html" class="is-active">Dashboard</a><a
-          href="impormasyon.html">Impormasyon</a><a href="kalendaryo.html">Kalendaryo</a><a
-          href="mga-kandidato.html">Mga Kandidato</a><a href="mga-panukala.html">Mga Panukala</a></nav>
+      <nav aria-label="Mobile navigation"><a href="index.html">Dashboard</a><a href="impormasyon.html">Impormasyon</a><a
+          href="kalendaryo.html">Kalendaryo</a><a href="mga-kandidato.html" class="is-active">Mga Kandidato</a><a
+          href="mga-panukala.html">Mga Panukala</a></nav>
       <div class="mobile-menu__auth" data-auth="guest"><a class="btn-auth btn-auth--outline"
           href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
       <div class="mobile-menu__auth is-hidden" data-auth="user"><a class="btn-auth btn-auth--outline"
@@ -84,130 +84,109 @@
   </div>
   <main id="main">
 
-    <section class="hero home-hero">
+    <section class="hero profile-hero">
       <div class="container hero__inner">
-        <span class="eyebrow">Tungo sa Matalinong Pagpapasya</span>
-        <h1 class="hero-title"><span class="line l1">Maging Handa.</span><em class="line l2">Maging Matalino.</em></h1>
-        <p class="hero-lead">Ang kandiDATA ay ang iyong sentrong impormasyon para sa Eleksyon 2028. Alamin ang iyong mga
-          karapatan, kilalanin ang mga kandidato, at gawing makabuluhan ang iyong boto.</p>
-      </div>
-    </section>
-    <div class="home-stats">
-      <div class="container">
-        <div class="stat-grid ">
-          <div class="stat-card reveal">
-            <div class="stat-card__icon c-blue"><i class="fa-solid fa-calendar-check"></i></div>
-            <div class="stat-card__label">Rehistrasyon</div>
-            <div class="stat-card__value c-blue">Setyembre 30, 2028</div>
-          </div>
-          <div class="stat-card reveal">
-            <div class="stat-card__icon c-red"><i class="fa-solid fa-clock"></i></div>
-            <div class="stat-card__label">Oras ng Pagboto</div>
-            <div class="stat-card__value c-red">6:00 AM - 7:00 PM</div>
-          </div>
-          <div class="stat-card reveal">
-            <div class="stat-card__icon c-yellow"><i class="fa-solid fa-address-card"></i></div>
-            <div class="stat-card__label">Valid ID Requirements</div>
-            <div class="stat-card__value c-ink">Valid ID / Voter's ID</div>
-          </div>
-          <div class="stat-card reveal">
-            <div class="stat-card__icon c-blue"><i class="fa-solid fa-person-booth"></i></div>
-            <div class="stat-card__label">Petsa ng Eleksyon</div>
-            <div class="stat-card__value c-ink">Mayo 12, 2028</div>
+        <div class="profile-hero__grid">
+          <div class="profile-photo"><img src="assets/img/cand-antonio.jpg" alt="Antonio Luna Jr."></div>
+          <div class="profile-hero__info">
+            <span class="eyebrow">Kandidato sa Pagka-Senate President</span>
+            <h1 class="profile-name">Antonio Luna Jr.</h1>
+            <p class="profile-motto">"Katatagan sa Pamumuno, Karangalan para sa Bayan"</p>
+            <p class="profile-party">Nationalist Union</p>
+
           </div>
         </div>
+      </div>
+    </section>
+    <div class="container">
+      <div class="profile-stats">
+        <div><small>Edad</small><strong>58 Taong Gulang</strong></div>
+        <div><small>Edukasyon</small><strong>Harvard Kennedy School - Governance</strong></div>
+        <div><small>Serbisyo Publiko</small><strong>25 na Taon</strong></div>
       </div>
     </div>
-
-    <section class="participate" aria-labelledby="participate-title">
-      <div class="container participate__grid">
-        <div class="participate__copy reveal">
-          <span class="bar"></span>
-          <h2 class="section-title" id="participate-title">Paano ka<br class="no-mobile"> makakabahagi?</h2>
-          <p class="lead">Ang BotoPinoy ay narito upang gabayan ka sa bawat hakbang. Mula sa pagpaparehistro hanggang sa
-            pagpili ng tamang pinuno.</p>
-          <div class="feature-grid">
-            <a class="feature-card" href="impormasyon.html"><i class="fa-solid fa-magnifying-glass-location c-blue"></i>
-              <h3>Impormasyon</h3>
-              <p>Alamin ang proseso ng pagboto at iyong mga karapatan.</p>
-            </a>
-            <a class="feature-card" href="mga-kandidato.html"><i class="fa-solid fa-magnifying-glass c-red"></i>
-              <h3>Kandidato</h3>
-              <p>Suriin ang track record at plataporma ng bawat isa.</p>
-            </a>
-            <a class="feature-card" href="checklist.html"><i class="fa-solid fa-clipboard-list c-yellow"></i>
-              <h3>Checklist</h3>
-              <p>Siguraduhin na handa ka na sa araw ng eleksyon.</p>
-            </a>
-            <a class="feature-card" href="impormasyon.html#paano-bumoto"><i class="fa-solid fa-print c-green"></i>
-              <h3>Gabay</h3>
-              <p>Tips para sa maayos at ligtas na pagboto.</p>
-            </a>
+    <section class="profile-body">
+      <div class="container profile-layout">
+        <div class="profile-main">
+          <section class="p-sec bio-sec">
+            <h2>Talambuhay</h2><span class="bar"></span>
+            <div class="bio">
+              <p>Si Antonio Luna Jr. ay isang kilalang eksperto sa batas at pambansang seguridad. Sa loob ng higit
+                dalawang dekada, naging bahagi siya ng mahahalagang deliberasyon sa Senado na naglalayong patatagin ang
+                soberanya ng bansa at ayusin ang sistema ng gobyerno. Bilang isang beteranong mambabatas, dala niya ang
+                disiplina at dedikasyong nakuha niya mula sa kanyang pamilyang may mahabang kasaysayan ng
+                serbisyo-militar.</p>
+              <p>Naniniwala siya na ang Senado ay dapat maging sentro ng matalinong debate at tunay na pagbabago. Ang
+                kanyang adhikain ay gawing mas mabilis, transparent, at epektibo ang pagpasa ng mga batas na may
+                direktang pakinabang sa seguridad at kabuhayan ng bawat Pilipino, habang pinapanatili ang integridad ng
+                mga institusyong demokratiko.</p>
+            </div>
+          </section>
+          <section class="p-sec">
+            <h2>Track Record &amp; Karanasan</h2><span class="bar"></span>
+            <div class="track-list">
+              <article class="track-card reveal"><span class="ico"><i class="fa-solid fa-gavel"></i></span>
+                <div>
+                  <h3>Senador (Chairman, Committee on National Defense)</h3>
+                  <p class="yr">2010 - Kasalukuyan</p>
+                </div>
+                <p style="grid-column:2">Pinamunuan ang modernisasyon ng Sandatahang Lakas ng Pilipinas at naging
+                  katuwang sa pagbabalangkas ng mga kasunduang pang-depensa na kumikilala sa ating soberanya.</p>
+              </article>
+              <article class="track-card reveal"><span class="ico"><i class="fa-solid fa-landmark"></i></span>
+                <div>
+                  <h3>Department of Interior and Local Government Secretary</h3>
+                  <p class="yr">2004 - 2009</p>
+                </div>
+                <p style="grid-column:2">Ipinatupad ang 'Zero-Tolerance Policy' laban sa katiwalian sa mga lokal na
+                  pamahalaan at pinangunahan ang rehabilitasyon ng mga komunidad pagkatapos ng malalaking sakuna.</p>
+              </article>
+            </div>
+          </section>
+          <section class="p-sec">
+            <h2>Plataporma at Prayoridad</h2><span class="bar"></span>
+            <div class="platform-grid">
+              <article class="platform-card reveal"><i class="fa-solid fa-shield-halved"></i>
+                <h3>Pambansang Seguridad</h3>
+                <p>Pagpapalakas ng ating maritime domain awareness at pagpopondo sa sapat na kagamitan para sa mga
+                  tanod-baybayin at sundalo.</p>
+              </article>
+              <article class="platform-card reveal"><i class="fa-solid fa-scale-balanced"></i>
+                <h3>Legislative Reform</h3>
+                <p>Pag-digitize ng lahat ng proseso sa Senado para sa mas mabilis na pagpasa ng batas at real-time na
+                  pagsubaybay ng publiko.</p>
+              </article>
+              <article class="platform-card reveal"><i class="fa-solid fa-handshake"></i>
+                <h3>Good Governance</h3>
+                <p>Pagpapasa ng 'Anti-Dynasty Bill' at pagpapalakas ng mga batas na nagbibigay ng proteksyon sa mga
+                  whistleblower laban sa kurapsyon.</p>
+              </article>
+              <article class="platform-card reveal"><i class="fa-solid fa-globe"></i>
+                <h3>Diplomatikong Relasyon</h3>
+                <p>Pagtatatag ng mas matibay na alyansang pang-ekonomiya sa mga bansang karatig-rehiyon upang masiguro
+                  ang ating global competitiveness.</p>
+              </article>
+            </div>
+          </section>
+        </div>
+        <aside class="profile-aside">
+          <button type="button" class="save-card" data-save-candidate="antonio-luna-jr" aria-pressed="false">
+            <div class="save-card__top"><i class="fa-regular fa-bookmark"></i><span>Senate President</span></div>
+            <h3>I-SAVE ANG KANDIDATANG ITO</h3>
+            <p>Suriin at ihambing ang profile na ito sa iba pang mga opisyal na kandidato.</p>
+          </button>
+          <div class="share">
+            <h4>Ibahagi o Sundan</h4>
+            <ul>
+              <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" data-share="instagram"><i
+                    class="fa-brands fa-instagram"></i> Instagram</a></li>
+              <li><a href="https://twitter.com/" target="_blank" rel="noopener" data-share="twitter"><i
+                    class="fa-brands fa-twitter"></i> Twitter / X</a></li>
+              <li><a href="https://www.facebook.com/" target="_blank" rel="noopener" data-share="facebook"><i
+                    class="fa-brands fa-facebook-f"></i> Facebook</a></li>
+            </ul>
           </div>
-        </div>
-        <div class="participate__media reveal">
-          <div class="participate__photo"><img src="assets/img/voter.jpg"
-              alt="Isang botanteng nagpapakita ng daliring may tinta matapos bumoto"></div>
-          <div class="stat-float">
-            <div class="stat-float__head"><span class="check-circle"><i
-                  class="fa-solid fa-check"></i></span><strong><span class="no-mobile">85%</span><span
-                  class="only-mobile" style="display:none">85% Participation</span></strong></div>
-            <p>Target na partisipasyon ng kabataang botante ngayong 2025. Maging bahagi nito.</p>
-            <span class="short">Target na partisipasyon ng kabataan.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="meet" aria-labelledby="meet-title">
-      <div class="container">
-        <div class="meet__head reveal">
-          <div><span class="bar bar--blue"></span>
-            <h2 class="section-title serif" id="meet-title">Kilalanin Sila.</h2>
-            <p class="lead">Suriin ang mga nagnanais maglingkod sa ating bayan.</p>
-          </div>
-          <a class="btn-card" href="mga-kandidato.html">Tingnan ang Lahat <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-        <div class="cand-grid">
-          <article class="cand-card reveal">
-            <div class="cand-card__img"><span class="tag-role">Presidente</span><img src="assets/img/cand-juan.jpg"
-                alt="Juan De La Cruz" loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Presidente</span>
-              <h3 class="cand-card__name">Juan De La Cruz</h3>
-              <p class="cand-card__party">Partido para sa Pagbabago</p><a class="cand-card__cta"
-                href="kandidato-juan-de-la-cruz.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-          <article class="cand-card reveal">
-            <div class="cand-card__img"><span class="tag-role">Bise Presidente</span><img
-                src="assets/img/cand-maria.jpg" alt="Maria Clara Reyes" loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Bise Presidente</span>
-              <h3 class="cand-card__name">Maria Clara Reyes</h3>
-              <p class="cand-card__party">Lakas ng Bayan Party</p><a class="cand-card__cta"
-                href="kandidato-maria-clara-reyes.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-          <article class="cand-card reveal">
-            <div class="cand-card__img"><span class="tag-role">Senate-President</span><img
-                src="assets/img/cand-antonio.jpg" alt="Antonio Luna Jr." loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Senate-President</span>
-              <h3 class="cand-card__name">Antonio Luna Jr.</h3>
-              <p class="cand-card__party">Nationalist Union</p><a class="cand-card__cta"
-                href="kandidato-antonio-luna-jr.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-          <article class="cand-card reveal">
-            <div class="cand-card__img"><span class="tag-role">Senador</span><img src="assets/img/cand-raymond.jpg"
-                alt="Raymond Hernandez" loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Senador</span>
-              <h3 class="cand-card__name">Raymond Hernandez</h3>
-              <p class="cand-card__party">Independent</p><a class="cand-card__cta"
-                href="kandidato-raymond-hernandez.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-        </div>
-        <a class="meet-all" href="mga-kandidato.html" style="display:none">Tingnan ang Lahat <i
-            class="fa-solid fa-arrow-right"></i></a>
+        </aside>
       </div>
     </section>
   </main>

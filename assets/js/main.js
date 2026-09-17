@@ -88,6 +88,63 @@
     });
   });
 
+  /* ---------- search overlay ---------- */
+  var overlay = $(".search-overlay");
+  function renderResults(q) {
+    var box = $(".search-results", overlay);
+    q = (q || "").trim().toLowerCase();
+    var cands = DATA.candidates.filter(function (c) { return !q || (c.name + " " + c.party + " " + c.position).toLowerCase().indexOf(q) > -1; });
+    var pages = DATA.pages.filter(function (p) { return !q || (p.t + " " + p.d).toLowerCase().indexOf(q) > -1; });
+    if (!q) cands = cands.slice(0, 4), pages = pages.slice(0, 5);
+    var html = "";
+    cands.forEach(function (c) { html += '<a href="kandidato-' + c.id + '.html"><img src="' + c.img + '" alt=""><div><strong>' + esc(c.name) + "</strong><span>" + esc(c.position) + " · " + esc(c.party) + "</span></div></a>"; });
+    pages.forEach(function (p) { html += '<a href="' + p.u + '"><span class="sr-ico"><i class="fa-solid ' + p.i + '"></i></span><div><strong>' + esc(p.t) + "</strong><span>" + esc(p.d) + "</span></div></a>"; });
+    box.innerHTML = html || '<div class="search-empty"><i class="fa-regular fa-face-frown"></i> Walang nahanap para sa “' + esc(q) + '”.</div>';
+  }
+  function openSearch() {
+    if (!overlay) return;
+    overlay.classList.add("is-open"); overlay.setAttribute("aria-hidden", "false");
+    var inp = $("input", overlay); inp.value = ""; renderResults("");
+    setTimeout(function () { inp.focus(); }, 60);
+  }
+  function closeSearch() { if (!overlay) return; overlay.classList.remove("is-open"); overlay.setAttribute("aria-hidden", "true"); }
+  if (overlay) {
+    var sInput = $("input", overlay);
+    sInput.addEventListener("input", function () { renderResults(sInput.value); });
+    sInput.addEventListener("keydown", function (e) {
+      var links = $$(".search-results a", overlay); if (!links.length) return;
+      var i = links.indexOf($(".search-results a.is-focus", overlay));
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        if (i > -1) links[i].classList.remove("is-focus");
+        i = e.key === "ArrowDown" ? (i + 1) % links.length : (i - 1 + links.length) % links.length;
+        links[i].classList.add("is-focus"); links[i].scrollIntoView({ block: "nearest" });
+      } else if (e.key === "Enter") { e.preventDefault(); location.href = (links[i > -1 ? i : 0]).getAttribute("href"); }
+    });
+    overlay.addEventListener("click", function (e) { if (e.target === overlay) closeSearch(); });
+  }
+  $$("[data-open-search]").forEach(function (b) { b.addEventListener("click", openSearch); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { closeSearch(); closeMenu(); closeDropdowns(); closeModal(); }
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k" && overlay) { e.preventDefault(); openSearch(); }
+  });
+
+  /* ---------- modal ---------- */
+  var modal = $(".modal");
+  function openModal(html) {
+    if (!modal) return;
+    $(".modal__content", modal).innerHTML = html;
+    modal.classList.add("is-open"); modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    setTimeout(function () { $(".modal__close", modal).focus(); }, 60);
+  }
+  function closeModal() { if (!modal || !modal.classList.contains("is-open")) return; modal.classList.remove("is-open"); modal.setAttribute("aria-hidden", "true"); document.body.style.overflow = ""; }
+  if (modal) {
+    $(".modal__close", modal).addEventListener("click", closeModal);
+    modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
+  }
+  window.kdModal = { open: openModal, close: closeModal };
+
   /* ---------- reveal on scroll ---------- */
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
@@ -108,6 +165,39 @@
         setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
         toast("Na-download ang " + name, "fa-file-arrow-down");
       }).catch(function () { window.location.href = href; });
+    });
+  });
+
+  /* ---------- saved candidates ---------- */
+  var DEFAULT_SAVED = ["juan-de-la-cruz", "maria-clara-reyes", "elena-guerrero"];
+  function getSaved() { return store.get("kd_saved", DEFAULT_SAVED); }
+  function setSaved(v) { store.set("kd_saved", v); }
+  $$("[data-save-candidate]").forEach(function (btn) {
+    var id = btn.getAttribute("data-save-candidate");
+    var sync = function () {
+      var saved = getSaved().indexOf(id) > -1;
+      btn.classList.toggle("is-saved", saved);
+      btn.setAttribute("aria-pressed", String(saved));
+      var ic = $(".save-card__top i", btn); if (ic) ic.className = saved ? "fa-solid fa-bookmark" : "fa-regular fa-bookmark";
+      btn.setAttribute("title", saved ? "Naka-save na — i-click upang alisin" : "I-save ang kandidatong ito");
+    };
+    sync();
+    btn.addEventListener("click", function () {
+      var s = getSaved(), i = s.indexOf(id);
+      if (i > -1) { s.splice(i, 1); toast("Inalis sa iyong mga naka-save na kandidato.", "fa-bookmark"); }
+      else { s.push(id); toast("Na-save! Makikita ito sa iyong Dashboard.", "fa-bookmark"); }
+      setSaved(s); sync();
+    });
+  });
+
+  /* ---------- share links on profile ---------- */
+  $$("[data-share]").forEach(function (a) {
+    var url = encodeURIComponent(location.href), txt = encodeURIComponent(document.title);
+    var net = a.getAttribute("data-share");
+    if (net === "facebook") a.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+    if (net === "twitter") a.href = "https://twitter.com/intent/tweet?url=" + url + "&text=" + txt;
+    if (net === "instagram") a.addEventListener("click", function (e) {
+      if (navigator.clipboard) { e.preventDefault(); navigator.clipboard.writeText(location.href).then(function () { toast("Nakopya ang link — i-paste sa iyong Instagram story o bio.", "fa-link"); window.open("https://www.instagram.com/", "_blank", "noopener"); }); }
     });
   });
 
@@ -170,6 +260,43 @@
     $$(".event-card[data-goto]").forEach(function (card) {
       card.addEventListener("click", function () { var p = card.dataset.goto.split("-"); state.y = +p[0]; state.m = +p[1]; state.collapsed = false; render(); var b = $('[data-key="' + card.dataset.goto + '"]', grid); b && b.click(); cal.scrollIntoView({ behavior: "smooth", block: "center" }); });
     });
+  }
+
+  /* ---------- Candidate list filter + pager ---------- */
+  if (page === "kandidato") {
+    var cards = $$(".cand-section .cand-card");
+    var form = $(".filter-panel"), nameIn = $("#f-name"), posIn = $("#f-pos"), partyIn = $("#f-party");
+    var pager = $(".pager"), PER = 8, cur = 1, matched = cards.slice();
+    var gridEl = $(".cand-section .cand-grid"), empty = $(".cand-section .empty-state");
+    function apply() {
+      var q = nameIn.value.trim().toLowerCase(), pos = posIn.value, party = partyIn.value;
+      matched = cards.filter(function (c) {
+        return (!q || c.dataset.name.toLowerCase().indexOf(q) > -1) && (!pos || c.dataset.pos === pos) && (!party || c.dataset.party === party);
+      });
+      cur = 1; draw();
+    }
+    function draw() {
+      var pages = Math.max(3, Math.ceil(matched.length / PER));
+      cards.forEach(function (c) { c.classList.add("is-hidden"); });
+      matched.slice((cur - 1) * PER, cur * PER).forEach(function (c) { c.classList.remove("is-hidden"); });
+      var none = !matched.slice((cur - 1) * PER, cur * PER).length;
+      empty.classList.toggle("is-hidden", !none);
+      empty.querySelector("p").textContent = matched.length ? "Wala nang ibang kandidato sa pahinang ito. Bumalik sa pahina 1." : "Walang kandidatong tumugma sa iyong paghahanap. Subukang baguhin ang mga filter.";
+      var nums = $$("[data-p]", pager);
+      nums.forEach(function (b) { b.classList.toggle("is-current", +b.dataset.p === cur); b.setAttribute("aria-current", +b.dataset.p === cur ? "page" : "false"); });
+      $(".pg-prev", pager).disabled = cur === 1;
+      $(".pg-next", pager).disabled = cur === pages;
+    }
+    form.addEventListener("submit", function (e) { e.preventDefault(); apply(); gridEl.scrollIntoView({ behavior: "smooth", block: "start" }); toast(matched.length + " kandidato ang nahanap.", "fa-magnifying-glass"); });
+    nameIn.addEventListener("input", apply); posIn.addEventListener("change", apply); partyIn.addEventListener("change", apply);
+    pager.addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (!b || b.disabled) return;
+      if (b.dataset.p) cur = +b.dataset.p; else if (b.classList.contains("pg-prev")) cur--; else if (b.classList.contains("pg-next")) cur++;
+      draw(); $(".cand-section").scrollIntoView({ behavior: "smooth" });
+    });
+    var params = new URLSearchParams(location.search);
+    if (params.get("q")) { nameIn.value = params.get("q"); }
+    apply();
   }
 
   /* ---------- Info page checklist (persist) ---------- */
