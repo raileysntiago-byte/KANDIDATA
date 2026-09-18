@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="tl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Raymond Hernandez | KandiDATA</title>
+  <meta name="description" content="Profile, track record at plataporma ni Raymond Hernandez.">
+  <meta name="theme-color" content="#050a30">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/home.css">
+  <link rel="stylesheet" href="assets/css/pages/impormasyon.css">
+  <link rel="stylesheet" href="assets/css/pages/kalendaryo.css">
+  <link rel="stylesheet" href="assets/css/pages/kandidato.css">
+  <link rel="stylesheet" href="assets/css/pages/profile.css">
+</head>
+
+<body class="profile-page" data-page="candidate">
+  <a class="sr-only" href="#main">Lumaktaw sa nilalaman</a>
+  <header class="site-header">
+    <div class="site-header__inner"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
+          class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <polygon
+              points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+              fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
+            <circle cx="50" cy="50" r="21" fill="#0038A8" />
+            <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
+          </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
+      <nav class="main-nav" aria-label="Pangunahing navigation">
+        <ul>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="impormasyon.html">Impormasyon</a></li>
+          <li><a href="kalendaryo.html">Kalendaryo</a></li>
+          <li><a href="mga-kandidato.html" class="is-active" aria-current="page">Mga Kandidato</a></li>
+          <li><a href="mga-panukala.html">Mga Panukala</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions"><button type="button" class="icon-btn" data-open-search
+          aria-label="Maghanap (Ctrl+K)"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <div class="header-guest" data-auth="guest"><a class="btn-auth btn-auth--outline"
+            href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
+        <div class="user-menu is-hidden" data-auth="user"><button type="button" class="avatar-btn" aria-haspopup="true"
+            aria-expanded="false" aria-label="Account menu"><img src="assets/img/user-avatar-large.jpg" alt=""></button>
+          <div class="user-dropdown" role="menu">
+            <div class="user-dropdown__head"><strong data-user-name>John Guerrero</strong><span data-user-email></span>
+            </div><a href="profile.html" role="menuitem"><i class="fa-regular fa-user"></i> Aking Dashboard</a><a
+              href="checklist.html" role="menuitem"><i class="fa-regular fa-clipboard"></i> Checklist ng Botante</a><a
+              href="faq.html" role="menuitem"><i class="fa-regular fa-circle-question"></i> Tulong at FAQ</a><button
+              type="button" role="menuitem" data-logout><i class="fa-solid fa-right-from-bracket"></i>
+              Mag-logout</button>
+          </div>
+        </div>
+      </div><button type="button" class="menu-toggle" aria-label="Buksan ang menu" aria-expanded="false"
+        aria-controls="mobile-menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu__backdrop"></div>
+    <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="mobile-menu__top"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
+            class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+              <polygon
+                points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+                fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
+              <circle cx="50" cy="50" r="21" fill="#0038A8" />
+              <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
+            </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a><button type="button"
+          class="mobile-menu__close" aria-label="Isara ang menu"><i class="fa-solid fa-xmark"></i></button></div>
+      <nav aria-label="Mobile navigation"><a href="index.html">Dashboard</a><a href="impormasyon.html">Impormasyon</a><a
+          href="kalendaryo.html">Kalendaryo</a><a href="mga-kandidato.html" class="is-active">Mga Kandidato</a><a
+          href="mga-panukala.html">Mga Panukala</a></nav>
+      <div class="mobile-menu__auth" data-auth="guest"><a class="btn-auth btn-auth--outline"
+          href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
+      <div class="mobile-menu__auth is-hidden" data-auth="user"><a class="btn-auth btn-auth--outline"
+          href="profile.html">Aking Dashboard</a><button type="button" class="btn-auth btn-auth--solid"
+          data-open-search>Maghanap</button><button type="button" class="btn-auth btn-auth--outline"
+          data-logout>Mag-logout</button></div>
+    </div>
+  </div>
+  <main id="main">
+
+    <section class="hero profile-hero">
+      <div class="container hero__inner">
+        <div class="profile-hero__grid">
+          <div class="profile-photo"><img src="assets/img/cand-raymond.jpg" alt="Raymond Hernandez"></div>
+          <div class="profile-hero__info">
+            <span class="eyebrow">Kandidato sa Pagka-Senador</span>
+            <h1 class="profile-name">Raymond Hernandez</h1>
+            <p class="profile-motto">"Boses ng Kabataan, Kalikasan, at Katapatan"</p>
+            <p class="profile-party">Independent</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <div class="profile-stats">
+        <div><small>Edad</small><strong>35 Taong Gulang</strong></div>
+        <div><small>Edukasyon</small><strong>UP Diliman - Environmental Science</strong></div>
+        <div><small>Adbokasiya</small><strong>Sustainable Dev.</strong></div>
+      </div>
+    </div>
+    <section class="profile-body">
+      <div class="container profile-layout">
+        <div class="profile-main">
+          <section class="p-sec bio-sec">
+            <h2>Talambuhay</h2><span class="bar"></span>
+            <div class="bio">
+              <p>Si Sofia Hernandez ay isang environmental advocate at lider-kabataan na nagmula sa komunidad ng mga
+                mangingisda at magsasaka. Sa kanyang murang edad, naging boses siya ng mga nasa laylayan, ipinaglalaban
+                ang proteksyon ng ating mga likas na yaman at ang karapatan ng susunod na henerasyon sa isang malinis at
+                ligtas na kapaligiran.</p>
+              <p>Bilang isang independent na kandidato, naniniwala si Sofia na ang tunay na serbisyo ay walang
+                kinikilingang partido kundi ang interes lamang ng publiko. Ang kanyang karanasan sa grassroots
+                organizing at international climate policy ay nagbibigay sa kanya ng natatanging perspektibo upang
+                balangkasin ang mga batas na hindi lamang makabago kundi tunay na makatao at makakalikasan.</p>
+            </div>
+          </section>
+          <section class="p-sec">
+            <h2>Track Record &amp; Karanasan</h2><span class="bar"></span>
+            <div class="track-list">
+              <article class="track-card reveal"><span class="ico"><i class="fa-solid fa-leaf"></i></span>
+                <div>
+                  <h3>Founder, Green Future Philippines</h3>
+                  <p class="yr">2015 - Kasalukuyan</p>
+                </div>
+                <p style="grid-column:2">Pinangunahan ang pagtatanim ng higit sa 1 milyong puno at ang rehabilitasyon ng
+                  mga lokal na watershed sa Luzon at Visayas sa pakikipagtulungan sa mga lokal na yunit ng pamahalaan.
+                </p>
+              </article>
+              <article class="track-card reveal"><span class="ico"><i class="fa-solid fa-users"></i></span>
+                <div>
+                  <h3>Youth Representative to the UN Climate Summit</h3>
+                  <p class="yr">2018 - 2022</p>
+                </div>
+                <p style="grid-column:2">Nagsilbing kinatawan ng Pilipinas sa pandaigdigang entablado upang isulong ang
+                  climate justice para sa mga bansang pinaka-apektado ng pagbabago ng panahon.</p>
+              </article>
+            </div>
+          </section>
+          <section class="p-sec">
+            <h2>Plataporma at Prayoridad</h2><span class="bar"></span>
+            <div class="platform-grid">
+              <article class="platform-card reveal"><i class="fa-solid fa-tree"></i>
+                <h3>Green Economy Act</h3>
+                <p>Pagbibigay ng insentibo sa mga kumpanyang gumagamit ng renewable energy at paglikha ng libu-libong
+                  "green jobs" para sa mga kabataan.</p>
+              </article>
+              <article class="platform-card reveal"><i class="fa-solid fa-magnifying-glass-chart"></i>
+                <h3>Full Transparency Bill</h3>
+                <p>Mandatory real-time online publication ng lahat ng public bidding at budget allocation sa bawat
+                  ahensya ng gobyerno.</p>
+              </article>
+              <article class="platform-card reveal"><i class="fa-solid fa-graduation-cap"></i>
+                <h3>Edukasyon para sa Lahat</h3>
+                <p>Pagpapalawak ng scholarships para sa STEM at Environmental Sciences upang ihanda ang kabataan sa
+                  makabagong ekonomiya.</p>
+              </article>
+              <article class="platform-card reveal"><i class="fa-solid fa-droplet"></i>
+                <h3>Food &amp; Water Security</h3>
+                <p>Proteksyon ng mga marine sanctuaries at pagpapatayo ng sustainable irrigation system para sa mga
+                  lokal na magsasaka.</p>
+              </article>
+            </div>
+          </section>
+        </div>
+        <aside class="profile-aside">
+          <button type="button" class="save-card" data-save-candidate="raymond-hernandez" aria-pressed="false">
+            <div class="save-card__top"><i class="fa-regular fa-bookmark"></i><span>Senatoriable</span></div>
+            <h3>I-SAVE ANG KANDIDATANG ITO</h3>
+            <p>Suriin at ihambing ang profile na ito sa iba pang mga opisyal na kandidato.</p>
+          </button>
+          <div class="share">
+            <h4>Ibahagi o Sundan</h4>
+            <ul>
+              <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" data-share="instagram"><i
+                    class="fa-brands fa-instagram"></i> Instagram</a></li>
+              <li><a href="https://twitter.com/" target="_blank" rel="noopener" data-share="twitter"><i
+                    class="fa-brands fa-twitter"></i> Twitter / X</a></li>
+              <li><a href="https://www.facebook.com/" target="_blank" rel="noopener" data-share="facebook"><i
+                    class="fa-brands fa-facebook-f"></i> Facebook</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about"><a class="brand brand--light" href="index.html" aria-label="KandiDATA — Home"><span
+              class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                <polygon
+                  points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+                  fill="#0038A8" stroke="#0038A8" stroke-width="7" stroke-linejoin="round" />
+                <circle cx="50" cy="50" r="21" fill="#fff" />
+                <circle cx="50" cy="50" r="15.5" fill="#0038A8" />
+              </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
+          <p>Isang inisyatibo upang mapataas ang kamalayan ng bawat Pilipino sa kanilang karapatang bumoto nang matalino
+            at mapayapa.</p>
+          <div class="socials"><a href="https://www.facebook.com/" target="_blank" rel="noopener"
+              aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://twitter.com/"
+              target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a><a
+              href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a></div>
+        </div>
+        <div class="footer-col">
+          <h4><button type="button" aria-expanded="false">Pangunahing Link <i
+                class="fa-solid fa-chevron-down"></i></button></h4>
+          <ul>
+            <li><a href="tungkol.html">Tungkol sa Amin</a></li>
+            <li><a href="mga-panukala.html">Mga Panukala</a></li>
+            <li><a href="lugar-ng-botohan.html">Lugar ng Botohan</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4><button type="button" aria-expanded="false">Impormasyon <i class="fa-solid fa-chevron-down"></i></button>
+          </h4>
+          <ul>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="kalendaryo.html#mga-pagbabawal">Mga Ipinagbabawal</a></li>
+            <li><a href="checklist.html#mga-paalala">Mga Paalala</a></li>
+          </ul>
+        </div>
+        <div class="footer-col contact">
+          <h4>Kontak</h4>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-envelope"></i><a href="mailto:info@botopinoy.gov.ph">info@botopinoy.gov.ph</a>
+            </li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+63288881234">+63 (02) 8888 1234</a></li>
+            <li><i class="fa-solid fa-location-dot"></i><a href="https://maps.google.com/?q=Angeles+City,+Pampanga"
+                target="_blank" rel="noopener">Angeles City, Pampanga</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 KandiDATA.<span class="full"> Lahat ng karapatan ay rizerbado.</span></div>
+    </div>
+  </footer>
+  <div class="search-overlay" aria-hidden="true" role="dialog" aria-label="Maghanap sa KandiDATA">
+    <div class="search-box"><label class="search-box__field"><i class="fa-solid fa-magnifying-glass"></i><input
+          type="search" placeholder="Maghanap ng kandidato, pahina o impormasyon…"
+          aria-label="Maghanap"><kbd>Esc</kbd></label>
+      <div class="search-results"></div>
+    </div>
+  </div>
+  <div class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal__box"><button type="button" class="modal__close" aria-label="Isara"><i
+          class="fa-solid fa-xmark"></i></button>
+      <div class="modal__content"></div>
+    </div>
+  </div>
+  <script src="assets/js/data.js"></script>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
