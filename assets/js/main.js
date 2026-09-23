@@ -299,6 +299,62 @@
     apply();
   }
 
+  /* ---------- Bills ---------- */
+  if (page === "panukala") {
+    var BILLS = window.KD_BILLS || [];
+    var bState = { q: "", cat: "Lahat", sort: "new", page: 1, per: 6 };
+    var bGrid = $(".bill-grid"), bCount = $(".bills-head .count"), bPager = $(".pager");
+    var STATUS = { approved: ["st-approved", "Approved"], pending: ["st-pending", "Pending Review"], debate: ["st-debate", "Under Debate"], approvedg: ["st-approved-g", "Approved"], impl: ["st-impl", "In Implementation"] };
+    function filtered() {
+      var q = bState.q.toLowerCase();
+      var list = BILLS.filter(function (b) { return (bState.cat === "Lahat" || b.cat === bState.cat) && (!q || (b.title + " " + b.desc + " " + b.author + " " + b.cat).toLowerCase().indexOf(q) > -1); });
+      list.sort(function (a, b) { return bState.sort === "new" ? (b.date > a.date ? 1 : -1) : bState.sort === "old" ? (a.date > b.date ? 1 : -1) : a.title.localeCompare(b.title); });
+      return list;
+    }
+    function card(b, i) {
+      var st = STATUS[b.status];
+      return '<article class="bill-card reveal is-visible"><div class="bill-card__body"><div class="bill-card__top"><span class="bill-ico ' + b.ico + '">' + b.icon + '</span><span class="status ' + st[0] + '">' + st[1] + "</span></div>" +
+        "<h3>" + esc(b.title) + "</h3><p>" + esc(b.desc) + '</p><div class="bill-prop"><span class="pin"><i class="fa-solid fa-location-dot"></i></span><div><small>Pangunahing Proponente</small><strong>' + esc(b.author) + "</strong></div></div></div>" +
+        '<button type="button" class="bill-card__cta" data-bill="' + b.id + '">Suriin ang Detalye</button></article>';
+    }
+    function drawBills() {
+      var list = filtered(), pages = Math.max(1, Math.ceil(list.length / bState.per));
+      if (bState.page > pages) bState.page = pages;
+      var slice = list.slice((bState.page - 1) * bState.per, bState.page * bState.per);
+      bGrid.innerHTML = slice.length ? slice.map(card).join("") : '<div class="empty-state" style="grid-column:1/-1"><i class="fa-regular fa-folder-open"></i><p>Walang panukalang tumugma sa iyong paghahanap.</p></div>';
+      bCount.textContent = "Ipinapakita: " + list.length + " na panukala";
+      var html = '<button type="button" class="pg-prev" aria-label="Nakaraang pahina"><i class="fa-solid fa-arrow-left"></i></button>';
+      var nums = [];
+      if (pages <= 5) { for (var i = 1; i <= pages; i++) nums.push(i); }
+      else { nums = [1, 2, 3, "…", pages]; if (bState.page > 3 && bState.page < pages) nums = [1, "…", bState.page, "…", pages]; }
+      nums.forEach(function (n) { html += n === "…" ? '<span class="dots">…</span>' : '<button type="button" data-p="' + n + '" class="' + (n === bState.page ? "is-current" : "") + '"' + (n === bState.page ? ' aria-current="page"' : "") + ">" + n + "</button>"; });
+      html += '<button type="button" class="pg-next" aria-label="Susunod na pahina"><i class="fa-solid fa-arrow-right"></i></button>';
+      bPager.innerHTML = html;
+      $(".pg-prev", bPager).disabled = bState.page === 1;
+      $(".pg-next", bPager).disabled = bState.page === pages;
+    }
+    $(".bills-search").addEventListener("submit", function (e) { e.preventDefault(); bState.q = $("#bill-q").value.trim(); bState.page = 1; drawBills(); $(".bills-section").scrollIntoView({ behavior: "smooth" }); });
+    $("#bill-q").addEventListener("input", function () { bState.q = this.value.trim(); bState.page = 1; drawBills(); });
+    $$(".cat-chip").forEach(function (c) { c.addEventListener("click", function () { $$(".cat-chip").forEach(function (x) { x.classList.remove("is-active"); x.setAttribute("aria-pressed", "false"); }); c.classList.add("is-active"); c.setAttribute("aria-pressed", "true"); bState.cat = c.dataset.cat; bState.page = 1; drawBills(); }); });
+    $("#bill-sort").addEventListener("change", function () { bState.sort = this.value; drawBills(); });
+    bPager.addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (!b || b.disabled) return;
+      if (b.dataset.p) bState.page = +b.dataset.p; else if (b.classList.contains("pg-prev")) bState.page--; else bState.page++;
+      drawBills(); $(".bills-section").scrollIntoView({ behavior: "smooth" });
+    });
+    bGrid.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-bill]"); if (!b) return;
+      var bill = BILLS.filter(function (x) { return x.id === b.dataset.bill; })[0], st = STATUS[bill.status];
+      openModal('<span class="bill-ico ' + bill.ico + '">' + bill.icon + '</span><h3 id="modal-title" style="margin-top:18px">' + esc(bill.title) + '</h3><div class="meta"><span class="status ' + st[0] + '">' + st[1] + '</span><span class="chip">' + esc(bill.cat) + "</span></div><p>" + esc(bill.full || bill.desc) + "</p><dl><dt>Proponente</dt><dd>" + esc(bill.author) + "</dd><dt>Bill No.</dt><dd>" + esc(bill.no) + "</dd><dt>Isinampa</dt><dd>" + esc(bill.dateLabel) + "</dd><dt>Komite</dt><dd>" + esc(bill.committee) + '</dd></dl><div class="modal-actions"><button type="button" class="btn btn-primary" data-follow="' + bill.id + '"><i class="fa-regular fa-bell"></i> Sundan ang Panukala</button><button type="button" class="btn btn-soft" data-close-modal>Isara</button></div>');
+    });
+    document.addEventListener("click", function (e) {
+      if (e.target.closest("[data-close-modal]")) closeModal();
+      var f = e.target.closest("[data-follow]");
+      if (f) { var fl = store.get("kd_follow_bills", []); if (fl.indexOf(f.dataset.follow) < 0) fl.push(f.dataset.follow); store.set("kd_follow_bills", fl); f.innerHTML = '<i class="fa-solid fa-bell"></i> Sinusundan mo na'; toast("Makakatanggap ka ng update tungkol sa panukalang ito.", "fa-bell"); }
+    });
+    drawBills();
+  }
+
   /* ---------- Info page checklist (persist) ---------- */
   $$("[data-checklist]").forEach(function (list) {
     var key = "kd_check_" + list.dataset.checklist, saved = store.get(key, []);
@@ -307,6 +363,72 @@
     boxes.forEach(function (b, i) { b.checked = saved.indexOf(i) > -1; b.addEventListener("change", function () { var s = []; boxes.forEach(function (x, j) { if (x.checked) s.push(j); }); store.set(key, s); upd(); if (s.length === boxes.length) toast("Handa ka na para sa araw ng halalan!", "fa-circle-check"); }); });
     upd();
   });
+
+  /* ---------- Polling place ---------- */
+  if (page === "botohan") {
+    var PLACES = [
+      { name: "Makati High School", addr: "Gen. Luna St, Brgy. Poblacion, Makati City, Metro Manila", area: "Poblacion, Makati City", short: "Makati High", time: "5 min lakad", mode: "walk", x: 47, y: 42, precinct: "0123A" },
+      { name: "Brgy. Valenzuela Hall", addr: "Ocampo St, Brgy. Valenzuela, Makati City", area: "Valenzuela, Makati City", short: "Valenzuela Hall", time: "12 min drive", mode: "car", x: 70, y: 52, precinct: "0145B" },
+      { name: "Guadalupe Elementary School", addr: "J.P. Rizal Ext, Brgy. Guadalupe Nuevo, Makati City", area: "Guadalupe Nuevo, Makati City", short: "Guadalupe Elem.", time: "18 min drive", mode: "car", x: 30, y: 55, precinct: "0201C" }
+    ];
+    var EXTRA = [
+      { name: "San Antonio National High School", addr: "Kalayaan Ave, Brgy. San Antonio, Makati City", area: "San Antonio, Makati City", short: "San Antonio HS", time: "22 min drive", mode: "car", x: 82, y: 40, precinct: "0233A" },
+      { name: "Pio del Pilar Elementary School", addr: "Arnaiz Ave, Brgy. Pio del Pilar, Makati City", area: "Pio del Pilar, Makati City", short: "Pio del Pilar ES", time: "25 min drive", mode: "car", x: 20, y: 45, precinct: "0310D" }
+    ];
+    var list = $(".place-list"), active = 0, showAll = false, zoom = 1;
+    var canvas = $(".map-canvas"), pin = $(".map-pin"), locName = $(".map-loc strong"), countPill = $(".poll-list-head .pill");
+    function placeCard(p, i) {
+      return '<button type="button" class="place-card' + (i === active ? " is-active" : "") + '" data-i="' + i + '" aria-pressed="' + (i === active) + '">' + (i === 0 ? '<div class="near">Pinakamalapit</div>' : "") + '<i class="fa-solid fa-check tick" aria-hidden="true"></i><h3>' + esc(p.name) + "</h3><p>" + esc(p.addr) + '</p><div class="place-meta"><span><i class="fa-regular fa-clock"></i>6:00 AM - 7:00 PM</span><span class="' + (p.mode === "walk" ? "blue" : "") + '"><i class="fa-solid ' + (p.mode === "walk" ? "fa-person-walking" : "fa-car") + '"></i>' + p.time + "</span></div></button>";
+    }
+    var current = PLACES.slice();
+    function drawPlaces() {
+      var shown = showAll ? current : current.slice(0, 3);
+      list.innerHTML = shown.map(placeCard).join("") || '<div class="empty-state"><i class="fa-solid fa-map-location-dot"></i><p>Walang nahanap na presinto. Subukan ang ibang address o precinct number.</p></div>';
+      countPill.textContent = current.length + " Nahanap";
+      $(".show-all").innerHTML = showAll ? 'Ipakita ang mas kaunti <i class="fa-solid fa-arrow-up"></i>' : 'Ipakita ang lahat <i class="fa-solid fa-arrow-right"></i>';
+      var p = current[active] || current[0];
+      if (p) { pin.style.left = p.x + "%"; pin.style.top = p.y + "%"; $(".lbl", pin).textContent = p.short; locName.textContent = p.area; pin.classList.remove("is-hidden"); }
+    }
+    list.addEventListener("click", function (e) { var b = e.target.closest(".place-card"); if (!b) return; active = +b.dataset.i; drawPlaces(); });
+    $(".show-all").addEventListener("click", function () { showAll = !showAll; if (showAll && current.length <= 3 && current === PLACES) current = PLACES.concat(EXTRA); else if (!showAll && current.length > 3 && current[3] === EXTRA[0]) current = PLACES.slice(); drawPlaces(); });
+    $(".poll-search").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var q = $("#poll-q").value.trim().toLowerCase();
+      if (!q) { $("#poll-q").focus(); toast("Ilagay muna ang iyong address o Precinct Number.", "fa-circle-exclamation"); return; }
+      var all = PLACES.concat(EXTRA);
+      current = all.filter(function (p) { return (p.name + " " + p.addr + " " + p.precinct).toLowerCase().indexOf(q) > -1; });
+      if (!current.length && /makati|poblacion|manila/.test(q)) current = PLACES.slice();
+      active = 0; showAll = current.length > 3; drawPlaces();
+      toast(current.length ? current.length + " lugar ng botohan ang nahanap." : "Walang nahanap na presinto.", current.length ? "fa-location-dot" : "fa-circle-exclamation");
+    });
+    $(".btn-loc").addEventListener("click", function () {
+      var btn = this;
+      if (!navigator.geolocation) { toast("Hindi suportado ng iyong browser ang geolocation.", "fa-circle-exclamation"); return; }
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Hinahanap ang lokasyon…';
+      navigator.geolocation.getCurrentPosition(function () {
+        btn.innerHTML = '<i class="fa-solid fa-location-dot"></i> Gamitin ang aking lokasyon';
+        current = PLACES.slice(); active = 0; showAll = false; drawPlaces();
+        toast("Ipinakita ang mga presinto na pinakamalapit sa iyo.", "fa-location-crosshairs");
+      }, function () {
+        btn.innerHTML = '<i class="fa-solid fa-location-dot"></i> Gamitin ang aking lokasyon';
+        toast("Hindi makuha ang iyong lokasyon. Pakibigay ang pahintulot o i-type ang address.", "fa-circle-exclamation");
+      }, { timeout: 8000 });
+    });
+    function setZoom(z) { zoom = Math.min(2.2, Math.max(1, z)); canvas.style.transform = "scale(" + zoom + ")"; }
+    $(".zoom-in").addEventListener("click", function () { setZoom(zoom + 0.3); });
+    $(".zoom-out").addEventListener("click", function () { setZoom(zoom - 0.3); });
+    $(".zoom-loc").addEventListener("click", function () { setZoom(1.6); var p = current[active]; if (p) canvas.style.transformOrigin = p.x + "% " + p.y + "%"; });
+    $$("[data-share-loc]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var p = current[active] || PLACES[0];
+        var text = "Ang aking lugar ng botohan: " + p.name + " — " + p.addr + " (6:00 AM - 7:00 PM)";
+        if (navigator.share) navigator.share({ title: "Lugar ng Botohan", text: text, url: location.href }).catch(function () {});
+        else if (navigator.clipboard) navigator.clipboard.writeText(text + " " + location.href).then(function () { toast("Nakopya ang lokasyon sa clipboard.", "fa-link"); });
+      });
+    });
+    $$("[data-print]").forEach(function (b) { b.addEventListener("click", function () { window.print(); }); });
+    drawPlaces();
+  }
 
   /* ---------- Auth forms ---------- */
   function fieldErr(inp, msg) { var fld = inp.closest(".auth-field"); fld.classList.toggle("has-error", !!msg); var fe = $(".field-error", fld); if (fe) fe.textContent = msg || ""; return !msg; }

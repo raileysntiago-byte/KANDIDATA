@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kalendaryo ng Halalan | KandiDATA</title>
-  <meta name="description" content="Mahahalagang petsa ng Halalan 2028.">
+  <title>Lugar ng Botohan | KandiDATA</title>
+  <meta name="description" content="Hanapin ang iyong presinto at lugar ng botohan.">
   <meta name="theme-color" content="#050a30">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="assets/css/pages/botohan.css">
 </head>
 
-<body class="cal-page font-jakarta" data-page="kalendaryo">
+<body class="poll-page" data-page="botohan">
   <a class="sr-only" href="#main">Lumaktaw sa nilalaman</a>
   <header class="site-header">
     <div class="site-header__inner"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
@@ -37,7 +37,7 @@
         <ul>
           <li><a href="index.html">Dashboard</a></li>
           <li><a href="impormasyon.html">Impormasyon</a></li>
-          <li><a href="kalendaryo.html" class="is-active" aria-current="page">Kalendaryo</a></li>
+          <li><a href="kalendaryo.html">Kalendaryo</a></li>
           <li><a href="mga-kandidato.html">Mga Kandidato</a></li>
           <li><a href="mga-panukala.html">Mga Panukala</a></li>
         </ul>
@@ -74,7 +74,7 @@
             </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a><button type="button"
           class="mobile-menu__close" aria-label="Isara ang menu"><i class="fa-solid fa-xmark"></i></button></div>
       <nav aria-label="Mobile navigation"><a href="index.html">Dashboard</a><a href="impormasyon.html">Impormasyon</a><a
-          href="kalendaryo.html" class="is-active">Kalendaryo</a><a href="mga-kandidato.html">Mga Kandidato</a><a
+          href="kalendaryo.html">Kalendaryo</a><a href="mga-kandidato.html">Mga Kandidato</a><a
           href="mga-panukala.html">Mga Panukala</a></nav>
       <div class="mobile-menu__auth" data-auth="guest"><a class="btn-auth btn-auth--outline"
           href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
@@ -86,100 +86,73 @@
   </div>
   <main id="main">
 
-    <section class="hero cal-hero">
+    <section class="hero poll-hero">
       <div class="container hero__inner">
-        <span class="eyebrow">Halalan 2028</span>
-        <h1 class="hero-title"><span class="line">Kalendaryo ng</span><em class="line">Halalan</em></h1>
-        <p class="hero-lead">Maging handa at laging updated sa mga mahahalagang petsa ng ating pambansang halalan. Huwag
-          palampasin ang pagkakataong makilahok.</p>
+        <span class="eyebrow">Hanapin ang Iyong Presinto</span>
+        <h1 class="hero-title"><span class="line">Hanapin ang iyong</span><span class="line y">Lugar ng Botohan<span
+              style="color:#fff">.</span></span></h1>
+        <p class="hero-lead">Huwag hayaang mawalan ng saysay ang iyong boto. Siguraduhin ang tamang lokasyon ng iyong
+          presinto bago ang araw ng eleksyon.</p>
       </div>
     </section>
-    <section class="cal-main">
-      <div class="container">
-        <div class="cal-layout">
-          <div class="calendar is-collapsed reveal" aria-label="Kalendaryo">
-            <div class="calendar__head">
-              <div>
-                <h2 class="calendar__title" aria-live="polite">Mayo 2028</h2>
-                <p class="calendar__sub">Buwan ng Halalan</p>
-              </div>
-              <div class="calendar__nav"><button type="button" class="cal-prev" aria-label="Nakaraang buwan"><i
-                    class="fa-solid fa-chevron-left"></i></button><button type="button" class="cal-next"
-                  aria-label="Susunod na buwan"><i class="fa-solid fa-chevron-right"></i></button></div>
-            </div>
-            <div class="calendar__dow" aria-hidden="true">
-              <span>Ling</span><span>Lun</span><span>Mar</span><span>Miy</span><span>Huw</span><span>Biy</span><span>Sab</span>
-            </div>
-            <div class="calendar__grid"></div>
-            <button type="button" class="calendar__more"
-              aria-label="Ipakita ang natitirang mga linggo"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></button>
-            <button type="button" class="calendar__toggle">Ipakita ang buong buwan</button>
-            <div class="cal-detail" aria-live="polite"></div>
+    <div class="container">
+      <form class="poll-search" role="search">
+        <div class="input-wrap"><label class="sr-only" for="poll-q">Address o Precinct Number</label><input
+            class="input" id="poll-q" type="search" placeholder="Ilagay ang iyong address o Precinct Number..."
+            autocomplete="street-address"><i class="fa-solid fa-location-dot"></i></div>
+        <button type="button" class="btn-loc"><i class="fa-solid fa-location-dot"></i> Gamitin ang aking
+          lokasyon</button>
+        <button class="btn btn-red" type="submit">Hanapin Ngayon</button>
+      </form>
+    </div>
+    <section class="poll-body">
+      <div class="container poll-layout">
+        <div>
+          <div class="poll-list-head">
+            <h2>Malapit na Lugar</h2><span class="pill" aria-live="polite">3 Nahanap</span>
           </div>
-          <div class="upcoming">
-            <h2>Mga Darating na Petsa</h2>
-            <div class="upcoming__list">
-              <article class="event-card reveal" data-goto="2028-8-30" role="button" tabindex="0">
-                <div class="event-date"><small>Set</small><b>30</b></div>
-                <div><span class="pill bg-blue">Huling Araw</span>
-                  <h3>Huling Araw ng Rehistrasyon</h3>
-                  <p><span class="d">Ang huling pagkakataon upang makapag-rehistro sa pinakamalapit na opisina ng
-                      COMELEC.</span><span class="m" style="display:none">Setyembre 30, 2028</span></p>
-                </div>
-              </article>
-              <article class="event-card reveal" data-goto="2028-1-11" role="button" tabindex="0">
-                <div class="event-date muted" style="background:#f8fafc"><small>Peb</small><b>11</b></div>
-                <div>
-                  <h3>Simula ng Panahon ng Kampanya</h3>
-                  <p><span class="d">Para sa mga posisyong nasyonal (Senador at Party-list).</span><span class="m"
-                      style="display:none">Enero 11, 2028 - Simula ng panahon ng kampanya para sa pambansang
-                      posisyon.</span></p>
-                </div>
-              </article>
-              <article class="event-card event-card--big reveal" data-goto="2028-4-12" role="button" tabindex="0"><svg
-                  class="sun-deco" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-                  <polygon
-                    points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
-                    fill="currentColor" />
-                  <circle cx="50" cy="50" r="21" fill="#0a1d55" />
-                  <circle cx="50" cy="50" r="15.5" fill="currentColor" />
-                </svg>
-                <div class="event-date"><small>May</small><b>12</b></div>
-                <div><span class="pill bg-yellow">Big Event</span>
-                  <h3>Araw ng Halalan 2028</h3>
-                  <p><span class="d">Bumoto mula 6:00 AM hanggang 7:00 PM sa iyong itinalagang presinto.</span><span
-                      class="m" style="display:none">Mayo 12, 2028 - Magsisimula ang botohan mula 6:00 AM hanggang 7:00
-                      PM.</span></p>
-                </div>
-              </article>
+          <div class="place-list"></div>
+          <button type="button" class="show-all">Ipakita ang lahat <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div>
+          <div class="map-panel reveal">
+            <div class="map-canvas"><img src="assets/img/polling-map.jpg"
+                alt="Mapa ng mga lugar ng botohan sa Makati City"></div>
+            <div class="map-pin is-hidden" aria-hidden="true" style="display:none"><span class="lbl"></span></div>
+            <div class="map-zoom"><button type="button" class="zoom-in" aria-label="Mag-zoom in"><i
+                  class="fa-solid fa-plus"></i></button><button type="button" class="zoom-out"
+                aria-label="Mag-zoom out"><i class="fa-solid fa-minus"></i></button><button type="button"
+                class="zoom-loc loc" aria-label="Ituon sa napiling lokasyon"><i
+                  class="fa-solid fa-location-crosshairs"></i></button></div>
+            <div class="map-loc"><span class="check-circle"><i class="fa-solid fa-check"></i></span>
+              <div><small>Kasalukuyang Lokasyon</small><strong>Poblacion, Makati City</strong></div>
+              <div class="acts"><button type="button" class="btn btn-primary" data-share-loc>I-share
+                  Lokasyon</button><button type="button" class="btn btn-outline" data-print>I-print</button></div>
             </div>
           </div>
+          <div class="map-acts-m" style="display:none"><button type="button" class="btn btn-primary"
+              data-share-loc>I-share Lokasyon</button><button type="button" class="btn btn-outline" data-print
+              style="border:1px solid #e5e7eb">I-print</button></div>
         </div>
       </div>
     </section>
-    <section class="ban-section" id="mga-pagbabawal" aria-labelledby="ban-title">
+    <section class="reg-cta">
       <div class="container">
-        <p class="kicker">Mahahalagang Paalala</p>
-        <h2 id="ban-title">Mga Pagbabawal sa Panahon ng Halalan</h2>
-        <span class="bar"></span>
-        <p class="ban-sub" style="display:none">Mga mahahalagang restriksyon sa bawat yugto ng eleksyon upang matiyak
-          ang kaayusan.</p>
-        <div class="ban-grid">
-          <article class="ban-card reveal"><span class="ico bg-red"><i class="fa-solid fa-ban"></i></span>
-            <h3>Liquor Ban</h3>
-            <p>Bawal ang pagbebenta at pag-inom ng alak sa bisperas at sa mismong araw ng halalan (Mayo 11–12, 2025).
-            </p>
-          </article>
-          <article class="ban-card reveal"><span class="ico bg-yellow"><i class="fa-solid fa-gun"></i></span>
-            <h3>Gun Ban</h3>
-            <p>Ipinagbabawal ang pagdadala ng armas simula Enero hanggang Hunyo 2025 nang walang pahintulot mula sa
-              COMELEC.</p>
-          </article>
-          <article class="ban-card reveal"><span class="ico bg-blue"><i class="fa-solid fa-bullhorn"></i></span>
-            <h3>Bawal ang Kampanya</h3>
-            <p>Mahigpit na ipinagbabawal ang anumang uri ng pangangampanya sa mismong araw ng halalan at bisperas nito.
-            </p>
-          </article>
+        <div class="reg-cta__card reveal">
+          <div>
+            <h2>Hindi pa rehistrado?</h2>
+            <p>May oras pa para makahabol. Siguraduhin ang iyong karapatang bumoto para sa kinabukasan ng bayan.</p>
+            <div class="acts"><a class="btn btn-yellow" href="signup.html">Magparehistro Ngayon</a><a
+                class="btn btn-ghost" href="rehistrasyon.html">Alamin ang Step-by-Step</a></div>
+          </div>
+          <div class="cta-sun" aria-hidden="true"><svg class="" viewBox="0 0 100 100" aria-hidden="true"
+              focusable="false">
+              <polygon
+                points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+                fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
+              <circle cx="50" cy="50" r="21" fill="#22408f" />
+              <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
+            </svg></div>
         </div>
       </div>
     </section>
