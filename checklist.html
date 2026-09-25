@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="tl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checklist ng Botante | KandiDATA</title>
+  <meta name="description" content="I-download ang checklist para sa araw ng halalan.">
+  <meta name="theme-color" content="#050a30">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/home.css">
+  <link rel="stylesheet" href="assets/css/pages/impormasyon.css">
+  <link rel="stylesheet" href="assets/css/pages/kalendaryo.css">
+  <link rel="stylesheet" href="assets/css/pages/kandidato.css">
+  <link rel="stylesheet" href="assets/css/pages/profile.css">
+  <link rel="stylesheet" href="assets/css/pages/dashboard.css">
+  <link rel="stylesheet" href="assets/css/pages/panukala.css">
+  <link rel="stylesheet" href="assets/css/pages/auth.css">
+  <link rel="stylesheet" href="assets/css/pages/botohan.css">
+  <link rel="stylesheet" href="assets/css/pages/checklist.css">
+</head>
+
+<body class="checklist-page" data-page="checklist">
+  <a class="sr-only" href="#main">Lumaktaw sa nilalaman</a>
+  <header class="site-header">
+    <div class="site-header__inner"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
+          class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <polygon
+              points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+              fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
+            <circle cx="50" cy="50" r="21" fill="#0038A8" />
+            <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
+          </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
+      <nav class="main-nav" aria-label="Pangunahing navigation">
+        <ul>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="impormasyon.html" class="is-active" aria-current="page">Impormasyon</a></li>
+          <li><a href="kalendaryo.html">Kalendaryo</a></li>
+          <li><a href="mga-kandidato.html">Mga Kandidato</a></li>
+          <li><a href="mga-panukala.html">Mga Panukala</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions"><button type="button" class="icon-btn" data-open-search
+          aria-label="Maghanap (Ctrl+K)"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <div class="header-guest" data-auth="guest"><a class="btn-auth btn-auth--outline"
+            href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
+        <div class="user-menu is-hidden" data-auth="user"><button type="button" class="avatar-btn" aria-haspopup="true"
+            aria-expanded="false" aria-label="Account menu"><img src="assets/img/user-avatar-large.jpg" alt=""></button>
+          <div class="user-dropdown" role="menu">
+            <div class="user-dropdown__head"><strong data-user-name>John Guerrero</strong><span data-user-email></span>
+            </div><a href="profile.html" role="menuitem"><i class="fa-regular fa-user"></i> Aking Dashboard</a><a
+              href="checklist.html" role="menuitem"><i class="fa-regular fa-clipboard"></i> Checklist ng Botante</a><a
+              href="faq.html" role="menuitem"><i class="fa-regular fa-circle-question"></i> Tulong at FAQ</a><button
+              type="button" role="menuitem" data-logout><i class="fa-solid fa-right-from-bracket"></i>
+              Mag-logout</button>
+          </div>
+        </div>
+      </div><button type="button" class="menu-toggle" aria-label="Buksan ang menu" aria-expanded="false"
+        aria-controls="mobile-menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu__backdrop"></div>
+    <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="mobile-menu__top"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
+            class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+              <polygon
+                points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+                fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
+              <circle cx="50" cy="50" r="21" fill="#0038A8" />
+              <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
+            </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a><button type="button"
+          class="mobile-menu__close" aria-label="Isara ang menu"><i class="fa-solid fa-xmark"></i></button></div>
+      <nav aria-label="Mobile navigation"><a href="index.html">Dashboard</a><a href="impormasyon.html"
+          class="is-active">Impormasyon</a><a href="kalendaryo.html">Kalendaryo</a><a href="mga-kandidato.html">Mga
+          Kandidato</a><a href="mga-panukala.html">Mga Panukala</a></nav>
+      <div class="mobile-menu__auth" data-auth="guest"><a class="btn-auth btn-auth--outline"
+          href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
+      <div class="mobile-menu__auth is-hidden" data-auth="user"><a class="btn-auth btn-auth--outline"
+          href="profile.html">Aking Dashboard</a><button type="button" class="btn-auth btn-auth--solid"
+          data-open-search>Maghanap</button><button type="button" class="btn-auth btn-auth--outline"
+          data-logout>Mag-logout</button></div>
+    </div>
+  </div>
+  <main id="main">
+
+    <section class="hero chk-hero">
+      <div class="container hero__inner">
+        <span class="eyebrow">Gabay sa Halalan 2028</span>
+        <h1 class="hero-title">Checklist ng <span class="y-m">Botante</span></h1>
+        <p class="hero-lead">Maging handa para sa paparating na halalan. Gamitin ang checklist na ito upang masiguro ang
+          iyong maayos at mabilis na pagboto.</p>
+      </div>
+    </section>
+    <div class="container" style="--gutter:48px">
+      <div class="offline-card">
+        <span class="ico"><i class="fa-solid fa-clipboard-list"></i></span>
+        <div>
+          <h2>Offline Checklist</h2>
+          <p>I-print o i-save ang checklist sa iyong mobile device.</p>
+        </div>
+        <a class="btn btn-navy" href="assets/docs/KandiDATA-Checklist-ng-Botante.pdf"
+          download="KandiDATA-Checklist-ng-Botante.pdf" data-download><i class="fa-solid fa-cloud-arrow-down"></i>
+          I-download ang Checklist</a>
+      </div>
+    </div>
+    <section class="chk-body">
+      <div class="container">
+        <div class="chk-row">
+          <div class="chk-copy reveal"><span class="bar bar--blue"></span>
+            <h2>Bago ang Araw ng Halalan</h2>
+            <p>Siguraduhin na ang iyong voter record ay aktibo at alam mo kung saan ang iyong presinto.</p>
+          </div>
+          <div class="chk-steps">
+            <a class="chk-step reveal" href="https://precinctfinder.comelec.gov.ph/" target="_blank"
+              rel="noopener"><span class="ico"><i class="fa-solid fa-magnifying-glass-location"></i></span>
+              <div>
+                <h3><span class="n" style="display:none">HAKBANG 1</span>I-verify ang iyong Rehistrasyon</h3>
+                <p>Gamitin ang COMELEC Precinct Finder online upang masigurong ikaw ay 'Active' na botante.</p>
+              </div>
+            </a>
+            <a class="chk-step reveal" href="lugar-ng-botohan.html"><span class="ico"><i
+                  class="fa-solid fa-location-dot"></i></span>
+              <div>
+                <h3><span class="n" style="display:none">HAKBANG 2</span>Hanapin ang Polling Place</h3>
+                <p>Alamin ang iyong Voting Center (paaralan) at ang partikular na Cluster Precinct Number.</p>
+              </div>
+            </a>
+            <a class="chk-step reveal" href="mga-kandidato.html"><span class="ico"><i
+                  class="fa-solid fa-magnifying-glass"></i></span>
+              <div>
+                <h3><span class="n" style="display:none">HAKBANG 3</span>Gumawa ng Kodigo</h3>
+                <p>Isulat sa papel ang iyong listahan ng mga napiling kandidato para mas mabilis ang proseso ng pagboto.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="chk-row rev">
+          <div class="day-grid">
+            <article class="day-card reveal"><span class="ico"><i class="fa-solid fa-address-card"></i></span>
+              <h3>Valid ID</h3>
+              <p>Bagama't hindi ito mandatory kung ikaw ay nasa listahan, mainam na may dalang ID bilang patunay ng
+                pagkakakilanlan.</p>
+            </article>
+            <article class="day-card reveal"><span class="ico"><i class="fa-solid fa-shirt"></i></span>
+              <h3>Kasuotan</h3>
+              <p>Magsuot ng komportableng damit. Iwasan ang pagsusuot ng mga campaign shirts o anumang may
+                mukha/pangalan ng kandidato.</p>
+            </article>
+            <article class="day-card reveal"><span class="ico"><i class="fa-solid fa-bottle-water"></i></span>
+              <h3>Tubig at Abaniko</h3>
+              <p>Maaaring maging mainit sa polling center at matagal ang pila, kaya't magdala ng sariling inuming tubig
+                at pamaypay.</p>
+            </article>
+            <article class="day-card reveal"><span class="ico"><i class="fa-solid fa-clock"></i></span>
+              <h3>Maagang Oras</h3>
+              <p>Bukas ang mga presinto mula 6:00 AM hanggang 7:00 PM. Mas maaga, mas maiiwasan ang siksikan.</p>
+            </article>
+          </div>
+          <div class="chk-copy reveal"><span class="bar"></span>
+            <h2>Sa Araw ng Halalan</h2>
+            <p>Ang pagiging handa sa mga personal na gamit ay makatutulong sa iyong kaginhawaan sa pila.</p>
+          </div>
+        </div>
+        <div class="steps-dark reveal">
+          <svg class="sun-deco" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <polygon
+              points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+              fill="currentColor" />
+            <circle cx="50" cy="50" r="21" fill="#050a30" />
+            <circle cx="50" cy="50" r="15.5" fill="currentColor" />
+          </svg>
+          <h2>Mga Hakbang sa Pagboto</h2>
+          <div class="steps-dark__grid">
+            <div><span class="num">01</span>
+              <h3>Magpakilala</h3>
+              <p>Pumunta sa iyong itinakdang presinto at magpakilala sa Electoral Board.</p>
+            </div>
+            <div><span class="num">02</span>
+              <h3>Kunin ang Balota</h3>
+              <p>Suriin ang balota kung ito ay malinis at walang anumang marka bago tanggapin.</p>
+            </div>
+            <div><span class="num">03</span>
+              <h3>Bumoto nang Wasto</h3>
+              <p>Itiman nang buo ang bilog sa tapat ng napiling kandidato gamit ang marker.</p>
+            </div>
+            <div><span class="num">04</span>
+              <h3>Isubo sa VCM</h3>
+              <p>Personal na isubo ang balota sa VCM at hintayin ang Voter's Receipt.</p>
+            </div>
+          </div>
+        </div>
+        <div class="chk-row" id="mga-paalala" style="margin-top:96px">
+          <div class="chk-copy reveal"><span class="bar bar--yellow"></span>
+            <h2>Mahalagang Paalala</h2>
+            <p>Maging mapagmatyag at iwasan ang mga gawaing labag sa batas ng halalan.</p>
+          </div>
+          <div class="warn-list">
+            <article class="warn-card reveal"><span class="ico"><i class="fa-regular fa-circle-question"></i></span>
+              <div>
+                <h3>Bawal ang Pagkuha ng Larawan</h3>
+                <p>Huwag kunan ng larawan ang iyong balota o ang iyong resibo (Voter's Receipt). Ito ay labag sa batas.
+                </p>
+              </div>
+            </article>
+            <article class="warn-card reveal"><span class="ico"><i class="fa-solid fa-ban"></i></span>
+              <div>
+                <h3>Bawal ang Pangangampanya</h3>
+                <p>Ang anumang uri ng pangangampanya sa loob ng voting center ay ipinagbabawal sa araw ng halalan.</p>
+              </div>
+            </article>
+            <article class="warn-card blue reveal"><span class="ico"><i class="fa-solid fa-shield-halved"></i></span>
+              <div>
+                <h3>Protektahan ang Boto</h3>
+                <p>Tiyaking tama ang nakasulat sa resibo bago ito ihulog sa 'receptacle'. I-report ang anumang anomalya
+                  sa mga kinauukulan.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about"><a class="brand brand--light" href="index.html" aria-label="KandiDATA — Home"><span
+              class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                <polygon
+                  points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+                  fill="#0038A8" stroke="#0038A8" stroke-width="7" stroke-linejoin="round" />
+                <circle cx="50" cy="50" r="21" fill="#fff" />
+                <circle cx="50" cy="50" r="15.5" fill="#0038A8" />
+              </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
+          <p>Isang inisyatibo upang mapataas ang kamalayan ng bawat Pilipino sa kanilang karapatang bumoto nang matalino
+            at mapayapa.</p>
+          <div class="socials"><a href="https://www.facebook.com/" target="_blank" rel="noopener"
+              aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://twitter.com/"
+              target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a><a
+              href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a></div>
+        </div>
+        <div class="footer-col">
+          <h4><button type="button" aria-expanded="false">Pangunahing Link <i
+                class="fa-solid fa-chevron-down"></i></button></h4>
+          <ul>
+            <li><a href="tungkol.html">Tungkol sa Amin</a></li>
+            <li><a href="mga-panukala.html">Mga Panukala</a></li>
+            <li><a href="lugar-ng-botohan.html">Lugar ng Botohan</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4><button type="button" aria-expanded="false">Impormasyon <i class="fa-solid fa-chevron-down"></i></button>
+          </h4>
+          <ul>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="kalendaryo.html#mga-pagbabawal">Mga Ipinagbabawal</a></li>
+            <li><a href="checklist.html#mga-paalala">Mga Paalala</a></li>
+          </ul>
+        </div>
+        <div class="footer-col contact">
+          <h4>Kontak</h4>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-envelope"></i><a href="mailto:info@botopinoy.gov.ph">info@botopinoy.gov.ph</a>
+            </li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+63288881234">+63 (02) 8888 1234</a></li>
+            <li><i class="fa-solid fa-location-dot"></i><a href="https://maps.google.com/?q=Angeles+City,+Pampanga"
+                target="_blank" rel="noopener">Angeles City, Pampanga</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 KandiDATA.<span class="full"> Lahat ng karapatan ay rizerbado.</span></div>
+    </div>
+  </footer>
+  <div class="search-overlay" aria-hidden="true" role="dialog" aria-label="Maghanap sa KandiDATA">
+    <div class="search-box"><label class="search-box__field"><i class="fa-solid fa-magnifying-glass"></i><input
+          type="search" placeholder="Maghanap ng kandidato, pahina o impormasyon…"
+          aria-label="Maghanap"><kbd>Esc</kbd></label>
+      <div class="search-results"></div>
+    </div>
+  </div>
+  <div class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal__box"><button type="button" class="modal__close" aria-label="Isara"><i
+          class="fa-solid fa-xmark"></i></button>
+      <div class="modal__content"></div>
+    </div>
+  </div>
+  <script src="assets/js/data.js"></script>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
