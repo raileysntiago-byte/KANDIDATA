@@ -485,4 +485,26 @@
   document.addEventListener("click", function (e) { if (e.target.closest("[data-accept-terms]")) { var t = $("#su-terms"); if (t) t.checked = true; closeModal(); } });
   $$(".auth-field input").forEach(function (i) { i.addEventListener("input", function () { var f = i.closest(".auth-field"); f.classList.remove("has-error"); }); });
 
+  /* ---------- Voter dashboard ---------- */
+  if (page === "profile") {
+    var savedGrid = $(".dash-saved .cand-grid"), countEl = $("[data-saved-count]");
+    var ROLE = { "juan-de-la-cruz": "Presidente", "maria-clara-reyes": "Senador", "elena-guerrero": "Bise Presidente" };
+    function drawSaved() {
+      var ids = getSaved();
+      var list = ids.map(function (id) { return DATA.candidates.filter(function (c) { return c.id === id; })[0]; }).filter(Boolean);
+      savedGrid.innerHTML = list.map(function (c) {
+        var role = ROLE[c.id] || c.tag;
+        return '<article class="cand-card"><button type="button" class="cand-card__remove" data-remove="' + c.id + '" aria-label="Alisin si ' + esc(c.name) + '"><i class="fa-solid fa-xmark"></i></button><div class="cand-card__img"><span class="tag-role">' + esc(role) + '</span><img src="' + c.img + '" alt="' + esc(c.name) + '"></div><div class="cand-card__body"><span class="cand-card__role-m">' + esc(role) + '</span><h3 class="cand-card__name">' + esc(c.name) + '</h3><p class="cand-card__party">' + esc(c.party) + '</p><a class="cand-card__cta" href="kandidato-' + c.id + '.html">View Profile <i class="fa-solid fa-arrow-right"></i></a></div></article>';
+      }).join("") || '<div class="empty-state"><i class="fa-regular fa-bookmark"></i><p>Wala ka pang naka-save na kandidato. <a class="link-arrow" href="mga-kandidato.html">Tingnan ang mga kandidato</a></p></div>';
+      if (countEl) countEl.textContent = list.length + " / 12 Slot";
+    }
+    savedGrid.addEventListener("click", function (e) { var r = e.target.closest("[data-remove]"); if (!r) return; setSaved(getSaved().filter(function (x) { return x !== r.dataset.remove; })); drawSaved(); toast("Inalis sa iyong listahan.", "fa-trash-can"); });
+    var mg = $("[data-manage]");
+    mg.addEventListener("click", function () { var on = $(".dash-saved").classList.toggle("is-managing"); mg.textContent = on ? "Tapos na" : mg.dataset.label; });
+    drawSaved();
+    var notifBtn = $("[data-all-notif]");
+    notifBtn && notifBtn.addEventListener("click", function () {
+      openModal('<h3 id="modal-title">Lahat ng Notipikasyon</h3>' + $$(".activity-item").map(function (a) { return '<div class="activity-item" style="margin-top:22px">' + a.innerHTML + "</div>"; }).join("") + '<div class="activity-item" style="margin-top:22px"><span class="ico"><i class="fa-solid fa-check c-green"></i></span><div><strong>Na-verify ang iyong voter registration</strong><span>1 linggo na ang nakalipas • Account</span></div></div>');
+    });
+  }
 })();
