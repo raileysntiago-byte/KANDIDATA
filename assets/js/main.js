@@ -168,6 +168,18 @@
     });
   });
 
+  /* ---------- generic accordion (FAQ) ---------- */
+  $$(".faq-item").forEach(function (item) {
+    var q = $(".faq-q", item);
+    q.addEventListener("click", function () {
+      var open = !item.classList.contains("is-open");
+      var group = item.closest("[data-accordion-single]");
+      if (group && open) $$(".faq-item.is-open", group).forEach(function (o) { if (o !== item) { o.classList.remove("is-open"); $(".faq-q", o).setAttribute("aria-expanded", "false"); } });
+      item.classList.toggle("is-open", open);
+      q.setAttribute("aria-expanded", String(open));
+    });
+  });
+
   /* ---------- saved candidates ---------- */
   var DEFAULT_SAVED = ["juan-de-la-cruz", "maria-clara-reyes", "elena-guerrero"];
   function getSaved() { return store.get("kd_saved", DEFAULT_SAVED); }
@@ -429,6 +441,54 @@
     $$("[data-print]").forEach(function (b) { b.addEventListener("click", function () { window.print(); }); });
     drawPlaces();
   }
+
+  /* ---------- Registration page ---------- */
+  if (page === "rehistrasyon") {
+    var tabs = $$(".tab-switch button"), panel = $(".where__panel");
+    tabs.forEach(function (t) { t.addEventListener("click", function () { tabs.forEach(function (x) { x.classList.toggle("is-active", x === t); x.setAttribute("aria-pressed", String(x === t)); }); var mode = t.dataset.view; panel.dataset.view = mode; if (mode === "list") { $(".office-col").scrollIntoView({ behavior: "smooth", block: "center" }); $("#office-q").focus({ preventScroll: true }); } else { $(".ph-map").scrollIntoView({ behavior: "smooth", block: "center" }); } }); });
+    var offices = $$(".office");
+    offices.forEach(function (o) { o.addEventListener("click", function () { offices.forEach(function (x) { x.classList.toggle("is-active", x === o); }); $(".ph-loc strong").textContent = o.dataset.city; }); });
+    $("#office-q").addEventListener("input", function () {
+      var q = this.value.trim().toLowerCase(), any = false;
+      offices.forEach(function (o) { var m = !q || o.textContent.toLowerCase().indexOf(q) > -1; o.classList.toggle("is-hidden", !m); if (m) any = true; });
+      $(".office-empty").classList.toggle("is-hidden", any);
+    });
+  }
+
+  /* ---------- Help center ---------- */
+  if (page === "faq") {
+    var items = $$(".help-sec .faq-item"), secs = $$(".help-sec"), nores = $(".no-results");
+    function filterFaq(q) {
+      q = q.trim().toLowerCase(); var hits = 0;
+      items.forEach(function (it) { var m = !q || it.textContent.toLowerCase().indexOf(q) > -1; it.classList.toggle("is-hidden", !m); if (m) hits++; if (q && m) { it.classList.add("is-open"); } });
+      secs.forEach(function (s) { var vis = $$(".faq-item:not(.is-hidden), .privacy-card", s).filter(function (x) { return !x.classList.contains("is-hidden"); }).length; s.classList.toggle("is-hidden", !vis); });
+      var pc = $(".privacy-card"); if (pc) { var mm = !q || pc.textContent.toLowerCase().indexOf(q) > -1; pc.classList.toggle("is-hidden", !mm); if (mm) hits++; pc.closest(".help-sec").classList.toggle("is-hidden", !mm && !$$(".faq-item:not(.is-hidden)", pc.closest(".help-sec")).length); }
+      nores.style.display = hits ? "none" : "block";
+      return hits;
+    }
+    $(".help-search").addEventListener("submit", function (e) { e.preventDefault(); var h = filterFaq($("#help-q").value); $(".help-layout").scrollIntoView({ behavior: "smooth" }); toast(h ? h + " sagot ang nahanap." : "Walang nahanap — subukang magpadala ng tanong sa ibaba.", h ? "fa-magnifying-glass" : "fa-circle-question"); });
+    $("#help-q").addEventListener("input", function () { if (!this.value.trim()) filterFaq(""); });
+    $$("[data-popular]").forEach(function (a) { a.addEventListener("click", function (e) { e.preventDefault(); $("#help-q").value = a.dataset.popular; $(".help-search").dispatchEvent(new Event("submit")); }); });
+    $$(".help-cat").forEach(function (c) { c.addEventListener("click", function () { $$(".help-cat").forEach(function (x) { x.classList.toggle("is-active", x === c); }); $("#help-q").value = ""; filterFaq(""); }); });
+    var segBtns = $$(".seg button");
+    segBtns.forEach(function (b) { b.addEventListener("click", function () { segBtns.forEach(function (x) { x.classList.toggle("is-active", x === b); x.setAttribute("aria-selected", String(x === b)); }); $$(".ql-grid").forEach(function (g) { g.classList.toggle("is-hidden", g.dataset.tab !== b.dataset.tab); }); }); });
+  }
+
+  /* ---------- Contact form ---------- */
+  $$("form[data-contact]").forEach(function (f) {
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var ok = true;
+      $$("[data-req]", f).forEach(function (fld) {
+        var inp = $("input, textarea", fld), v = inp.value.trim(), bad = !v || (inp.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+        fld.classList.toggle("has-error", bad); if (bad) ok = false;
+      });
+      if (!ok) { toast("Pakikumpleto ang mga kinakailangang field.", "fa-circle-exclamation"); var fe = $(".has-error input, .has-error textarea", f); fe && fe.focus(); return; }
+      var msgs = store.get("kd_messages", []); msgs.push({ name: f.elements.name.value, email: f.elements.email.value, msg: f.elements.message.value, at: new Date().toISOString() }); store.set("kd_messages", msgs);
+      f.reset(); toast("Salamat! Natanggap namin ang iyong mensahe.", "fa-paper-plane");
+    });
+    $$("input, textarea", f).forEach(function (i) { i.addEventListener("input", function () { i.closest("[data-req]") && i.closest("[data-req]").classList.remove("has-error"); }); });
+  });
 
   /* ---------- Auth forms ---------- */
   function fieldErr(inp, msg) { var fld = inp.closest(".auth-field"); fld.classList.toggle("has-error", !!msg); var fe = $(".field-error", fld); if (fe) fe.textContent = msg || ""; return !msg; }
