@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="tl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mga Hakbang sa Rehistrasyon | KandiDATA</title>
+  <meta name="description" content="Gabay sa pagpaparehistro bilang botante.">
+  <meta name="theme-color" content="#050a30">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/home.css">
+  <link rel="stylesheet" href="assets/css/pages/impormasyon.css">
+  <link rel="stylesheet" href="assets/css/pages/kalendaryo.css">
+  <link rel="stylesheet" href="assets/css/pages/kandidato.css">
+  <link rel="stylesheet" href="assets/css/pages/profile.css">
+  <link rel="stylesheet" href="assets/css/pages/dashboard.css">
+  <link rel="stylesheet" href="assets/css/pages/panukala.css">
+  <link rel="stylesheet" href="assets/css/pages/auth.css">
+  <link rel="stylesheet" href="assets/css/pages/botohan.css">
+  <link rel="stylesheet" href="assets/css/pages/checklist.css">
+  <link rel="stylesheet" href="assets/css/pages/rehistrasyon.css">
+  <link rel="stylesheet" href="assets/css/pages/faq.css">
+</head>
+
+<body class="reg-page" data-page="rehistrasyon">
+  <a class="sr-only" href="#main">Lumaktaw sa nilalaman</a>
+  <header class="site-header">
+    <div class="site-header__inner"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
+          class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <polygon
+              points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+              fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
+            <circle cx="50" cy="50" r="21" fill="#0038A8" />
+            <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
+          </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
+      <nav class="main-nav" aria-label="Pangunahing navigation">
+        <ul>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="impormasyon.html">Impormasyon</a></li>
+          <li><a href="kalendaryo.html">Kalendaryo</a></li>
+          <li><a href="mga-kandidato.html">Mga Kandidato</a></li>
+          <li><a href="mga-panukala.html">Mga Panukala</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions"><button type="button" class="icon-btn" data-open-search
+          aria-label="Maghanap (Ctrl+K)"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <div class="header-guest" data-auth="guest"><a class="btn-auth btn-auth--outline"
+            href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
+        <div class="user-menu is-hidden" data-auth="user"><button type="button" class="avatar-btn" aria-haspopup="true"
+            aria-expanded="false" aria-label="Account menu"><img src="assets/img/user-avatar-large.jpg" alt=""></button>
+          <div class="user-dropdown" role="menu">
+            <div class="user-dropdown__head"><strong data-user-name>John Guerrero</strong><span data-user-email></span>
+            </div><a href="profile.html" role="menuitem"><i class="fa-regular fa-user"></i> Aking Dashboard</a><a
+              href="checklist.html" role="menuitem"><i class="fa-regular fa-clipboard"></i> Checklist ng Botante</a><a
+              href="faq.html" role="menuitem"><i class="fa-regular fa-circle-question"></i> Tulong at FAQ</a><button
+              type="button" role="menuitem" data-logout><i class="fa-solid fa-right-from-bracket"></i>
+              Mag-logout</button>
+          </div>
+        </div>
+      </div><button type="button" class="menu-toggle" aria-label="Buksan ang menu" aria-expanded="false"
+        aria-controls="mobile-menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu__backdrop"></div>
+    <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="mobile-menu__top"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
+            class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+              <polygon
+                points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+                fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
+              <circle cx="50" cy="50" r="21" fill="#0038A8" />
+              <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
+            </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a><button type="button"
+          class="mobile-menu__close" aria-label="Isara ang menu"><i class="fa-solid fa-xmark"></i></button></div>
+      <nav aria-label="Mobile navigation"><a href="index.html">Dashboard</a><a href="impormasyon.html">Impormasyon</a><a
+          href="kalendaryo.html">Kalendaryo</a><a href="mga-kandidato.html">Mga Kandidato</a><a
+          href="mga-panukala.html">Mga Panukala</a></nav>
+      <div class="mobile-menu__auth" data-auth="guest"><a class="btn-auth btn-auth--outline"
+          href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
+      <div class="mobile-menu__auth is-hidden" data-auth="user"><a class="btn-auth btn-auth--outline"
+          href="profile.html">Aking Dashboard</a><button type="button" class="btn-auth btn-auth--solid"
+          data-open-search>Maghanap</button><button type="button" class="btn-auth btn-auth--outline"
+          data-logout>Mag-logout</button></div>
+    </div>
+  </div>
+  <main id="main">
+
+    <section class="hero reg-hero">
+      <div class="flag-deco" aria-hidden="true"><svg viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice"
+          style="position:absolute;inset:0;width:100%;height:100%">
+          <polygon points="0,0 560,0 1000,250 560,500 0,500" fill="rgba(255,255,255,.025)" />
+          <polygon points="760,0 1440,0 1440,500 760,500 1180,250" fill="rgba(255,255,255,.03)" />
+          <polygon points="380,-60 700,250 380,560 60,250" fill="rgba(0,0,0,.08)" />
+        </svg>
+        <div style="position:absolute;left:41%;top:20%;width:250px;height:250px"><svg class="" viewBox="0 0 100 100"
+            aria-hidden="true" focusable="false">
+            <g fill="rgba(255,255,255,.07)">
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(0 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(-12 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(12 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(45 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(33 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(57 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(90 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(78 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(102 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(135 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(123 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(147 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(180 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(168 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(192 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(225 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(213 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(237 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(270 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(258 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(282 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(315 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(303 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(327 50 50)" />
+              <circle cx="50" cy="50" r="15" />
+            </g>
+          </svg></div>
+        <div style="position:absolute;left:3%;top:2%;width:90px;height:90px"><svg class="" viewBox="0 0 100 100"
+            aria-hidden="true" focusable="false">
+            <g fill="rgba(255,255,255,.06)">
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(0 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(-12 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(12 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(45 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(33 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(57 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(90 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(78 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(102 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(135 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(123 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(147 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(180 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(168 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(192 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(225 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(213 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(237 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(270 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(258 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(282 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(315 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(303 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(327 50 50)" />
+              <circle cx="50" cy="50" r="15" />
+            </g>
+          </svg></div>
+        <div style="position:absolute;left:31%;top:72%;width:80px;height:80px"><svg class="" viewBox="0 0 100 100"
+            aria-hidden="true" focusable="false">
+            <g fill="rgba(255,255,255,.06)">
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(0 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(-12 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(12 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(45 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(33 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(57 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(90 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(78 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(102 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(135 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(123 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(147 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(180 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(168 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(192 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(225 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(213 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(237 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(270 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(258 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(282 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(315 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(303 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(327 50 50)" />
+              <circle cx="50" cy="50" r="15" />
+            </g>
+          </svg></div>
+        <div style="position:absolute;left:43%;top:10%;width:70px;height:70px;opacity:.6"><svg class=""
+            viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <g fill="rgba(255,255,255,.06)">
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(0 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(-12 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(12 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(45 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(33 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(57 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(90 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(78 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(102 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(135 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(123 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(147 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(180 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(168 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(192 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(225 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(213 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(237 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(270 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(258 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(282 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(315 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(303 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(327 50 50)" />
+              <circle cx="50" cy="50" r="15" />
+            </g>
+          </svg></div>
+        <div style="position:absolute;left:63%;top:10%;width:80px;height:80px"><svg class="" viewBox="0 0 100 100"
+            aria-hidden="true" focusable="false">
+            <g fill="rgba(255,255,255,.06)">
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(0 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(-12 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(12 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(45 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(33 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(57 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(90 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(78 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(102 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(135 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(123 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(147 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(180 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(168 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(192 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(225 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(213 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(237 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(270 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(258 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(282 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(315 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(303 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(327 50 50)" />
+              <circle cx="50" cy="50" r="15" />
+            </g>
+          </svg></div>
+        <div style="position:absolute;left:87%;top:12%;width:80px;height:80px"><svg class="" viewBox="0 0 100 100"
+            aria-hidden="true" focusable="false">
+            <g fill="rgba(255,255,255,.06)">
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(0 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(-12 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(12 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(45 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(33 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(57 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(90 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(78 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(102 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(135 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(123 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(147 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(180 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(168 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(192 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(225 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(213 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(237 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(270 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(258 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(282 50 50)" />
+              <path d="M50 50 L45.0 3 L55.0 3 Z" transform="rotate(315 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(303 50 50)" />
+              <path d="M50 50 L46.8 10 L53.2 10 Z" transform="rotate(327 50 50)" />
+              <circle cx="50" cy="50" r="15" />
+            </g>
+          </svg></div>
+      </div>
+      <div class="container hero__inner reg-hero__grid">
+        <div>
+          <span class="eyebrow eyebrow--solid">Halalan 2028</span>
+          <h1 class="hero-title">Mga Hakbang sa Rehistrasyon</h1>
+          <p class="hero-lead">Ang iyong boto ay iyong boses. Siguraduhing ikaw ay rehistrado para sa susunod na
+            halalan. Sundin ang aming simpleng gabay sa pagpaparehistro.</p>
+          <div class="hero-actions">
+            <a class="btn btn-white" href="assets/docs/KandiDATA-Voter-Registration-Form.pdf"
+              download="KandiDATA-Voter-Registration-Form.pdf" data-download><i class="fa-solid fa-download"></i>
+              I-download ang Form</a>
+            <a class="btn btn-outline-light" href="kalendaryo.html">Alamin ang Deadline</a>
+          </div>
+          <div class="ready-badge-m" style="display:none"><strong>100%</strong><small>HANDA SA PAGBOTO</small></div>
+        </div>
+        <div class="id-glass reveal"><img src="assets/img/id-comelec.jpg" alt="Halimbawa ng COMELEC Voter's ID">
+          <div class="ready-badge">
+            <div><strong>100%</strong><small>Handa sa Pagboto</small></div><i class="fa-solid fa-thumbs-up"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="guide" aria-labelledby="guide-title">
+      <div class="container">
+        <h2 class="section-title" id="guide-title">Gabay sa Pagrerehistro</h2><span class="bar"></span>
+        <div class="guide-steps">
+          <div class="guide-step reveal"><span class="num">1</span>
+            <div class="card"><span class="ico"><i class="fa-solid fa-address-card"></i></span>
+              <h3>Paghahanda ng <br>Dokumento</h3>
+              <p>Siguraduhing kumpleto ang iyong valid ID at i-print ang accomplished Application Form (iRehistro).</p>
+            </div>
+          </div>
+          <div class="guide-step reveal"><span class="num">2</span>
+            <div class="card"><span class="ico"><i class="fa-solid fa-building-flag"></i></span>
+              <h3>Pagpunta sa <br>COMELEC</h3>
+              <p>Pumunta sa pinakamalapit na COMELEC Office o Satellite Registration site sa inyong lugar.</p>
+            </div>
+          </div>
+          <div class="guide-step reveal"><span class="num">3</span>
+            <div class="card"><span class="ico"><i class="fa-solid fa-fingerprint"></i></span>
+              <h3>Biometrics Capture</h3>
+              <p>Isasagawa ang pagkuha ng iyong litrato, fingerprints, at digital signature sa registration site.</p>
+            </div>
+          </div>
+          <div class="guide-step reveal"><span class="num">4</span>
+            <div class="card"><span class="ico"><i class="fa-solid fa-receipt"></i></span>
+              <h3>Acknowledgement <br>Receipt</h3>
+              <p>Kunin ang iyong stub bilang patunay ng iyong matagumpay na aplikasyon sa pagrerehistro.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="docs" aria-labelledby="docs-title">
+      <div class="container docs__grid">
+        <div class="reveal">
+          <h2 id="docs-title">Mga Kinakailangang<br class="no-mobile"> Dokumento</h2>
+          <p class="lead">Dalhin ang orihinal at kopya ng alinman sa mga sumusunod na dokumento upang ma-verify ang
+            iyong pagkakakilanlan.</p>
+          <div class="doc-grid">
+            <div class="doc-item"><i class="fa-solid fa-passport"></i>Philippine Passport</div>
+            <div class="doc-item"><i class="fa-solid fa-id-badge"></i>UMID Card</div>
+            <div class="doc-item"><i class="fa-solid fa-car"></i>Driver's License</div>
+            <div class="doc-item"><i class="fa-solid fa-user-graduate"></i>Student ID</div>
+            <div class="doc-item"><i class="fa-solid fa-briefcase"></i>PRC License</div>
+            <div class="doc-item"><i class="fa-solid fa-address-card"></i>Postal ID</div>
+          </div>
+          <div class="doc-warn"><i class="fa-solid fa-circle-exclamation"></i><span>Paalala: Hindi tinatanggap ang
+              Cedula (Community Tax Certificate) bilang valid ID para sa registration.</span></div>
+        </div>
+        <div class="docs-media reveal">
+          <img class="license" src="assets/img/license.jpg" alt="Halimbawa ng Driver's License">
+          <div class="testimonial"><i class="fa-solid fa-quote-left q"></i>
+            <p>"Madali lang ang proseso. Basta't handa ang mga dokumento, hindi ka tatagal ng 15 minuto sa office."</p>
+            <div class="who"><img src="assets/img/testimonial.jpg" alt="">
+              <div><strong>Maria Santos</strong><span>First-time Voter</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="where" aria-labelledby="where-title">
+      <div class="container">
+        <div class="where__head">
+          <div>
+            <h2 id="where-title">Saan Pwedeng Magparehistro?</h2>
+            <p class="lead">Hanapin ang pinakamalapit na registration hub sa iyong lokasyon.</p>
+          </div>
+          <div class="tab-switch"><button type="button" data-view="list" aria-pressed="false"><i
+                class="fa-solid fa-list-ul"></i> Listahan ng Offices</button><button type="button" class="is-active"
+              data-view="map" aria-pressed="true"><i class="fa-solid fa-map-location-dot"></i> Buksan ang Mapa</button>
+          </div>
+        </div>
+        <div class="where__panel" data-view="map">
+          <div class="office-col">
+            <div class="input-wrap"><label class="sr-only" for="office-q">Lungsod o munisipyo</label><input
+                class="input" id="office-q" type="search" placeholder="I-type ang iyong lungsod o munisipyo..."><i
+                class="fa-solid fa-magnifying-glass"></i></div>
+            <button type="button" class="office is-active" data-city="Quezon, City">
+              <div class="row"><span class="type">Main Office</span><span class="open">BUKAS</span></div>
+              <h3>COMELEC Quezon City</h3>
+              <p class="addr">Arroceros St., Manila (Main), Satellite Offices in QC Districts</p>
+              <p class="hrs"><i class="fa-solid fa-clock"></i>8:00 AM - 5:00 PM</p>
+            </button><button type="button" class="office" data-city="SM North EDSA, QC">
+              <div class="row"><span class="type">Mall Satellite</span><span class="open">BUKAS</span></div>
+              <h3>SM North EDSA</h3>
+              <p class="addr">4th Level, The Block, Quezon City</p>
+              <p class="hrs"><i class="fa-solid fa-clock"></i>10:00 AM - 5:00 PM</p>
+            </button><button type="button" class="office" data-city="Ortigas, Quezon City">
+              <div class="row"><span class="type">Mall Satellite</span><span class="open">BUKAS</span></div>
+              <h3>Robinsons Galleria</h3>
+              <p class="addr">Level 3, East Wing, Quezon City</p>
+              <p class="hrs"><i class="fa-solid fa-clock"></i>10:00 AM - 5:00 PM</p>
+            </button>
+            <p class="office-empty is-hidden" style="font-size:14px;color:#64748b;padding:8px 4px">Walang office na
+              tumugma. Subukan ang ibang lungsod.</p>
+          </div>
+          <div class="ph-map"><img src="assets/img/ph-map.jpg" alt="Mapa ng mga COMELEC registration hub">
+            <div class="ph-loc"><span class="nav"><i class="fa-solid fa-location-arrow"></i></span>
+              <div><small>Ang Iyong Lokasyon:</small><strong>Quezon, City</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="faq-sec" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title">Mga Karaniwang Tanong</h2>
+        <p class="lead">Alamin ang mahahalagang detalye tungkol sa voter registration.</p>
+        <div class="faq-list" data-accordion-single>
+          <div class="faq-item is-open"><button type="button" class="faq-q" aria-expanded="true">Sino ang pwedeng
+              magparehistro?<span class="chev"><i class="fa-solid fa-chevron-down"></i></span></button>
+            <div class="faq-a">
+              <div>
+                <p>Dapat ay ikaw ay: (1) Filipino Citizen; (2) Hindi bababa sa 18 taong gulang sa araw ng halalan; (3)
+                  Residente ng Pilipinas nang hindi bababa sa isang taon; at (4) Residente ng lugar kung saan balak mong
+                  bumoto nang hindi bababa sa anim na buwan.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item"><button type="button" class="faq-q" aria-expanded="false">Kailan ang huling araw
+              (deadline) ng pagpaparehistro?<span class="chev"><i class="fa-solid fa-chevron-down"></i></span></button>
+            <div class="faq-a">
+              <div>
+                <p>Ang huling araw ng voter registration ay sa Setyembre 30, 2028. Pagkatapos nito, hindi na tatanggap
+                  ang COMELEC ng bagong aplikasyon para sa Halalan 2028, kaya magparehistro nang maaga.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item"><button type="button" class="faq-q" aria-expanded="false">Kailangan bang mag-online
+              appointment bago pumunta?<span class="chev"><i class="fa-solid fa-chevron-down"></i></span></button>
+            <div class="faq-a">
+              <div>
+                <p>Hindi ito mandatory, pero lubos na inirerekomenda. Sa pamamagitan ng online appointment ng COMELEC,
+                  makakapili ka ng oras at maiiwasan ang mahabang pila sa registration site.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item"><button type="button" class="faq-q" aria-expanded="false">Paano kung nawala ang aking
+              Voter's ID?<span class="chev"><i class="fa-solid fa-chevron-down"></i></span></button>
+            <div class="faq-a">
+              <div>
+                <p>Maaari kang humingi ng Voter's Certification sa Office of the Election Officer sa iyong lungsod o
+                  munisipyo. Dalhin ang isang valid ID; ito ay magsisilbing patunay na ikaw ay rehistradong botante.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="link-arrow faq-all" href="faq.html">Tignan ang lahat ng FAQs <i
+            class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about"><a class="brand brand--light" href="index.html" aria-label="KandiDATA — Home"><span
+              class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                <polygon
+                  points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+                  fill="#0038A8" stroke="#0038A8" stroke-width="7" stroke-linejoin="round" />
+                <circle cx="50" cy="50" r="21" fill="#fff" />
+                <circle cx="50" cy="50" r="15.5" fill="#0038A8" />
+              </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
+          <p>Isang inisyatibo upang mapataas ang kamalayan ng bawat Pilipino sa kanilang karapatang bumoto nang matalino
+            at mapayapa.</p>
+          <div class="socials"><a href="https://www.facebook.com/" target="_blank" rel="noopener"
+              aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://twitter.com/"
+              target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a><a
+              href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a></div>
+        </div>
+        <div class="footer-col">
+          <h4><button type="button" aria-expanded="false">Pangunahing Link <i
+                class="fa-solid fa-chevron-down"></i></button></h4>
+          <ul>
+            <li><a href="tungkol.html">Tungkol sa Amin</a></li>
+            <li><a href="mga-panukala.html">Mga Panukala</a></li>
+            <li><a href="lugar-ng-botohan.html">Lugar ng Botohan</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4><button type="button" aria-expanded="false">Impormasyon <i class="fa-solid fa-chevron-down"></i></button>
+          </h4>
+          <ul>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="kalendaryo.html#mga-pagbabawal">Mga Ipinagbabawal</a></li>
+            <li><a href="checklist.html#mga-paalala">Mga Paalala</a></li>
+          </ul>
+        </div>
+        <div class="footer-col contact">
+          <h4>Kontak</h4>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-envelope"></i><a href="mailto:info@botopinoy.gov.ph">info@botopinoy.gov.ph</a>
+            </li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+63288881234">+63 (02) 8888 1234</a></li>
+            <li><i class="fa-solid fa-location-dot"></i><a href="https://maps.google.com/?q=Angeles+City,+Pampanga"
+                target="_blank" rel="noopener">Angeles City, Pampanga</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 KandiDATA.<span class="full"> Lahat ng karapatan ay rizerbado.</span></div>
+    </div>
+  </footer>
+  <div class="search-overlay" aria-hidden="true" role="dialog" aria-label="Maghanap sa KandiDATA">
+    <div class="search-box"><label class="search-box__field"><i class="fa-solid fa-magnifying-glass"></i><input
+          type="search" placeholder="Maghanap ng kandidato, pahina o impormasyon…"
+          aria-label="Maghanap"><kbd>Esc</kbd></label>
+      <div class="search-results"></div>
+    </div>
+  </div>
+  <div class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal__box"><button type="button" class="modal__close" aria-label="Isara"><i
+          class="fa-solid fa-xmark"></i></button>
+      <div class="modal__content"></div>
+    </div>
+  </div>
+  <script src="assets/js/data.js"></script>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
