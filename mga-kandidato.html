@@ -1,302 +1,536 @@
 <!doctype html>
 <html lang="tl">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mga Kandidato | KandiDATA</title>
-  <meta name="description" content="Kilalanin ang mga kandidato sa Halalan 2028.">
-  <meta name="theme-color" content="#050a30">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/fonts.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/pages/home.css">
-  <link rel="stylesheet" href="assets/css/pages/impormasyon.css">
-  <link rel="stylesheet" href="assets/css/pages/kalendaryo.css">
-  <link rel="stylesheet" href="assets/css/pages/kandidato.css">
-  <link rel="stylesheet" href="assets/css/pages/profile.css">
-  <link rel="stylesheet" href="assets/css/pages/dashboard.css">
-  <link rel="stylesheet" href="assets/css/pages/panukala.css">
-  <link rel="stylesheet" href="assets/css/pages/auth.css">
-  <link rel="stylesheet" href="assets/css/pages/botohan.css">
-  <link rel="stylesheet" href="assets/css/pages/checklist.css">
-  <link rel="stylesheet" href="assets/css/pages/rehistrasyon.css">
-  <link rel="stylesheet" href="assets/css/pages/faq.css">
-</head>
-
-<body class="cand-list" data-page="kandidato">
-  <a class="sr-only" href="#main">Lumaktaw sa nilalaman</a>
-  <header class="site-header">
-    <div class="site-header__inner"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
-          class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-            <polygon
-              points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
-              fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
-            <circle cx="50" cy="50" r="21" fill="#0038A8" />
-            <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
-          </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
-      <nav class="main-nav" aria-label="Pangunahing navigation">
-        <ul>
-          <li><a href="index.html">Dashboard</a></li>
-          <li><a href="impormasyon.html">Impormasyon</a></li>
-          <li><a href="kalendaryo.html">Kalendaryo</a></li>
-          <li><a href="mga-kandidato.html" class="is-active" aria-current="page">Mga Kandidato</a></li>
-          <li><a href="mga-panukala.html">Mga Panukala</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions"><button type="button" class="icon-btn" data-open-search
-          aria-label="Maghanap (Ctrl+K)"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <div class="header-guest" data-auth="guest"><a class="btn-auth btn-auth--outline"
-            href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
-        <div class="user-menu is-hidden" data-auth="user"><button type="button" class="avatar-btn" aria-haspopup="true"
-            aria-expanded="false" aria-label="Account menu"><img src="assets/img/user-avatar-large.jpg" alt=""></button>
-          <div class="user-dropdown" role="menu">
-            <div class="user-dropdown__head"><strong data-user-name>John Guerrero</strong><span data-user-email></span>
-            </div><a href="profile.html" role="menuitem"><i class="fa-regular fa-user"></i> Aking Dashboard</a><a
-              href="checklist.html" role="menuitem"><i class="fa-regular fa-clipboard"></i> Checklist ng Botante</a><a
-              href="faq.html" role="menuitem"><i class="fa-regular fa-circle-question"></i> Tulong at FAQ</a><button
-              type="button" role="menuitem" data-logout><i class="fa-solid fa-right-from-bracket"></i>
-              Mag-logout</button>
-          </div>
-        </div>
-      </div><button type="button" class="menu-toggle" aria-label="Buksan ang menu" aria-expanded="false"
-        aria-controls="mobile-menu"><i class="fa-solid fa-bars"></i></button>
-    </div>
-  </header>
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <div class="mobile-menu__backdrop"></div>
-    <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
-      <div class="mobile-menu__top"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
-            class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mga Kandidato | KandiDATA</title>
+    <meta name="description" content="Kilalanin ang mga kandidato sa Halalan 2028." />
+    <meta name="theme-color" content="#050a30" />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages/home.css" />
+    <link rel="stylesheet" href="assets/css/pages/impormasyon.css" />
+    <link rel="stylesheet" href="assets/css/pages/kalendaryo.css" />
+    <link rel="stylesheet" href="assets/css/pages/kandidato.css" />
+    <link rel="stylesheet" href="assets/css/pages/profile.css" />
+    <link rel="stylesheet" href="assets/css/pages/dashboard.css" />
+    <link rel="stylesheet" href="assets/css/pages/panukala.css" />
+    <link rel="stylesheet" href="assets/css/pages/auth.css" />
+    <link rel="stylesheet" href="assets/css/pages/botohan.css" />
+    <link rel="stylesheet" href="assets/css/pages/checklist.css" />
+    <link rel="stylesheet" href="assets/css/pages/rehistrasyon.css" />
+    <link rel="stylesheet" href="assets/css/pages/faq.css" />
+    <link rel="stylesheet" href="assets/css/pages/tungkol.css" />
+    <link rel="stylesheet" href="assets/css/fluid-type.css" />
+  </head>
+  <body class="cand-list" data-page="kandidato">
+    <a class="sr-only" href="#main">Lumaktaw sa nilalaman</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="index.html" aria-label="KandiDATA — Home">
+          <span class="brand__icon">
+            <svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
               <polygon
                 points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
-                fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
+                fill="#FCD116"
+                stroke="#FCD116"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
               <circle cx="50" cy="50" r="21" fill="#0038A8" />
-              <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
-            </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a><button type="button"
-          class="mobile-menu__close" aria-label="Isara ang menu"><i class="fa-solid fa-xmark"></i></button></div>
-      <nav aria-label="Mobile navigation"><a href="index.html">Dashboard</a><a href="impormasyon.html">Impormasyon</a><a
-          href="kalendaryo.html">Kalendaryo</a><a href="mga-kandidato.html" class="is-active">Mga Kandidato</a><a
-          href="mga-panukala.html">Mga Panukala</a></nav>
-      <div class="mobile-menu__auth" data-auth="guest"><a class="btn-auth btn-auth--outline"
-          href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
-      <div class="mobile-menu__auth is-hidden" data-auth="user"><a class="btn-auth btn-auth--outline"
-          href="profile.html">Aking Dashboard</a><button type="button" class="btn-auth btn-auth--solid"
-          data-open-search>Maghanap</button><button type="button" class="btn-auth btn-auth--outline"
-          data-logout>Mag-logout</button></div>
-    </div>
-  </div>
-  <main id="main">
-
-    <section class="hero list-hero">
-      <div class="container hero__inner">
-        <span class="eyebrow">Halalan 2028</span>
-        <h1 class="hero-title"><span class="line">Kilalanin ang mga</span><span class="line y">Kandidato.</span></h1>
-        <p class="hero-lead">Suriin ang mga plataporma at track record ng mga nagnanais maglingkod sa bayan para sa
-          isang matalinong pagpapasya.</p>
-      </div>
-    </section>
-    <div class="container">
-      <form class="filter-panel" role="search" aria-label="Maghanap ng kandidato">
-        <div><label class="field-label" for="f-name">Pangalan ng Kandidato</label>
-          <div class="input-wrap"><input class="input" id="f-name" type="search" placeholder="I-type ang pangalan..."
-              autocomplete="off"><i class="fa-solid fa-magnifying-glass-location"></i></div>
-        </div>
-        <div><label class="field-label" for="f-pos">Posisyon</label>
-          <div class="select-wrap"><select class="input" id="f-pos">
-              <option value="">Lahat ng Posisyon</option>
-              <option>Presidente</option>
-              <option>Bise Presidente</option>
-              <option>Senate President</option>
-              <option>Senador</option>
-            </select></div>
-        </div>
-        <div><label class="field-label" for="f-party">Partido Politikal</label>
-          <div class="select-wrap"><select class="input" id="f-party">
-              <option value="">Lahat ng Partido</option>
-              <option value="Democratic Action">Democratic Action</option>
-              <option value="Independent">Independent</option>
-              <option value="Lakas ng Bayan Party">Lakas ng Bayan Party</option>
-              <option value="Nationalist Union">Nationalist Union</option>
-              <option value="Partido para sa Pagbabago">Partido para sa Pagbabago</option>
-              <option value="People's Alliance">People's Alliance</option>
-              <option value="Progressive Coalition">Progressive Coalition</option>
-              <option value="Solidarity Front">Solidarity Front</option>
-            </select></div>
-        </div>
-        <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass no-mobile"></i>
-          Maghanap</button>
-      </form>
-    </div>
-    <section class="cand-section" aria-labelledby="cl-title">
-      <div class="container">
-        <h2 class="section-title" id="cl-title">Mga Pangunahing Kandidato</h2>
-        <span class="bar"></span>
-        <div class="cand-grid">
-          <article class="cand-card reveal" data-name="Juan De La Cruz" data-pos="Presidente"
-            data-party="Partido para sa Pagbabago">
-            <div class="cand-card__img"><span class="tag-role">Presidente</span><img src="assets/img/cand-juan.jpg"
-                alt="Juan De La Cruz" loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Presidente</span>
-              <h3 class="cand-card__name">Juan De La Cruz</h3>
-              <p class="cand-card__party">Partido para sa Pagbabago</p><a class="cand-card__cta"
-                href="kandidato-juan-de-la-cruz.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
+              <circle cx="50" cy="50" r="15.5" fill="#FCD116" /></svg
+          ></span>
+          <span class="brand__word">Kandi<b>DATA</b></span>
+        </a>
+        <nav class="main-nav" aria-label="Pangunahing navigation">
+          <ul>
+            <li>
+              <a href="index.html">Dashboard</a>
+            </li>
+            <li>
+              <a href="impormasyon.html">Impormasyon</a>
+            </li>
+            <li>
+              <a href="kalendaryo.html">Kalendaryo</a>
+            </li>
+            <li>
+              <a href="mga-kandidato.html" class="is-active" aria-current="page">Mga Kandidato</a>
+            </li>
+            <li>
+              <a href="mga-panukala.html">Mga Panukala</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="icon-btn" data-open-search aria-label="Maghanap (Ctrl+K)">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <div class="header-guest" data-auth="guest">
+            <a class="btn-auth btn-auth--outline" href="login.html">Mag-login</a>
+            <a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a>
+          </div>
+          <div class="user-menu is-hidden" data-auth="user">
+            <button
+              type="button"
+              class="avatar-btn"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Account menu"
+            >
+              <img src="assets/img/user-avatar-large.jpg" alt="" />
+            </button>
+            <div class="user-dropdown" role="menu">
+              <div class="user-dropdown__head">
+                <strong data-user-name>John Guerrero</strong><span data-user-email></span>
+              </div>
+              <a href="profile.html" role="menuitem">
+                <i class="fa-regular fa-user"></i> Aking Dashboard</a
+              >
+              <a href="checklist.html" role="menuitem">
+                <i class="fa-regular fa-clipboard"></i> Checklist ng Botante</a
+              >
+              <a href="faq.html" role="menuitem">
+                <i class="fa-regular fa-circle-question"></i> Tulong at FAQ</a
+              >
+              <button type="button" role="menuitem" data-logout>
+                <i class="fa-solid fa-right-from-bracket"></i> Mag-logout
+              </button>
             </div>
-          </article>
-          <article class="cand-card reveal" data-name="Maria Clara Reyes" data-pos="Senador"
-            data-party="Lakas ng Bayan Party">
-            <div class="cand-card__img"><span class="tag-role">Senador</span><img src="assets/img/cand-maria.jpg"
-                alt="Maria Clara Reyes" loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Senador</span>
-              <h3 class="cand-card__name">Maria Clara Reyes</h3>
-              <p class="cand-card__party">Lakas ng Bayan Party</p><a class="cand-card__cta"
-                href="kandidato-maria-clara-reyes.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-          <article class="cand-card reveal" data-name="Antonio Luna Jr." data-pos="Senate President"
-            data-party="Nationalist Union">
-            <div class="cand-card__img"><span class="tag-role">Senate President</span><img
-                src="assets/img/cand-antonio.jpg" alt="Antonio Luna Jr." loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Senate President</span>
-              <h3 class="cand-card__name">Antonio Luna Jr.</h3>
-              <p class="cand-card__party">Nationalist Union</p><a class="cand-card__cta"
-                href="kandidato-antonio-luna-jr.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-          <article class="cand-card reveal" data-name="Raymond Hernandez" data-pos="Senador" data-party="Independent">
-            <div class="cand-card__img"><span class="tag-role">Senador</span><img src="assets/img/cand-raymond.jpg"
-                alt="Raymond Hernandez" loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Senador</span>
-              <h3 class="cand-card__name">Raymond Hernandez</h3>
-              <p class="cand-card__party">Independent</p><a class="cand-card__cta"
-                href="kandidato-raymond-hernandez.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-          <article class="cand-card reveal" data-name="Ricardo Dalisay" data-pos="Senador"
-            data-party="Solidarity Front">
-            <div class="cand-card__img"><span class="tag-role">Senador</span><img src="assets/img/cand-ricardo.jpg"
-                alt="Ricardo Dalisay" loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Senador</span>
-              <h3 class="cand-card__name">Ricardo Dalisay</h3>
-              <p class="cand-card__party">Solidarity Front</p><a class="cand-card__cta"
-                href="kandidato-ricardo-dalisay.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-          <article class="cand-card reveal" data-name="Elena Guerrero" data-pos="Bise Presidente"
-            data-party="Progressive Coalition">
-            <div class="cand-card__img"><span class="tag-role">Bise Presidente</span><img
-                src="assets/img/cand-elena.jpg" alt="Elena Guerrero" loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Bise Presidente</span>
-              <h3 class="cand-card__name">Elena Guerrero</h3>
-              <p class="cand-card__party">Progressive Coalition</p><a class="cand-card__cta"
-                href="kandidato-elena-guerrero.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-          <article class="cand-card reveal" data-name="Mark Santos" data-pos="Senador" data-party="Democratic Action">
-            <div class="cand-card__img"><span class="tag-role">Senador</span><img src="assets/img/cand-mark.jpg"
-                alt="Mark Santos" loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Senador</span>
-              <h3 class="cand-card__name">Mark Santos</h3>
-              <p class="cand-card__party">Democratic Action</p><a class="cand-card__cta"
-                href="kandidato-mark-santos.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-          <article class="cand-card reveal" data-name="Victoria Dimagiba" data-pos="Senador"
-            data-party="People's Alliance">
-            <div class="cand-card__img"><span class="tag-role">Senador</span><img src="assets/img/cand-victoria.jpg"
-                alt="Victoria Dimagiba" loading="lazy"></div>
-            <div class="cand-card__body"><span class="cand-card__role-m">Senador</span>
-              <h3 class="cand-card__name">Victoria Dimagiba</h3>
-              <p class="cand-card__party">People's Alliance</p><a class="cand-card__cta"
-                href="kandidato-victoria-dimagiba.html">Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-          <div class="empty-state is-hidden"><i class="fa-solid fa-user-slash"></i>
-            <p></p>
           </div>
         </div>
-        <nav class="pager" aria-label="Pahina">
-          <button type="button" class="pg-prev" aria-label="Nakaraang pahina"><i
-              class="fa-solid fa-chevron-left"></i></button>
-          <button type="button" data-p="1" class="is-current">1</button><button type="button"
-            data-p="2">2</button><button type="button" data-p="3">3</button>
-          <button type="button" class="pg-next" aria-label="Susunod na pahina"><i
-              class="fa-solid fa-chevron-right"></i></button>
-          <span class="dots" aria-hidden="true">...</span>
-        </nav>
+        <button
+          type="button"
+          class="menu-toggle"
+          aria-label="Buksan ang menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-about"><a class="brand brand--light" href="index.html" aria-label="KandiDATA — Home"><span
-              class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+    </header>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu__backdrop"></div>
+      <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+        <div class="mobile-menu__top">
+          <a class="brand" href="index.html" aria-label="KandiDATA — Home">
+            <span class="brand__icon">
+              <svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
                 <polygon
                   points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
-                  fill="#0038A8" stroke="#0038A8" stroke-width="7" stroke-linejoin="round" />
-                <circle cx="50" cy="50" r="21" fill="#fff" />
-                <circle cx="50" cy="50" r="15.5" fill="#0038A8" />
-              </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
-          <p>Isang inisyatibo upang mapataas ang kamalayan ng bawat Pilipino sa kanilang karapatang bumoto nang matalino
-            at mapayapa.</p>
-          <div class="socials"><a href="https://www.facebook.com/" target="_blank" rel="noopener"
-              aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://twitter.com/"
-              target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a><a
-              href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i
-                class="fa-brands fa-instagram"></i></a></div>
+                  fill="#FCD116"
+                  stroke="#FCD116"
+                  stroke-width="7"
+                  stroke-linejoin="round"
+                />
+                <circle cx="50" cy="50" r="21" fill="#0038A8" />
+                <circle cx="50" cy="50" r="15.5" fill="#FCD116" /></svg
+            ></span>
+            <span class="brand__word">Kandi<b>DATA</b></span>
+          </a>
+          <button type="button" class="mobile-menu__close" aria-label="Isara ang menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
-        <div class="footer-col">
-          <h4><button type="button" aria-expanded="false">Pangunahing Link <i
-                class="fa-solid fa-chevron-down"></i></button></h4>
-          <ul>
-            <li><a href="tungkol.html">Tungkol sa Amin</a></li>
-            <li><a href="mga-panukala.html">Mga Panukala</a></li>
-            <li><a href="lugar-ng-botohan.html">Lugar ng Botohan</a></li>
-          </ul>
+        <nav aria-label="Mobile navigation">
+          <a href="index.html">Dashboard</a>
+          <a href="impormasyon.html">Impormasyon</a>
+          <a href="kalendaryo.html">Kalendaryo</a>
+          <a href="mga-kandidato.html" class="is-active">Mga Kandidato</a>
+          <a href="mga-panukala.html">Mga Panukala</a>
+        </nav>
+        <div class="mobile-menu__auth" data-auth="guest">
+          <a class="btn-auth btn-auth--outline" href="login.html">Mag-login</a>
+          <a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a>
         </div>
-        <div class="footer-col">
-          <h4><button type="button" aria-expanded="false">Impormasyon <i class="fa-solid fa-chevron-down"></i></button>
-          </h4>
-          <ul>
-            <li><a href="faq.html">FAQs</a></li>
-            <li><a href="kalendaryo.html#mga-pagbabawal">Mga Ipinagbabawal</a></li>
-            <li><a href="checklist.html#mga-paalala">Mga Paalala</a></li>
-          </ul>
-        </div>
-        <div class="footer-col contact">
-          <h4>Kontak</h4>
-          <ul class="footer-contact">
-            <li><i class="fa-solid fa-envelope"></i><a href="mailto:info@botopinoy.gov.ph">info@botopinoy.gov.ph</a>
-            </li>
-            <li><i class="fa-solid fa-phone"></i><a href="tel:+63288881234">+63 (02) 8888 1234</a></li>
-            <li><i class="fa-solid fa-location-dot"></i><a href="https://maps.google.com/?q=Angeles+City,+Pampanga"
-                target="_blank" rel="noopener">Angeles City, Pampanga</a></li>
-          </ul>
+        <div class="mobile-menu__auth is-hidden" data-auth="user">
+          <a class="btn-auth btn-auth--outline" href="profile.html">Aking Dashboard</a>
+          <button type="button" class="btn-auth btn-auth--solid" data-open-search>Maghanap</button>
+          <button type="button" class="btn-auth btn-auth--outline" data-logout>Mag-logout</button>
         </div>
       </div>
-      <div class="footer-bottom">© 2026 KandiDATA.<span class="full"> Lahat ng karapatan ay rizerbado.</span></div>
     </div>
-  </footer>
-  <div class="search-overlay" aria-hidden="true" role="dialog" aria-label="Maghanap sa KandiDATA">
-    <div class="search-box"><label class="search-box__field"><i class="fa-solid fa-magnifying-glass"></i><input
-          type="search" placeholder="Maghanap ng kandidato, pahina o impormasyon…"
-          aria-label="Maghanap"><kbd>Esc</kbd></label>
-      <div class="search-results"></div>
+    <main id="main">
+      <section class="hero list-hero">
+        <div class="container hero__inner">
+          <span class="eyebrow">Halalan 2028</span>
+          <h1 class="hero-title">
+            <span class="line">Kilalanin ang mga</span>
+            <span class="line y">Kandidato.</span>
+          </h1>
+          <p class="hero-lead">
+            Suriin ang mga plataporma at track record ng mga nagnanais maglingkod sa bayan para sa
+            isang matalinong pagpapasya.
+          </p>
+        </div>
+      </section>
+      <div class="container">
+        <form class="filter-panel" role="search" aria-label="Maghanap ng kandidato">
+          <div>
+            <label class="field-label" for="f-name">Pangalan ng Kandidato</label>
+            <div class="input-wrap">
+              <input
+                class="input"
+                id="f-name"
+                type="search"
+                placeholder="I-type ang pangalan..."
+                autocomplete="off"
+              />
+              <i class="fa-solid fa-magnifying-glass-location"></i>
+            </div>
+          </div>
+          <div>
+            <label class="field-label" for="f-pos">Posisyon</label>
+            <div class="select-wrap">
+              <select class="input" id="f-pos">
+                <option value="">Lahat ng Posisyon</option>
+                <option>Presidente</option>
+                <option>Bise Presidente</option>
+                <option>Senate President</option>
+                <option>Senador</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="field-label" for="f-party">Partido Politikal</label>
+            <div class="select-wrap">
+              <select class="input" id="f-party">
+                <option value="">Lahat ng Partido</option>
+                <option value="Democratic Action">Democratic Action</option>
+                <option value="Independent">Independent</option>
+                <option value="Lakas ng Bayan Party">Lakas ng Bayan Party</option>
+                <option value="Nationalist Union">Nationalist Union</option>
+                <option value="Partido para sa Pagbabago">Partido para sa Pagbabago</option>
+                <option value="People's Alliance">People's Alliance</option>
+                <option value="Progressive Coalition">Progressive Coalition</option>
+                <option value="Solidarity Front">Solidarity Front</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">
+            <i class="fa-solid fa-magnifying-glass no-mobile"></i> Maghanap
+          </button>
+        </form>
+      </div>
+      <section class="cand-section" aria-labelledby="cl-title">
+        <div class="container">
+          <h2 class="section-title" id="cl-title">Mga Pangunahing Kandidato</h2>
+          <span class="bar"></span>
+          <div class="cand-grid">
+            <article
+              class="cand-card reveal"
+              data-name="Juan De La Cruz"
+              data-pos="Presidente"
+              data-party="Partido para sa Pagbabago"
+            >
+              <div class="cand-card__img">
+                <span class="tag-role">Presidente</span>
+                <img src="assets/img/cand-juan.jpg" alt="Juan De La Cruz" loading="lazy" />
+              </div>
+              <div class="cand-card__body">
+                <span class="cand-card__role-m">Presidente</span>
+                <h3 class="cand-card__name">Juan De La Cruz</h3>
+                <p class="cand-card__party">Partido para sa Pagbabago</p>
+                <a class="cand-card__cta" href="kandidato-juan-de-la-cruz.html"
+                  >Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+            <article
+              class="cand-card reveal"
+              data-name="Maria Clara Reyes"
+              data-pos="Senador"
+              data-party="Lakas ng Bayan Party"
+            >
+              <div class="cand-card__img">
+                <span class="tag-role">Senador</span>
+                <img src="assets/img/cand-maria.jpg" alt="Maria Clara Reyes" loading="lazy" />
+              </div>
+              <div class="cand-card__body">
+                <span class="cand-card__role-m">Senador</span>
+                <h3 class="cand-card__name">Maria Clara Reyes</h3>
+                <p class="cand-card__party">Lakas ng Bayan Party</p>
+                <a class="cand-card__cta" href="kandidato-maria-clara-reyes.html"
+                  >Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+            <article
+              class="cand-card reveal"
+              data-name="Antonio Luna Jr."
+              data-pos="Senate President"
+              data-party="Nationalist Union"
+            >
+              <div class="cand-card__img">
+                <span class="tag-role">Senate President</span>
+                <img src="assets/img/cand-antonio.jpg" alt="Antonio Luna Jr." loading="lazy" />
+              </div>
+              <div class="cand-card__body">
+                <span class="cand-card__role-m">Senate President</span>
+                <h3 class="cand-card__name">Antonio Luna Jr.</h3>
+                <p class="cand-card__party">Nationalist Union</p>
+                <a class="cand-card__cta" href="kandidato-antonio-luna-jr.html"
+                  >Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+            <article
+              class="cand-card reveal"
+              data-name="Raymond Hernandez"
+              data-pos="Senador"
+              data-party="Independent"
+            >
+              <div class="cand-card__img">
+                <span class="tag-role">Senador</span>
+                <img src="assets/img/cand-raymond.jpg" alt="Raymond Hernandez" loading="lazy" />
+              </div>
+              <div class="cand-card__body">
+                <span class="cand-card__role-m">Senador</span>
+                <h3 class="cand-card__name">Raymond Hernandez</h3>
+                <p class="cand-card__party">Independent</p>
+                <a class="cand-card__cta" href="kandidato-raymond-hernandez.html"
+                  >Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+            <article
+              class="cand-card reveal"
+              data-name="Ricardo Dalisay"
+              data-pos="Senador"
+              data-party="Solidarity Front"
+            >
+              <div class="cand-card__img">
+                <span class="tag-role">Senador</span>
+                <img src="assets/img/cand-ricardo.jpg" alt="Ricardo Dalisay" loading="lazy" />
+              </div>
+              <div class="cand-card__body">
+                <span class="cand-card__role-m">Senador</span>
+                <h3 class="cand-card__name">Ricardo Dalisay</h3>
+                <p class="cand-card__party">Solidarity Front</p>
+                <a class="cand-card__cta" href="kandidato-ricardo-dalisay.html"
+                  >Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+            <article
+              class="cand-card reveal"
+              data-name="Elena Guerrero"
+              data-pos="Bise Presidente"
+              data-party="Progressive Coalition"
+            >
+              <div class="cand-card__img">
+                <span class="tag-role">Bise Presidente</span>
+                <img src="assets/img/cand-elena.jpg" alt="Elena Guerrero" loading="lazy" />
+              </div>
+              <div class="cand-card__body">
+                <span class="cand-card__role-m">Bise Presidente</span>
+                <h3 class="cand-card__name">Elena Guerrero</h3>
+                <p class="cand-card__party">Progressive Coalition</p>
+                <a class="cand-card__cta" href="kandidato-elena-guerrero.html"
+                  >Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+            <article
+              class="cand-card reveal"
+              data-name="Mark Santos"
+              data-pos="Senador"
+              data-party="Democratic Action"
+            >
+              <div class="cand-card__img">
+                <span class="tag-role">Senador</span>
+                <img src="assets/img/cand-mark.jpg" alt="Mark Santos" loading="lazy" />
+              </div>
+              <div class="cand-card__body">
+                <span class="cand-card__role-m">Senador</span>
+                <h3 class="cand-card__name">Mark Santos</h3>
+                <p class="cand-card__party">Democratic Action</p>
+                <a class="cand-card__cta" href="kandidato-mark-santos.html"
+                  >Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+            <article
+              class="cand-card reveal"
+              data-name="Victoria Dimagiba"
+              data-pos="Senador"
+              data-party="People's Alliance"
+            >
+              <div class="cand-card__img">
+                <span class="tag-role">Senador</span>
+                <img src="assets/img/cand-victoria.jpg" alt="Victoria Dimagiba" loading="lazy" />
+              </div>
+              <div class="cand-card__body">
+                <span class="cand-card__role-m">Senador</span>
+                <h3 class="cand-card__name">Victoria Dimagiba</h3>
+                <p class="cand-card__party">People's Alliance</p>
+                <a class="cand-card__cta" href="kandidato-victoria-dimagiba.html"
+                  >Tingnan ang Profile <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+            <div class="empty-state is-hidden">
+              <i class="fa-solid fa-user-slash"></i>
+              <p></p>
+            </div>
+          </div>
+          <nav class="pager" aria-label="Pahina">
+            <button type="button" class="pg-prev" aria-label="Nakaraang pahina">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button type="button" data-p="1" class="is-current">1</button>
+            <button type="button" data-p="2">2</button>
+            <button type="button" data-p="3">3</button>
+            <button type="button" class="pg-next" aria-label="Susunod na pahina">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <span class="dots" aria-hidden="true">...</span>
+          </nav>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <a class="brand brand--light" href="index.html" aria-label="KandiDATA — Home">
+              <span class="brand__icon">
+                <svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                  <polygon
+                    points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+                    fill="#0038A8"
+                    stroke="#0038A8"
+                    stroke-width="7"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="50" cy="50" r="21" fill="#fff" />
+                  <circle cx="50" cy="50" r="15.5" fill="#0038A8" /></svg
+              ></span>
+              <span class="brand__word">Kandi<b>DATA</b></span>
+            </a>
+            <p>
+              Isang inisyatibo upang mapataas ang kamalayan ng bawat Pilipino sa kanilang karapatang
+              bumoto nang matalino at mapayapa.
+            </p>
+            <div class="socials">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>
+              <button type="button" aria-expanded="false">
+                Pangunahing Link <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </h4>
+            <ul>
+              <li>
+                <a href="tungkol.html">Tungkol sa Amin</a>
+              </li>
+              <li>
+                <a href="mga-panukala.html">Mga Panukala</a>
+              </li>
+              <li>
+                <a href="lugar-ng-botohan.html">Lugar ng Botohan</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>
+              <button type="button" aria-expanded="false">
+                Impormasyon <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </h4>
+            <ul>
+              <li>
+                <a href="faq.html">FAQs</a>
+              </li>
+              <li>
+                <a href="kalendaryo.html#mga-pagbabawal">Mga Ipinagbabawal</a>
+              </li>
+              <li>
+                <a href="checklist.html#mga-paalala">Mga Paalala</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col contact">
+            <h4>Kontak</h4>
+            <ul class="footer-contact">
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:info@kandidata.gov.ph">info@kandidata.gov.ph</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+63288881234">+63 (02) 8888 1234</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot"></i>
+                <a
+                  href="https://maps.google.com/?q=Angeles+City,+Pampanga"
+                  target="_blank"
+                  rel="noopener"
+                  >Angeles City, Pampanga</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © 2026 KandiDATA.<span class="full"> Lahat ng karapatan ay rizerbado.</span>
+        </div>
+      </div>
+    </footer>
+    <div class="search-overlay" aria-hidden="true" role="dialog" aria-label="Maghanap sa KandiDATA">
+      <div class="search-box">
+        <label class="search-box__field">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="search"
+            placeholder="Maghanap ng kandidato, pahina o impormasyon…"
+            aria-label="Maghanap"
+          /><kbd>Esc</kbd></label
+        >
+        <div class="search-results"></div>
+      </div>
     </div>
-  </div>
-  <div class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal__box"><button type="button" class="modal__close" aria-label="Isara"><i
-          class="fa-solid fa-xmark"></i></button>
-      <div class="modal__content"></div>
+    <div
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal__box">
+        <button type="button" class="modal__close" aria-label="Isara">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal__content"></div>
+      </div>
     </div>
-  </div>
-  <script src="assets/js/data.js"></script>
+    <script src="assets/js/data.js"></script>
 
-  <script src="assets/js/main.js"></script>
-</body>
-
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

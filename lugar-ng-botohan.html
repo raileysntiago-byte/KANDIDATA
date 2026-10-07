@@ -1,234 +1,422 @@
 <!doctype html>
 <html lang="tl">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lugar ng Botohan | KandiDATA</title>
-  <meta name="description" content="Hanapin ang iyong presinto at lugar ng botohan.">
-  <meta name="theme-color" content="#050a30">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/fonts.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/pages/home.css">
-  <link rel="stylesheet" href="assets/css/pages/impormasyon.css">
-  <link rel="stylesheet" href="assets/css/pages/kalendaryo.css">
-  <link rel="stylesheet" href="assets/css/pages/kandidato.css">
-  <link rel="stylesheet" href="assets/css/pages/profile.css">
-  <link rel="stylesheet" href="assets/css/pages/dashboard.css">
-  <link rel="stylesheet" href="assets/css/pages/panukala.css">
-  <link rel="stylesheet" href="assets/css/pages/auth.css">
-  <link rel="stylesheet" href="assets/css/pages/botohan.css">
-  <link rel="stylesheet" href="assets/css/pages/checklist.css">
-  <link rel="stylesheet" href="assets/css/pages/rehistrasyon.css">
-  <link rel="stylesheet" href="assets/css/pages/faq.css">
-</head>
-
-<body class="poll-page" data-page="botohan">
-  <a class="sr-only" href="#main">Lumaktaw sa nilalaman</a>
-  <header class="site-header">
-    <div class="site-header__inner"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
-          class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-            <polygon
-              points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
-              fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
-            <circle cx="50" cy="50" r="21" fill="#0038A8" />
-            <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
-          </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
-      <nav class="main-nav" aria-label="Pangunahing navigation">
-        <ul>
-          <li><a href="index.html">Dashboard</a></li>
-          <li><a href="impormasyon.html">Impormasyon</a></li>
-          <li><a href="kalendaryo.html">Kalendaryo</a></li>
-          <li><a href="mga-kandidato.html">Mga Kandidato</a></li>
-          <li><a href="mga-panukala.html">Mga Panukala</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions"><button type="button" class="icon-btn" data-open-search
-          aria-label="Maghanap (Ctrl+K)"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <div class="header-guest" data-auth="guest"><a class="btn-auth btn-auth--outline"
-            href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
-        <div class="user-menu is-hidden" data-auth="user"><button type="button" class="avatar-btn" aria-haspopup="true"
-            aria-expanded="false" aria-label="Account menu"><img src="assets/img/user-avatar-large.jpg" alt=""></button>
-          <div class="user-dropdown" role="menu">
-            <div class="user-dropdown__head"><strong data-user-name>John Guerrero</strong><span data-user-email></span>
-            </div><a href="profile.html" role="menuitem"><i class="fa-regular fa-user"></i> Aking Dashboard</a><a
-              href="checklist.html" role="menuitem"><i class="fa-regular fa-clipboard"></i> Checklist ng Botante</a><a
-              href="faq.html" role="menuitem"><i class="fa-regular fa-circle-question"></i> Tulong at FAQ</a><button
-              type="button" role="menuitem" data-logout><i class="fa-solid fa-right-from-bracket"></i>
-              Mag-logout</button>
-          </div>
-        </div>
-      </div><button type="button" class="menu-toggle" aria-label="Buksan ang menu" aria-expanded="false"
-        aria-controls="mobile-menu"><i class="fa-solid fa-bars"></i></button>
-    </div>
-  </header>
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <div class="mobile-menu__backdrop"></div>
-    <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
-      <div class="mobile-menu__top"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
-            class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lugar ng Botohan | KandiDATA</title>
+    <meta name="description" content="Hanapin ang iyong presinto at lugar ng botohan." />
+    <meta name="theme-color" content="#050a30" />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages/home.css" />
+    <link rel="stylesheet" href="assets/css/pages/impormasyon.css" />
+    <link rel="stylesheet" href="assets/css/pages/kalendaryo.css" />
+    <link rel="stylesheet" href="assets/css/pages/kandidato.css" />
+    <link rel="stylesheet" href="assets/css/pages/profile.css" />
+    <link rel="stylesheet" href="assets/css/pages/dashboard.css" />
+    <link rel="stylesheet" href="assets/css/pages/panukala.css" />
+    <link rel="stylesheet" href="assets/css/pages/auth.css" />
+    <link rel="stylesheet" href="assets/css/pages/botohan.css" />
+    <link rel="stylesheet" href="assets/css/pages/checklist.css" />
+    <link rel="stylesheet" href="assets/css/pages/rehistrasyon.css" />
+    <link rel="stylesheet" href="assets/css/pages/faq.css" />
+    <link rel="stylesheet" href="assets/css/pages/tungkol.css" />
+    <link rel="stylesheet" href="assets/css/fluid-type.css" />
+  </head>
+  <body class="poll-page" data-page="botohan">
+    <a class="sr-only" href="#main">Lumaktaw sa nilalaman</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="index.html" aria-label="KandiDATA — Home">
+          <span class="brand__icon">
+            <svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
               <polygon
                 points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
-                fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
+                fill="#FCD116"
+                stroke="#FCD116"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
               <circle cx="50" cy="50" r="21" fill="#0038A8" />
-              <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
-            </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a><button type="button"
-          class="mobile-menu__close" aria-label="Isara ang menu"><i class="fa-solid fa-xmark"></i></button></div>
-      <nav aria-label="Mobile navigation"><a href="index.html">Dashboard</a><a href="impormasyon.html">Impormasyon</a><a
-          href="kalendaryo.html">Kalendaryo</a><a href="mga-kandidato.html">Mga Kandidato</a><a
-          href="mga-panukala.html">Mga Panukala</a></nav>
-      <div class="mobile-menu__auth" data-auth="guest"><a class="btn-auth btn-auth--outline"
-          href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
-      <div class="mobile-menu__auth is-hidden" data-auth="user"><a class="btn-auth btn-auth--outline"
-          href="profile.html">Aking Dashboard</a><button type="button" class="btn-auth btn-auth--solid"
-          data-open-search>Maghanap</button><button type="button" class="btn-auth btn-auth--outline"
-          data-logout>Mag-logout</button></div>
-    </div>
-  </div>
-  <main id="main">
-
-    <section class="hero poll-hero">
-      <div class="container hero__inner">
-        <span class="eyebrow">Hanapin ang Iyong Presinto</span>
-        <h1 class="hero-title"><span class="line">Hanapin ang iyong</span><span class="line y">Lugar ng Botohan<span
-              style="color:#fff">.</span></span></h1>
-        <p class="hero-lead">Huwag hayaang mawalan ng saysay ang iyong boto. Siguraduhin ang tamang lokasyon ng iyong
-          presinto bago ang araw ng eleksyon.</p>
-      </div>
-    </section>
-    <div class="container">
-      <form class="poll-search" role="search">
-        <div class="input-wrap"><label class="sr-only" for="poll-q">Address o Precinct Number</label><input
-            class="input" id="poll-q" type="search" placeholder="Ilagay ang iyong address o Precinct Number..."
-            autocomplete="street-address"><i class="fa-solid fa-location-dot"></i></div>
-        <button type="button" class="btn-loc"><i class="fa-solid fa-location-dot"></i> Gamitin ang aking
-          lokasyon</button>
-        <button class="btn btn-red" type="submit">Hanapin Ngayon</button>
-      </form>
-    </div>
-    <section class="poll-body">
-      <div class="container poll-layout">
-        <div>
-          <div class="poll-list-head">
-            <h2>Malapit na Lugar</h2><span class="pill" aria-live="polite">3 Nahanap</span>
+              <circle cx="50" cy="50" r="15.5" fill="#FCD116" /></svg
+          ></span>
+          <span class="brand__word">Kandi<b>DATA</b></span>
+        </a>
+        <nav class="main-nav" aria-label="Pangunahing navigation">
+          <ul>
+            <li>
+              <a href="index.html">Dashboard</a>
+            </li>
+            <li>
+              <a href="impormasyon.html">Impormasyon</a>
+            </li>
+            <li>
+              <a href="kalendaryo.html">Kalendaryo</a>
+            </li>
+            <li>
+              <a href="mga-kandidato.html">Mga Kandidato</a>
+            </li>
+            <li>
+              <a href="mga-panukala.html">Mga Panukala</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="icon-btn" data-open-search aria-label="Maghanap (Ctrl+K)">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <div class="header-guest" data-auth="guest">
+            <a class="btn-auth btn-auth--outline" href="login.html">Mag-login</a>
+            <a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a>
           </div>
-          <div class="place-list"></div>
-          <button type="button" class="show-all">Ipakita ang lahat <i class="fa-solid fa-arrow-right"></i></button>
-        </div>
-        <div>
-          <div class="map-panel reveal">
-            <div class="map-canvas"><img src="assets/img/polling-map.jpg"
-                alt="Mapa ng mga lugar ng botohan sa Makati City"></div>
-            <div class="map-pin is-hidden" aria-hidden="true" style="display:none"><span class="lbl"></span></div>
-            <div class="map-zoom"><button type="button" class="zoom-in" aria-label="Mag-zoom in"><i
-                  class="fa-solid fa-plus"></i></button><button type="button" class="zoom-out"
-                aria-label="Mag-zoom out"><i class="fa-solid fa-minus"></i></button><button type="button"
-                class="zoom-loc loc" aria-label="Ituon sa napiling lokasyon"><i
-                  class="fa-solid fa-location-crosshairs"></i></button></div>
-            <div class="map-loc"><span class="check-circle"><i class="fa-solid fa-check"></i></span>
-              <div><small>Kasalukuyang Lokasyon</small><strong>Poblacion, Makati City</strong></div>
-              <div class="acts"><button type="button" class="btn btn-primary" data-share-loc>I-share
-                  Lokasyon</button><button type="button" class="btn btn-outline" data-print>I-print</button></div>
+          <div class="user-menu is-hidden" data-auth="user">
+            <button
+              type="button"
+              class="avatar-btn"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Account menu"
+            >
+              <img src="assets/img/user-avatar-large.jpg" alt="" />
+            </button>
+            <div class="user-dropdown" role="menu">
+              <div class="user-dropdown__head">
+                <strong data-user-name>John Guerrero</strong><span data-user-email></span>
+              </div>
+              <a href="profile.html" role="menuitem">
+                <i class="fa-regular fa-user"></i> Aking Dashboard</a
+              >
+              <a href="checklist.html" role="menuitem">
+                <i class="fa-regular fa-clipboard"></i> Checklist ng Botante</a
+              >
+              <a href="faq.html" role="menuitem">
+                <i class="fa-regular fa-circle-question"></i> Tulong at FAQ</a
+              >
+              <button type="button" role="menuitem" data-logout>
+                <i class="fa-solid fa-right-from-bracket"></i> Mag-logout
+              </button>
             </div>
           </div>
-          <div class="map-acts-m" style="display:none"><button type="button" class="btn btn-primary"
-              data-share-loc>I-share Lokasyon</button><button type="button" class="btn btn-outline" data-print
-              style="border:1px solid #e5e7eb">I-print</button></div>
         </div>
+        <button
+          type="button"
+          class="menu-toggle"
+          aria-label="Buksan ang menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
-    </section>
-    <section class="reg-cta">
-      <div class="container">
-        <div class="reg-cta__card reveal">
-          <div>
-            <h2>Hindi pa rehistrado?</h2>
-            <p>May oras pa para makahabol. Siguraduhin ang iyong karapatang bumoto para sa kinabukasan ng bayan.</p>
-            <div class="acts"><a class="btn btn-yellow" href="signup.html">Magparehistro Ngayon</a><a
-                class="btn btn-ghost" href="rehistrasyon.html">Alamin ang Step-by-Step</a></div>
-          </div>
-          <div class="cta-sun" aria-hidden="true"><svg class="" viewBox="0 0 100 100" aria-hidden="true"
-              focusable="false">
-              <polygon
-                points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
-                fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
-              <circle cx="50" cy="50" r="21" fill="#22408f" />
-              <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
-            </svg></div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-about"><a class="brand brand--light" href="index.html" aria-label="KandiDATA — Home"><span
-              class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+    </header>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu__backdrop"></div>
+      <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+        <div class="mobile-menu__top">
+          <a class="brand" href="index.html" aria-label="KandiDATA — Home">
+            <span class="brand__icon">
+              <svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
                 <polygon
                   points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
-                  fill="#0038A8" stroke="#0038A8" stroke-width="7" stroke-linejoin="round" />
-                <circle cx="50" cy="50" r="21" fill="#fff" />
-                <circle cx="50" cy="50" r="15.5" fill="#0038A8" />
-              </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
-          <p>Isang inisyatibo upang mapataas ang kamalayan ng bawat Pilipino sa kanilang karapatang bumoto nang matalino
-            at mapayapa.</p>
-          <div class="socials"><a href="https://www.facebook.com/" target="_blank" rel="noopener"
-              aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://twitter.com/"
-              target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a><a
-              href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i
-                class="fa-brands fa-instagram"></i></a></div>
+                  fill="#FCD116"
+                  stroke="#FCD116"
+                  stroke-width="7"
+                  stroke-linejoin="round"
+                />
+                <circle cx="50" cy="50" r="21" fill="#0038A8" />
+                <circle cx="50" cy="50" r="15.5" fill="#FCD116" /></svg
+            ></span>
+            <span class="brand__word">Kandi<b>DATA</b></span>
+          </a>
+          <button type="button" class="mobile-menu__close" aria-label="Isara ang menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
-        <div class="footer-col">
-          <h4><button type="button" aria-expanded="false">Pangunahing Link <i
-                class="fa-solid fa-chevron-down"></i></button></h4>
-          <ul>
-            <li><a href="tungkol.html">Tungkol sa Amin</a></li>
-            <li><a href="mga-panukala.html">Mga Panukala</a></li>
-            <li><a href="lugar-ng-botohan.html">Lugar ng Botohan</a></li>
-          </ul>
+        <nav aria-label="Mobile navigation">
+          <a href="index.html">Dashboard</a>
+          <a href="impormasyon.html">Impormasyon</a>
+          <a href="kalendaryo.html">Kalendaryo</a>
+          <a href="mga-kandidato.html">Mga Kandidato</a>
+          <a href="mga-panukala.html">Mga Panukala</a>
+        </nav>
+        <div class="mobile-menu__auth" data-auth="guest">
+          <a class="btn-auth btn-auth--outline" href="login.html">Mag-login</a>
+          <a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a>
         </div>
-        <div class="footer-col">
-          <h4><button type="button" aria-expanded="false">Impormasyon <i class="fa-solid fa-chevron-down"></i></button>
-          </h4>
-          <ul>
-            <li><a href="faq.html">FAQs</a></li>
-            <li><a href="kalendaryo.html#mga-pagbabawal">Mga Ipinagbabawal</a></li>
-            <li><a href="checklist.html#mga-paalala">Mga Paalala</a></li>
-          </ul>
-        </div>
-        <div class="footer-col contact">
-          <h4>Kontak</h4>
-          <ul class="footer-contact">
-            <li><i class="fa-solid fa-envelope"></i><a href="mailto:info@botopinoy.gov.ph">info@botopinoy.gov.ph</a>
-            </li>
-            <li><i class="fa-solid fa-phone"></i><a href="tel:+63288881234">+63 (02) 8888 1234</a></li>
-            <li><i class="fa-solid fa-location-dot"></i><a href="https://maps.google.com/?q=Angeles+City,+Pampanga"
-                target="_blank" rel="noopener">Angeles City, Pampanga</a></li>
-          </ul>
+        <div class="mobile-menu__auth is-hidden" data-auth="user">
+          <a class="btn-auth btn-auth--outline" href="profile.html">Aking Dashboard</a>
+          <button type="button" class="btn-auth btn-auth--solid" data-open-search>Maghanap</button>
+          <button type="button" class="btn-auth btn-auth--outline" data-logout>Mag-logout</button>
         </div>
       </div>
-      <div class="footer-bottom">© 2026 KandiDATA.<span class="full"> Lahat ng karapatan ay rizerbado.</span></div>
     </div>
-  </footer>
-  <div class="search-overlay" aria-hidden="true" role="dialog" aria-label="Maghanap sa KandiDATA">
-    <div class="search-box"><label class="search-box__field"><i class="fa-solid fa-magnifying-glass"></i><input
-          type="search" placeholder="Maghanap ng kandidato, pahina o impormasyon…"
-          aria-label="Maghanap"><kbd>Esc</kbd></label>
-      <div class="search-results"></div>
+    <main id="main">
+      <section class="hero poll-hero">
+        <div class="container hero__inner">
+          <span class="eyebrow">Hanapin ang Iyong Presinto</span>
+          <h1 class="hero-title">
+            <span class="line">Hanapin ang iyong</span>
+            <span class="line y">Lugar ng Botohan<span style="color: #fff">.</span></span>
+          </h1>
+          <p class="hero-lead">
+            Huwag hayaang mawalan ng saysay ang iyong boto. Siguraduhin ang tamang lokasyon ng iyong
+            presinto bago ang araw ng eleksyon.
+          </p>
+        </div>
+      </section>
+      <div class="container">
+        <form class="poll-search" role="search">
+          <div class="input-wrap">
+            <label class="sr-only" for="poll-q">Address o Precinct Number</label>
+            <input
+              class="input"
+              id="poll-q"
+              type="search"
+              placeholder="Ilagay ang iyong address o Precinct Number..."
+              autocomplete="street-address"
+            />
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <button type="button" class="btn-loc">
+            <i class="fa-solid fa-location-dot"></i> Gamitin ang aking lokasyon
+          </button>
+          <button class="btn btn-red" type="submit">Hanapin Ngayon</button>
+        </form>
+      </div>
+      <section class="poll-body">
+        <div class="container poll-layout">
+          <div>
+            <div class="poll-list-head">
+              <h2>Malapit na Lugar</h2>
+              <span class="pill" aria-live="polite">3 Nahanap</span>
+            </div>
+            <div class="place-list"></div>
+            <button type="button" class="show-all">
+              Ipakita ang lahat <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+          <div>
+            <div class="map-panel reveal">
+              <div class="map-canvas">
+                <img
+                  src="assets/img/polling-map.jpg"
+                  alt="Mapa ng mga lugar ng botohan sa Makati City"
+                />
+              </div>
+              <div class="map-pin is-hidden" aria-hidden="true" style="display: none">
+                <span class="lbl"></span>
+              </div>
+              <div class="map-zoom">
+                <button type="button" class="zoom-in" aria-label="Mag-zoom in">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+                <button type="button" class="zoom-out" aria-label="Mag-zoom out">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <button type="button" class="zoom-loc loc" aria-label="Ituon sa napiling lokasyon">
+                  <i class="fa-solid fa-location-crosshairs"></i>
+                </button>
+              </div>
+              <div class="map-loc">
+                <span class="check-circle"> <i class="fa-solid fa-check"></i></span>
+                <div>
+                  <small>Kasalukuyang Lokasyon</small><strong>Poblacion, Makati City</strong>
+                </div>
+                <div class="acts">
+                  <button type="button" class="btn btn-primary" data-share-loc>
+                    I-share Lokasyon
+                  </button>
+                  <button type="button" class="btn btn-outline" data-print>I-print</button>
+                </div>
+              </div>
+            </div>
+            <div class="map-acts-m" style="display: none">
+              <button type="button" class="btn btn-primary" data-share-loc>I-share Lokasyon</button>
+              <button
+                type="button"
+                class="btn btn-outline"
+                data-print
+                style="border: 1px solid #e5e7eb"
+              >
+                I-print
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="reg-cta">
+        <div class="container">
+          <div class="reg-cta__card reveal">
+            <div>
+              <h2>Hindi pa rehistrado?</h2>
+              <p>
+                May oras pa para makahabol. Siguraduhin ang iyong karapatang bumoto para sa
+                kinabukasan ng bayan.
+              </p>
+              <div class="acts">
+                <a class="btn btn-yellow" href="signup.html">Magparehistro Ngayon</a>
+                <a class="btn btn-ghost" href="rehistrasyon.html">Alamin ang Step-by-Step</a>
+              </div>
+            </div>
+            <div class="cta-sun" aria-hidden="true">
+              <svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                <polygon
+                  points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+                  fill="#FCD116"
+                  stroke="#FCD116"
+                  stroke-width="7"
+                  stroke-linejoin="round"
+                />
+                <circle cx="50" cy="50" r="21" fill="#22408f" />
+                <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <a class="brand brand--light" href="index.html" aria-label="KandiDATA — Home">
+              <span class="brand__icon">
+                <svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                  <polygon
+                    points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+                    fill="#0038A8"
+                    stroke="#0038A8"
+                    stroke-width="7"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="50" cy="50" r="21" fill="#fff" />
+                  <circle cx="50" cy="50" r="15.5" fill="#0038A8" /></svg
+              ></span>
+              <span class="brand__word">Kandi<b>DATA</b></span>
+            </a>
+            <p>
+              Isang inisyatibo upang mapataas ang kamalayan ng bawat Pilipino sa kanilang karapatang
+              bumoto nang matalino at mapayapa.
+            </p>
+            <div class="socials">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>
+              <button type="button" aria-expanded="false">
+                Pangunahing Link <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </h4>
+            <ul>
+              <li>
+                <a href="tungkol.html">Tungkol sa Amin</a>
+              </li>
+              <li>
+                <a href="mga-panukala.html">Mga Panukala</a>
+              </li>
+              <li>
+                <a href="lugar-ng-botohan.html">Lugar ng Botohan</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>
+              <button type="button" aria-expanded="false">
+                Impormasyon <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </h4>
+            <ul>
+              <li>
+                <a href="faq.html">FAQs</a>
+              </li>
+              <li>
+                <a href="kalendaryo.html#mga-pagbabawal">Mga Ipinagbabawal</a>
+              </li>
+              <li>
+                <a href="checklist.html#mga-paalala">Mga Paalala</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col contact">
+            <h4>Kontak</h4>
+            <ul class="footer-contact">
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:info@kandidata.gov.ph">info@kandidata.gov.ph</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+63288881234">+63 (02) 8888 1234</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot"></i>
+                <a
+                  href="https://maps.google.com/?q=Angeles+City,+Pampanga"
+                  target="_blank"
+                  rel="noopener"
+                  >Angeles City, Pampanga</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © 2026 KandiDATA.<span class="full"> Lahat ng karapatan ay rizerbado.</span>
+        </div>
+      </div>
+    </footer>
+    <div class="search-overlay" aria-hidden="true" role="dialog" aria-label="Maghanap sa KandiDATA">
+      <div class="search-box">
+        <label class="search-box__field">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="search"
+            placeholder="Maghanap ng kandidato, pahina o impormasyon…"
+            aria-label="Maghanap"
+          /><kbd>Esc</kbd></label
+        >
+        <div class="search-results"></div>
+      </div>
     </div>
-  </div>
-  <div class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal__box"><button type="button" class="modal__close" aria-label="Isara"><i
-          class="fa-solid fa-xmark"></i></button>
-      <div class="modal__content"></div>
+    <div
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal__box">
+        <button type="button" class="modal__close" aria-label="Isara">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal__content"></div>
+      </div>
     </div>
-  </div>
-  <script src="assets/js/data.js"></script>
+    <script src="assets/js/data.js"></script>
 
-  <script src="assets/js/main.js"></script>
-</body>
-
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

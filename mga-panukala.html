@@ -1,209 +1,740 @@
 <!doctype html>
 <html lang="tl">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mga Panukala | KandiDATA</title>
-  <meta name="description" content="Mga batas at polisiyang isinusulong para sa kinabukasan ng Pilipinas.">
-  <meta name="theme-color" content="#050a30">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/fonts.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/pages/home.css">
-  <link rel="stylesheet" href="assets/css/pages/impormasyon.css">
-  <link rel="stylesheet" href="assets/css/pages/kalendaryo.css">
-  <link rel="stylesheet" href="assets/css/pages/kandidato.css">
-  <link rel="stylesheet" href="assets/css/pages/profile.css">
-  <link rel="stylesheet" href="assets/css/pages/dashboard.css">
-  <link rel="stylesheet" href="assets/css/pages/panukala.css">
-  <link rel="stylesheet" href="assets/css/pages/auth.css">
-  <link rel="stylesheet" href="assets/css/pages/botohan.css">
-  <link rel="stylesheet" href="assets/css/pages/checklist.css">
-  <link rel="stylesheet" href="assets/css/pages/rehistrasyon.css">
-  <link rel="stylesheet" href="assets/css/pages/faq.css">
-</head>
-
-<body class="bills-page" data-page="panukala">
-  <a class="sr-only" href="#main">Lumaktaw sa nilalaman</a>
-  <header class="site-header">
-    <div class="site-header__inner"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
-          class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-            <polygon
-              points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
-              fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
-            <circle cx="50" cy="50" r="21" fill="#0038A8" />
-            <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
-          </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
-      <nav class="main-nav" aria-label="Pangunahing navigation">
-        <ul>
-          <li><a href="index.html">Dashboard</a></li>
-          <li><a href="impormasyon.html">Impormasyon</a></li>
-          <li><a href="kalendaryo.html">Kalendaryo</a></li>
-          <li><a href="mga-kandidato.html">Mga Kandidato</a></li>
-          <li><a href="mga-panukala.html" class="is-active" aria-current="page">Mga Panukala</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions"><button type="button" class="icon-btn" data-open-search
-          aria-label="Maghanap (Ctrl+K)"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <div class="header-guest" data-auth="guest"><a class="btn-auth btn-auth--outline"
-            href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
-        <div class="user-menu is-hidden" data-auth="user"><button type="button" class="avatar-btn" aria-haspopup="true"
-            aria-expanded="false" aria-label="Account menu"><img src="assets/img/user-avatar-large.jpg" alt=""></button>
-          <div class="user-dropdown" role="menu">
-            <div class="user-dropdown__head"><strong data-user-name>John Guerrero</strong><span data-user-email></span>
-            </div><a href="profile.html" role="menuitem"><i class="fa-regular fa-user"></i> Aking Dashboard</a><a
-              href="checklist.html" role="menuitem"><i class="fa-regular fa-clipboard"></i> Checklist ng Botante</a><a
-              href="faq.html" role="menuitem"><i class="fa-regular fa-circle-question"></i> Tulong at FAQ</a><button
-              type="button" role="menuitem" data-logout><i class="fa-solid fa-right-from-bracket"></i>
-              Mag-logout</button>
-          </div>
-        </div>
-      </div><button type="button" class="menu-toggle" aria-label="Buksan ang menu" aria-expanded="false"
-        aria-controls="mobile-menu"><i class="fa-solid fa-bars"></i></button>
-    </div>
-  </header>
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <div class="mobile-menu__backdrop"></div>
-    <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
-      <div class="mobile-menu__top"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
-            class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mga Panukala | KandiDATA</title>
+    <meta
+      name="description"
+      content="Mga batas at polisiyang isinusulong para sa kinabukasan ng Pilipinas."
+    />
+    <meta name="theme-color" content="#050a30" />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages/home.css" />
+    <link rel="stylesheet" href="assets/css/pages/impormasyon.css" />
+    <link rel="stylesheet" href="assets/css/pages/kalendaryo.css" />
+    <link rel="stylesheet" href="assets/css/pages/kandidato.css" />
+    <link rel="stylesheet" href="assets/css/pages/profile.css" />
+    <link rel="stylesheet" href="assets/css/pages/dashboard.css" />
+    <link rel="stylesheet" href="assets/css/pages/panukala.css" />
+    <link rel="stylesheet" href="assets/css/pages/auth.css" />
+    <link rel="stylesheet" href="assets/css/pages/botohan.css" />
+    <link rel="stylesheet" href="assets/css/pages/checklist.css" />
+    <link rel="stylesheet" href="assets/css/pages/rehistrasyon.css" />
+    <link rel="stylesheet" href="assets/css/pages/faq.css" />
+    <link rel="stylesheet" href="assets/css/pages/tungkol.css" />
+    <link rel="stylesheet" href="assets/css/fluid-type.css" />
+  </head>
+  <body class="bills-page" data-page="panukala">
+    <a class="sr-only" href="#main">Lumaktaw sa nilalaman</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="index.html" aria-label="KandiDATA — Home">
+          <span class="brand__icon">
+            <svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
               <polygon
                 points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
-                fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
+                fill="#FCD116"
+                stroke="#FCD116"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
               <circle cx="50" cy="50" r="21" fill="#0038A8" />
-              <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
-            </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a><button type="button"
-          class="mobile-menu__close" aria-label="Isara ang menu"><i class="fa-solid fa-xmark"></i></button></div>
-      <nav aria-label="Mobile navigation"><a href="index.html">Dashboard</a><a href="impormasyon.html">Impormasyon</a><a
-          href="kalendaryo.html">Kalendaryo</a><a href="mga-kandidato.html">Mga Kandidato</a><a href="mga-panukala.html"
-          class="is-active">Mga Panukala</a></nav>
-      <div class="mobile-menu__auth" data-auth="guest"><a class="btn-auth btn-auth--outline"
-          href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
-      <div class="mobile-menu__auth is-hidden" data-auth="user"><a class="btn-auth btn-auth--outline"
-          href="profile.html">Aking Dashboard</a><button type="button" class="btn-auth btn-auth--solid"
-          data-open-search>Maghanap</button><button type="button" class="btn-auth btn-auth--outline"
-          data-logout>Mag-logout</button></div>
-    </div>
-  </div>
-  <main id="main">
-
-    <section class="hero bills-hero">
-      <div class="container hero__inner">
-        <span class="eyebrow">Legislative Agenda 2025</span>
-        <h1 class="hero-title"><span class="line">Mga Panukala para sa</span><span class="line y">Bukas ng Bayan<span
-              style="color:#fff">.</span></span></h1>
-        <p class="hero-lead">Suriin ang mga batas at polisiyang isinusulong para sa kinabukasan ng Pilipinas. Makilahok
-          sa diskusyon at alamin ang epekto nito sa iyong komunidad.</p>
-      </div>
-    </section>
-    <div class="container">
-      <div class="bills-panel">
-        <form class="bills-search" role="search">
-          <div class="input-wrap"><label for="bill-q" class="sr-only">Maghanap ng panukala</label><input class="input"
-              id="bill-q" type="search" placeholder="Maghanap ng panukala o keyword..." autocomplete="off"><i
-              class="fa-solid fa-magnifying-glass-location"></i></div>
-          <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass-location"></i>
-            Maghanap</button>
-        </form>
-        <div class="cat-row" role="group" aria-label="Mga kategorya"><span class="field-label">Mga
-            Kategorya:</span><button type="button" class="cat-chip is-active" data-cat="Lahat"
-            aria-pressed="true">Lahat</button><button type="button" class="cat-chip" data-cat="Edukasyon"
-            aria-pressed="false">Edukasyon</button><button type="button" class="cat-chip" data-cat="Kalusugan"
-            aria-pressed="false">Kalusugan</button><button type="button" class="cat-chip" data-cat="Infrastraktura"
-            aria-pressed="false">Infrastraktura</button><button type="button" class="cat-chip" data-cat="Teknolohiya"
-            aria-pressed="false">Teknolohiya</button><button type="button" class="cat-chip" data-cat="Agrikultura"
-            aria-pressed="false">Agrikultura</button></div>
-        <div class="sort-row"><label class="field-label" for="bill-sort">Ayos:</label><select id="bill-sort">
-            <option value="new">Pinakabago</option>
-            <option value="old">Pinakaluma</option>
-            <option value="az">A – Z</option>
-          </select></div>
-      </div>
-    </div>
-    <section class="bills-section" aria-labelledby="ap-title">
-      <div class="container">
-        <div class="bills-head">
-          <div>
-            <h2 class="section-title" id="ap-title">Aktibong Panukala</h2><span class="bar"></span>
+              <circle cx="50" cy="50" r="15.5" fill="#FCD116" /></svg
+          ></span>
+          <span class="brand__word">Kandi<b>DATA</b></span>
+        </a>
+        <nav class="main-nav" aria-label="Pangunahing navigation">
+          <ul>
+            <li>
+              <a href="index.html">Dashboard</a>
+            </li>
+            <li>
+              <a href="impormasyon.html">Impormasyon</a>
+            </li>
+            <li>
+              <a href="kalendaryo.html">Kalendaryo</a>
+            </li>
+            <li>
+              <a href="mga-kandidato.html">Mga Kandidato</a>
+            </li>
+            <li>
+              <a href="mga-panukala.html" class="is-active" aria-current="page">Mga Panukala</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="icon-btn" data-open-search aria-label="Maghanap (Ctrl+K)">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <div class="header-guest" data-auth="guest">
+            <a class="btn-auth btn-auth--outline" href="login.html">Mag-login</a>
+            <a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a>
           </div>
-          <p class="count" aria-live="polite">Ipinapakita: 24 na panukala</p>
+          <div class="user-menu is-hidden" data-auth="user">
+            <button
+              type="button"
+              class="avatar-btn"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Account menu"
+            >
+              <img src="assets/img/user-avatar-large.jpg" alt="" />
+            </button>
+            <div class="user-dropdown" role="menu">
+              <div class="user-dropdown__head">
+                <strong data-user-name>John Guerrero</strong><span data-user-email></span>
+              </div>
+              <a href="profile.html" role="menuitem">
+                <i class="fa-regular fa-user"></i> Aking Dashboard</a
+              >
+              <a href="checklist.html" role="menuitem">
+                <i class="fa-regular fa-clipboard"></i> Checklist ng Botante</a
+              >
+              <a href="faq.html" role="menuitem">
+                <i class="fa-regular fa-circle-question"></i> Tulong at FAQ</a
+              >
+              <button type="button" role="menuitem" data-logout>
+                <i class="fa-solid fa-right-from-bracket"></i> Mag-logout
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="bill-grid bill-grid--b"></div>
-        <nav class="pager pager--square" aria-label="Pahina"></nav>
+        <button
+          type="button"
+          class="menu-toggle"
+          aria-label="Buksan ang menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-about"><a class="brand brand--light" href="index.html" aria-label="KandiDATA — Home"><span
-              class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+    </header>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu__backdrop"></div>
+      <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+        <div class="mobile-menu__top">
+          <a class="brand" href="index.html" aria-label="KandiDATA — Home">
+            <span class="brand__icon">
+              <svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
                 <polygon
                   points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
-                  fill="#0038A8" stroke="#0038A8" stroke-width="7" stroke-linejoin="round" />
-                <circle cx="50" cy="50" r="21" fill="#fff" />
-                <circle cx="50" cy="50" r="15.5" fill="#0038A8" />
-              </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
-          <p>Isang inisyatibo upang mapataas ang kamalayan ng bawat Pilipino sa kanilang karapatang bumoto nang matalino
-            at mapayapa.</p>
-          <div class="socials"><a href="https://www.facebook.com/" target="_blank" rel="noopener"
-              aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://twitter.com/"
-              target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a><a
-              href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i
-                class="fa-brands fa-instagram"></i></a></div>
+                  fill="#FCD116"
+                  stroke="#FCD116"
+                  stroke-width="7"
+                  stroke-linejoin="round"
+                />
+                <circle cx="50" cy="50" r="21" fill="#0038A8" />
+                <circle cx="50" cy="50" r="15.5" fill="#FCD116" /></svg
+            ></span>
+            <span class="brand__word">Kandi<b>DATA</b></span>
+          </a>
+          <button type="button" class="mobile-menu__close" aria-label="Isara ang menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
-        <div class="footer-col">
-          <h4><button type="button" aria-expanded="false">Pangunahing Link <i
-                class="fa-solid fa-chevron-down"></i></button></h4>
-          <ul>
-            <li><a href="tungkol.html">Tungkol sa Amin</a></li>
-            <li><a href="mga-panukala.html">Mga Panukala</a></li>
-            <li><a href="lugar-ng-botohan.html">Lugar ng Botohan</a></li>
-          </ul>
+        <nav aria-label="Mobile navigation">
+          <a href="index.html">Dashboard</a>
+          <a href="impormasyon.html">Impormasyon</a>
+          <a href="kalendaryo.html">Kalendaryo</a>
+          <a href="mga-kandidato.html">Mga Kandidato</a>
+          <a href="mga-panukala.html" class="is-active">Mga Panukala</a>
+        </nav>
+        <div class="mobile-menu__auth" data-auth="guest">
+          <a class="btn-auth btn-auth--outline" href="login.html">Mag-login</a>
+          <a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a>
         </div>
-        <div class="footer-col">
-          <h4><button type="button" aria-expanded="false">Impormasyon <i class="fa-solid fa-chevron-down"></i></button>
-          </h4>
-          <ul>
-            <li><a href="faq.html">FAQs</a></li>
-            <li><a href="kalendaryo.html#mga-pagbabawal">Mga Ipinagbabawal</a></li>
-            <li><a href="checklist.html#mga-paalala">Mga Paalala</a></li>
-          </ul>
-        </div>
-        <div class="footer-col contact">
-          <h4>Kontak</h4>
-          <ul class="footer-contact">
-            <li><i class="fa-solid fa-envelope"></i><a href="mailto:info@botopinoy.gov.ph">info@botopinoy.gov.ph</a>
-            </li>
-            <li><i class="fa-solid fa-phone"></i><a href="tel:+63288881234">+63 (02) 8888 1234</a></li>
-            <li><i class="fa-solid fa-location-dot"></i><a href="https://maps.google.com/?q=Angeles+City,+Pampanga"
-                target="_blank" rel="noopener">Angeles City, Pampanga</a></li>
-          </ul>
+        <div class="mobile-menu__auth is-hidden" data-auth="user">
+          <a class="btn-auth btn-auth--outline" href="profile.html">Aking Dashboard</a>
+          <button type="button" class="btn-auth btn-auth--solid" data-open-search>Maghanap</button>
+          <button type="button" class="btn-auth btn-auth--outline" data-logout>Mag-logout</button>
         </div>
       </div>
-      <div class="footer-bottom">© 2026 KandiDATA.<span class="full"> Lahat ng karapatan ay rizerbado.</span></div>
     </div>
-  </footer>
-  <div class="search-overlay" aria-hidden="true" role="dialog" aria-label="Maghanap sa KandiDATA">
-    <div class="search-box"><label class="search-box__field"><i class="fa-solid fa-magnifying-glass"></i><input
-          type="search" placeholder="Maghanap ng kandidato, pahina o impormasyon…"
-          aria-label="Maghanap"><kbd>Esc</kbd></label>
-      <div class="search-results"></div>
+    <main id="main">
+      <section class="hero bills-hero">
+        <div class="container hero__inner">
+          <span class="eyebrow">Legislative Agenda 2025</span>
+          <h1 class="hero-title">
+            <span class="line">Mga Panukala para sa</span>
+            <span class="line y">Bukas ng Bayan<span style="color: #fff">.</span></span>
+          </h1>
+          <p class="hero-lead">
+            Suriin ang mga batas at polisiyang isinusulong para sa kinabukasan ng Pilipinas.
+            Makilahok sa diskusyon at alamin ang epekto nito sa iyong komunidad.
+          </p>
+        </div>
+      </section>
+      <div class="container">
+        <div class="bills-panel">
+          <form class="bills-search" role="search">
+            <div class="input-wrap">
+              <label for="bill-q" class="sr-only">Maghanap ng panukala</label>
+              <input
+                class="input"
+                id="bill-q"
+                type="search"
+                placeholder="Maghanap ng panukala o keyword..."
+                autocomplete="off"
+              />
+              <i class="fa-solid fa-magnifying-glass-location"></i>
+            </div>
+            <button class="btn btn-primary" type="submit">
+              <i class="fa-solid fa-magnifying-glass-location"></i> Maghanap
+            </button>
+          </form>
+          <div class="cat-row" role="group" aria-label="Mga kategorya">
+            <span class="field-label">Mga Kategorya:</span>
+            <button type="button" class="cat-chip is-active" data-cat="Lahat" aria-pressed="true">
+              Lahat
+            </button>
+            <button type="button" class="cat-chip" data-cat="Edukasyon" aria-pressed="false">
+              Edukasyon
+            </button>
+            <button type="button" class="cat-chip" data-cat="Kalusugan" aria-pressed="false">
+              Kalusugan
+            </button>
+            <button type="button" class="cat-chip" data-cat="Infrastraktura" aria-pressed="false">
+              Infrastraktura
+            </button>
+            <button type="button" class="cat-chip" data-cat="Teknolohiya" aria-pressed="false">
+              Teknolohiya
+            </button>
+            <button type="button" class="cat-chip" data-cat="Agrikultura" aria-pressed="false">
+              Agrikultura
+            </button>
+          </div>
+          <div class="sort-row">
+            <label class="field-label" for="bill-sort">Ayos:</label>
+            <select id="bill-sort">
+              <option value="new">Pinakabago</option>
+              <option value="old">Pinakaluma</option>
+              <option value="az">A – Z</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <section class="bills-section" aria-labelledby="ap-title">
+        <div class="container">
+          <div class="bills-head">
+            <div>
+              <h2 class="section-title" id="ap-title">Aktibong Panukala</h2>
+              <span class="bar"></span>
+            </div>
+            <p class="count" aria-live="polite">Ipinapakita: 24 na panukala</p>
+          </div>
+          <div class="bill-grid bill-grid--b"></div>
+          <nav class="pager pager--square" aria-label="Pahina"></nav>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <a class="brand brand--light" href="index.html" aria-label="KandiDATA — Home">
+              <span class="brand__icon">
+                <svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                  <polygon
+                    points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+                    fill="#0038A8"
+                    stroke="#0038A8"
+                    stroke-width="7"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="50" cy="50" r="21" fill="#fff" />
+                  <circle cx="50" cy="50" r="15.5" fill="#0038A8" /></svg
+              ></span>
+              <span class="brand__word">Kandi<b>DATA</b></span>
+            </a>
+            <p>
+              Isang inisyatibo upang mapataas ang kamalayan ng bawat Pilipino sa kanilang karapatang
+              bumoto nang matalino at mapayapa.
+            </p>
+            <div class="socials">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>
+              <button type="button" aria-expanded="false">
+                Pangunahing Link <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </h4>
+            <ul>
+              <li>
+                <a href="tungkol.html">Tungkol sa Amin</a>
+              </li>
+              <li>
+                <a href="mga-panukala.html">Mga Panukala</a>
+              </li>
+              <li>
+                <a href="lugar-ng-botohan.html">Lugar ng Botohan</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>
+              <button type="button" aria-expanded="false">
+                Impormasyon <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </h4>
+            <ul>
+              <li>
+                <a href="faq.html">FAQs</a>
+              </li>
+              <li>
+                <a href="kalendaryo.html#mga-pagbabawal">Mga Ipinagbabawal</a>
+              </li>
+              <li>
+                <a href="checklist.html#mga-paalala">Mga Paalala</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col contact">
+            <h4>Kontak</h4>
+            <ul class="footer-contact">
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:info@kandidata.gov.ph">info@kandidata.gov.ph</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+63288881234">+63 (02) 8888 1234</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot"></i>
+                <a
+                  href="https://maps.google.com/?q=Angeles+City,+Pampanga"
+                  target="_blank"
+                  rel="noopener"
+                  >Angeles City, Pampanga</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © 2026 KandiDATA.<span class="full"> Lahat ng karapatan ay rizerbado.</span>
+        </div>
+      </div>
+    </footer>
+    <div class="search-overlay" aria-hidden="true" role="dialog" aria-label="Maghanap sa KandiDATA">
+      <div class="search-box">
+        <label class="search-box__field">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="search"
+            placeholder="Maghanap ng kandidato, pahina o impormasyon…"
+            aria-label="Maghanap"
+          /><kbd>Esc</kbd></label
+        >
+        <div class="search-results"></div>
+      </div>
     </div>
-  </div>
-  <div class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal__box"><button type="button" class="modal__close" aria-label="Isara"><i
-          class="fa-solid fa-xmark"></i></button>
-      <div class="modal__content"></div>
+    <div
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal__box">
+        <button type="button" class="modal__close" aria-label="Isara">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal__content"></div>
+      </div>
     </div>
-  </div>
-  <script src="assets/js/data.js"></script>
-  <script>window.KD_BILLS = [{ "id": "b01", "title": "Universal Digital Connectivity Act", "desc": "Layuning magbigay ng libre at mabilis na internet access sa lahat ng pampublikong paaralan at komunidad sa Pilipinas.", "author": "Hon. Elena Santos", "cat": "Teknolohiya", "status": "approved", "ico": "ico-blue", "icon": "<i class=\"fa-solid fa-calendar-check\"></i>", "date": "2025-03-02", "dateLabel": "Marso 2, 2025", "no": "SB No. 1024", "committee": "Committee on Science and Technology", "full": "Layuning magbigay ng libre at mabilis na internet access sa lahat ng pampublikong paaralan at komunidad sa Pilipinas. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Science and Technology at bukas para sa mga komento ng publiko." }, { "id": "b02", "title": "Modern Agrikultura 2030", "desc": "Komprehensibong plano para sa mekanisasyon ng pagsasaka at direktang suporta sa mga lokal na magsasaka sa bansa.", "author": "Hon. Roberto Garcia", "cat": "Agrikultura", "status": "pending", "ico": "ico-red", "icon": "<svg class=\"\" viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><polygon points=\"50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59\" fill=\"#CE1126\" stroke=\"#CE1126\" stroke-width=\"7\" stroke-linejoin=\"round\"/><circle cx=\"50\" cy=\"50\" r=\"21\" fill=\"#fde8eb\"/><circle cx=\"50\" cy=\"50\" r=\"15.5\" fill=\"#CE1126\"/></svg>", "date": "2025-02-27", "dateLabel": "Pebrero 27, 2025", "no": "SB No. 1031", "committee": "Committee on Agriculture and Food", "full": "Komprehensibong plano para sa mekanisasyon ng pagsasaka at direktang suporta sa mga lokal na magsasaka sa bansa. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Agriculture and Food at bukas para sa mga komento ng publiko." }, { "id": "b03", "title": "Green City Urban Initiative", "desc": "Pagpapalawak ng mga \"green spaces\" at pagpapatupad ng mas mahigpit na waste management system sa mga urbanisadong lungsod.", "author": "Hon. Maria Clara", "cat": "Infrastraktura", "status": "debate", "ico": "ico-yellow", "icon": "<i class=\"fa-solid fa-address-card\"></i>", "date": "2025-02-20", "dateLabel": "Pebrero 20, 2025", "no": "SB No. 1038", "committee": "Committee on Public Works", "full": "Pagpapalawak ng mga \"green spaces\" at pagpapatupad ng mas mahigpit na waste management system sa mga urbanisadong lungsod. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Public Works at bukas para sa mga komento ng publiko." }, { "id": "b04", "title": "Rural Healthcare Bridge", "desc": "Pagpapadala ng mga mobile clinic sa malalayong barangay at pagbibigay ng libreng gamot para sa mga senior citizen.", "author": "Hon. David Lim", "cat": "Kalusugan", "status": "approvedg", "ico": "ico-green", "icon": "<i class=\"fa-solid fa-print\"></i>", "date": "2025-02-14", "dateLabel": "Pebrero 14, 2025", "no": "SB No. 1045", "committee": "Committee on Health and Demography", "full": "Pagpapadala ng mga mobile clinic sa malalayong barangay at pagbibigay ng libreng gamot para sa mga senior citizen. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Health and Demography at bukas para sa mga komento ng publiko." }, { "id": "b05", "title": "Mass Transit Expansion Act", "desc": "Pagpapabilis sa konstruksyon ng mga bagong riles ng tren at modernisasyon ng sistema ng transportasyon sa Kalakhang Maynila.", "author": "Hon. Sofia Reyes", "cat": "Infrastraktura", "status": "impl", "ico": "ico-blue", "icon": "<i class=\"fa-solid fa-person-booth\"></i>", "date": "2025-02-08", "dateLabel": "Pebrero 8, 2025", "no": "SB No. 1052", "committee": "Committee on Public Works", "full": "Pagpapabilis sa konstruksyon ng mga bagong riles ng tren at modernisasyon ng sistema ng transportasyon sa Kalakhang Maynila. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Public Works at bukas para sa mga komento ng publiko." }, { "id": "b06", "title": "Teachers' Welfare Package", "desc": "Pagtaas ng sahod at pagbibigay ng mas malawak na health insurance at housing benefits para sa lahat ng mga guro sa pampublikong paaralan.", "author": "Hon. Antonio Cruz", "cat": "Edukasyon", "status": "pending", "ico": "ico-red", "icon": "<i class=\"fa-solid fa-clipboard-list\"></i>", "date": "2025-02-01", "dateLabel": "Pebrero 1, 2025", "no": "SB No. 1059", "committee": "Committee on Basic Education", "full": "Pagtaas ng sahod at pagbibigay ng mas malawak na health insurance at housing benefits para sa lahat ng mga guro sa pampublikong paaralan. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Basic Education at bukas para sa mga komento ng publiko." }, { "id": "b07", "title": "Free College Internet Program", "desc": "Pagbibigay ng libreng pocket WiFi at data allowance sa mga iskolar ng state universities at colleges.", "author": "Hon. Mark Villanueva", "cat": "Edukasyon", "status": "debate", "ico": "ico-yellow", "icon": "<i class=\"fa-solid fa-wifi\"></i>", "date": "2025-01-28", "dateLabel": "Enero 28, 2025", "no": "SB No. 1066", "committee": "Committee on Basic Education", "full": "Pagbibigay ng libreng pocket WiFi at data allowance sa mga iskolar ng state universities at colleges. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Basic Education at bukas para sa mga komento ng publiko." }, { "id": "b08", "title": "Barangay Health Workers Magna Carta", "desc": "Pagkilala at pagtaas ng honoraria ng mga barangay health workers bilang mahalagang bahagi ng primary health care.", "author": "Hon. Grace Navarro", "cat": "Kalusugan", "status": "approved", "ico": "ico-blue", "icon": "<i class=\"fa-solid fa-heart-pulse\"></i>", "date": "2025-01-22", "dateLabel": "Enero 22, 2025", "no": "SB No. 1073", "committee": "Committee on Health and Demography", "full": "Pagkilala at pagtaas ng honoraria ng mga barangay health workers bilang mahalagang bahagi ng primary health care. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Health and Demography at bukas para sa mga komento ng publiko." }, { "id": "b09", "title": "National Cold Storage Network", "desc": "Pagtatayo ng mga cold storage facility sa bawat rehiyon upang mabawasan ang pagkasira ng ani ng mga magsasaka at mangingisda.", "author": "Hon. Roberto Garcia", "cat": "Agrikultura", "status": "impl", "ico": "ico-green", "icon": "<i class=\"fa-solid fa-snowflake\"></i>", "date": "2025-01-15", "dateLabel": "Enero 15, 2025", "no": "SB No. 1080", "committee": "Committee on Agriculture and Food", "full": "Pagtatayo ng mga cold storage facility sa bawat rehiyon upang mabawasan ang pagkasira ng ani ng mga magsasaka at mangingisda. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Agriculture and Food at bukas para sa mga komento ng publiko." }, { "id": "b10", "title": "Philippine Cybersecurity Act", "desc": "Pagtatatag ng pambansang ahensya para sa cybersecurity at mas mabigat na parusa laban sa online scams at data breach.", "author": "Hon. Elena Santos", "cat": "Teknolohiya", "status": "pending", "ico": "ico-red", "icon": "<i class=\"fa-solid fa-shield-halved\"></i>", "date": "2025-01-09", "dateLabel": "Enero 9, 2025", "no": "SB No. 1087", "committee": "Committee on Science and Technology", "full": "Pagtatatag ng pambansang ahensya para sa cybersecurity at mas mabigat na parusa laban sa online scams at data breach. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Science and Technology at bukas para sa mga komento ng publiko." }, { "id": "b11", "title": "Safe Schools Infrastructure Act", "desc": "Pagpapatibay ng mga gusali ng paaralan laban sa lindol at bagyo, kasama ang regular na structural audit.", "author": "Hon. Antonio Cruz", "cat": "Infrastraktura", "status": "approvedg", "ico": "ico-green", "icon": "<i class=\"fa-solid fa-school\"></i>", "date": "2025-01-03", "dateLabel": "Enero 3, 2025", "no": "SB No. 1094", "committee": "Committee on Public Works", "full": "Pagpapatibay ng mga gusali ng paaralan laban sa lindol at bagyo, kasama ang regular na structural audit. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Public Works at bukas para sa mga komento ng publiko." }, { "id": "b12", "title": "Mental Health in Schools Act", "desc": "Pagkakaroon ng guidance counselor at libreng mental health services sa bawat pampublikong paaralan.", "author": "Hon. Grace Navarro", "cat": "Kalusugan", "status": "debate", "ico": "ico-yellow", "icon": "<i class=\"fa-solid fa-brain\"></i>", "date": "2024-12-18", "dateLabel": "Disyembre 18, 2024", "no": "SB No. 1101", "committee": "Committee on Health and Demography", "full": "Pagkakaroon ng guidance counselor at libreng mental health services sa bawat pampublikong paaralan. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Health and Demography at bukas para sa mga komento ng publiko." }, { "id": "b13", "title": "Digital Bayanihan e-Gov Act", "desc": "Paglilipat ng lahat ng serbisyo ng gobyerno sa iisang online portal para sa mabilis at transparent na transaksyon.", "author": "Hon. Mark Villanueva", "cat": "Teknolohiya", "status": "approved", "ico": "ico-blue", "icon": "<i class=\"fa-solid fa-laptop-code\"></i>", "date": "2024-12-10", "dateLabel": "Disyembre 10, 2024", "no": "SB No. 1108", "committee": "Committee on Science and Technology", "full": "Paglilipat ng lahat ng serbisyo ng gobyerno sa iisang online portal para sa mabilis at transparent na transaksyon. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Science and Technology at bukas para sa mga komento ng publiko." }, { "id": "b14", "title": "Farm-to-Market Roads Program", "desc": "Pagpapagawa ng mga kalsadang nagdudugtong sa mga sakahan at pamilihan upang mapababa ang gastos sa transportasyon ng ani.", "author": "Hon. David Lim", "cat": "Agrikultura", "status": "impl", "ico": "ico-blue", "icon": "<i class=\"fa-solid fa-road\"></i>", "date": "2024-12-02", "dateLabel": "Disyembre 2, 2024", "no": "SB No. 1115", "committee": "Committee on Agriculture and Food", "full": "Pagpapagawa ng mga kalsadang nagdudugtong sa mga sakahan at pamilihan upang mapababa ang gastos sa transportasyon ng ani. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Agriculture and Food at bukas para sa mga komento ng publiko." }, { "id": "b15", "title": "Universal Pre-School Act", "desc": "Libreng pre-school education para sa lahat ng batang edad 3 hanggang 5 sa bawat barangay.", "author": "Hon. Sofia Reyes", "cat": "Edukasyon", "status": "pending", "ico": "ico-red", "icon": "<i class=\"fa-solid fa-children\"></i>", "date": "2024-11-25", "dateLabel": "Nobyembre 25, 2024", "no": "SB No. 1122", "committee": "Committee on Basic Education", "full": "Libreng pre-school education para sa lahat ng batang edad 3 hanggang 5 sa bawat barangay. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Basic Education at bukas para sa mga komento ng publiko." }, { "id": "b16", "title": "Clean Water for All Act", "desc": "Pagtitiyak ng malinis at abot-kayang tubig sa bawat tahanan sa pamamagitan ng water district modernization.", "author": "Hon. Maria Clara", "cat": "Infrastraktura", "status": "debate", "ico": "ico-yellow", "icon": "<i class=\"fa-solid fa-droplet\"></i>", "date": "2024-11-18", "dateLabel": "Nobyembre 18, 2024", "no": "SB No. 1129", "committee": "Committee on Public Works", "full": "Pagtitiyak ng malinis at abot-kayang tubig sa bawat tahanan sa pamamagitan ng water district modernization. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Public Works at bukas para sa mga komento ng publiko." }, { "id": "b17", "title": "Telemedicine Expansion Act", "desc": "Pagbibigay ng libreng online konsulta sa mga doktor para sa mga residente ng malalayong isla at bundok.", "author": "Hon. Elena Santos", "cat": "Kalusugan", "status": "approvedg", "ico": "ico-green", "icon": "<i class=\"fa-solid fa-stethoscope\"></i>", "date": "2024-11-09", "dateLabel": "Nobyembre 9, 2024", "no": "SB No. 1136", "committee": "Committee on Health and Demography", "full": "Pagbibigay ng libreng online konsulta sa mga doktor para sa mga residente ng malalayong isla at bundok. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Health and Demography at bukas para sa mga komento ng publiko." }, { "id": "b18", "title": "Seed Bank and Crop Insurance Act", "desc": "Pagtatatag ng pambansang seed bank at libreng crop insurance para sa maliliit na magsasaka laban sa kalamidad.", "author": "Hon. Roberto Garcia", "cat": "Agrikultura", "status": "approved", "ico": "ico-blue", "icon": "<i class=\"fa-solid fa-seedling\"></i>", "date": "2024-11-01", "dateLabel": "Nobyembre 1, 2024", "no": "SB No. 1143", "committee": "Committee on Agriculture and Food", "full": "Pagtatatag ng pambansang seed bank at libreng crop insurance para sa maliliit na magsasaka laban sa kalamidad. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Agriculture and Food at bukas para sa mga komento ng publiko." }, { "id": "b19", "title": "AI Ethics and Accountability Act", "desc": "Paglalatag ng mga patakaran sa responsableng paggamit ng Artificial Intelligence sa gobyerno at pribadong sektor.", "author": "Hon. Mark Villanueva", "cat": "Teknolohiya", "status": "debate", "ico": "ico-yellow", "icon": "<i class=\"fa-solid fa-robot\"></i>", "date": "2024-10-24", "dateLabel": "Oktubre 24, 2024", "no": "SB No. 1150", "committee": "Committee on Science and Technology", "full": "Paglalatag ng mga patakaran sa responsableng paggamit ng Artificial Intelligence sa gobyerno at pribadong sektor. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Science and Technology at bukas para sa mga komento ng publiko." }, { "id": "b20", "title": "Public Library Modernization Act", "desc": "Pag-upgrade ng mga pampublikong aklatan bilang digital learning hubs na may libreng computer at internet.", "author": "Hon. Antonio Cruz", "cat": "Edukasyon", "status": "impl", "ico": "ico-blue", "icon": "<i class=\"fa-solid fa-book-open\"></i>", "date": "2024-10-15", "dateLabel": "Oktubre 15, 2024", "no": "SB No. 1157", "committee": "Committee on Basic Education", "full": "Pag-upgrade ng mga pampublikong aklatan bilang digital learning hubs na may libreng computer at internet. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Basic Education at bukas para sa mga komento ng publiko." }, { "id": "b21", "title": "Bike Lane Network Act", "desc": "Paglalagay ng protektadong bike lanes sa mga pangunahing lansangan ng mga lungsod para sa ligtas na pagbibisikleta.", "author": "Hon. Sofia Reyes", "cat": "Infrastraktura", "status": "approvedg", "ico": "ico-green", "icon": "<i class=\"fa-solid fa-bicycle\"></i>", "date": "2024-10-07", "dateLabel": "Oktubre 7, 2024", "no": "SB No. 1164", "committee": "Committee on Public Works", "full": "Paglalagay ng protektadong bike lanes sa mga pangunahing lansangan ng mga lungsod para sa ligtas na pagbibisikleta. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Public Works at bukas para sa mga komento ng publiko." }, { "id": "b22", "title": "Generic Medicines Access Act", "desc": "Pagpapababa ng presyo ng mga gamot sa pamamagitan ng mas malawak na paggamit ng generic medicines sa mga botika.", "author": "Hon. David Lim", "cat": "Kalusugan", "status": "pending", "ico": "ico-red", "icon": "<i class=\"fa-solid fa-pills\"></i>", "date": "2024-09-29", "dateLabel": "Setyembre 29, 2024", "no": "SB No. 1171", "committee": "Committee on Health and Demography", "full": "Pagpapababa ng presyo ng mga gamot sa pamamagitan ng mas malawak na paggamit ng generic medicines sa mga botika. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Health and Demography at bukas para sa mga komento ng publiko." }, { "id": "b23", "title": "Fisherfolk Livelihood Act", "desc": "Pagbibigay ng modernong bangka, kagamitan at pautang na walang interes para sa mga maliliit na mangingisda.", "author": "Hon. Grace Navarro", "cat": "Agrikultura", "status": "debate", "ico": "ico-yellow", "icon": "<i class=\"fa-solid fa-fish\"></i>", "date": "2024-09-20", "dateLabel": "Setyembre 20, 2024", "no": "SB No. 1178", "committee": "Committee on Agriculture and Food", "full": "Pagbibigay ng modernong bangka, kagamitan at pautang na walang interes para sa mga maliliit na mangingisda. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Agriculture and Food at bukas para sa mga komento ng publiko." }, { "id": "b24", "title": "Open Data Philippines Act", "desc": "Paglalathala ng lahat ng datos ng gobyerno sa machine-readable na format para sa transparency at pananaliksik.", "author": "Hon. Elena Santos", "cat": "Teknolohiya", "status": "approved", "ico": "ico-blue", "icon": "<i class=\"fa-solid fa-database\"></i>", "date": "2024-09-12", "dateLabel": "Setyembre 12, 2024", "no": "SB No. 1185", "committee": "Committee on Science and Technology", "full": "Paglalathala ng lahat ng datos ng gobyerno sa machine-readable na format para sa transparency at pananaliksik. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Science and Technology at bukas para sa mga komento ng publiko." }];</script>
-  <script src="assets/js/main.js"></script>
-</body>
-
+    <script src="assets/js/data.js"></script>
+    <script>
+      window.KD_BILLS = [
+        {
+          id: "b01",
+          title: "Universal Digital Connectivity Act",
+          desc: "Layuning magbigay ng libre at mabilis na internet access sa lahat ng pampublikong paaralan at komunidad sa Pilipinas.",
+          author: "Hon. Elena Santos",
+          cat: "Teknolohiya",
+          status: "approved",
+          ico: "ico-blue",
+          icon: '<i class="fa-solid fa-calendar-check"></i>',
+          date: "2025-03-02",
+          dateLabel: "Marso 2, 2025",
+          no: "SB No. 1024",
+          committee: "Committee on Science and Technology",
+          full: "Layuning magbigay ng libre at mabilis na internet access sa lahat ng pampublikong paaralan at komunidad sa Pilipinas. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Science and Technology at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b02",
+          title: "Modern Agrikultura 2030",
+          desc: "Komprehensibong plano para sa mekanisasyon ng pagsasaka at direktang suporta sa mga lokal na magsasaka sa bansa.",
+          author: "Hon. Roberto Garcia",
+          cat: "Agrikultura",
+          status: "pending",
+          ico: "ico-red",
+          icon: '<svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><polygon points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59" fill="#CE1126" stroke="#CE1126" stroke-width="7" stroke-linejoin="round"/><circle cx="50" cy="50" r="21" fill="#fde8eb"/><circle cx="50" cy="50" r="15.5" fill="#CE1126"/></svg>',
+          date: "2025-02-27",
+          dateLabel: "Pebrero 27, 2025",
+          no: "SB No. 1031",
+          committee: "Committee on Agriculture and Food",
+          full: "Komprehensibong plano para sa mekanisasyon ng pagsasaka at direktang suporta sa mga lokal na magsasaka sa bansa. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Agriculture and Food at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b03",
+          title: "Green City Urban Initiative",
+          desc: 'Pagpapalawak ng mga "green spaces" at pagpapatupad ng mas mahigpit na waste management system sa mga urbanisadong lungsod.',
+          author: "Hon. Maria Clara",
+          cat: "Infrastraktura",
+          status: "debate",
+          ico: "ico-yellow",
+          icon: '<i class="fa-solid fa-address-card"></i>',
+          date: "2025-02-20",
+          dateLabel: "Pebrero 20, 2025",
+          no: "SB No. 1038",
+          committee: "Committee on Public Works",
+          full: 'Pagpapalawak ng mga "green spaces" at pagpapatupad ng mas mahigpit na waste management system sa mga urbanisadong lungsod. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Public Works at bukas para sa mga komento ng publiko.',
+        },
+        {
+          id: "b04",
+          title: "Rural Healthcare Bridge",
+          desc: "Pagpapadala ng mga mobile clinic sa malalayong barangay at pagbibigay ng libreng gamot para sa mga senior citizen.",
+          author: "Hon. David Lim",
+          cat: "Kalusugan",
+          status: "approvedg",
+          ico: "ico-green",
+          icon: '<i class="fa-solid fa-print"></i>',
+          date: "2025-02-14",
+          dateLabel: "Pebrero 14, 2025",
+          no: "SB No. 1045",
+          committee: "Committee on Health and Demography",
+          full: "Pagpapadala ng mga mobile clinic sa malalayong barangay at pagbibigay ng libreng gamot para sa mga senior citizen. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Health and Demography at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b05",
+          title: "Mass Transit Expansion Act",
+          desc: "Pagpapabilis sa konstruksyon ng mga bagong riles ng tren at modernisasyon ng sistema ng transportasyon sa Kalakhang Maynila.",
+          author: "Hon. Sofia Reyes",
+          cat: "Infrastraktura",
+          status: "impl",
+          ico: "ico-blue",
+          icon: '<i class="fa-solid fa-person-booth"></i>',
+          date: "2025-02-08",
+          dateLabel: "Pebrero 8, 2025",
+          no: "SB No. 1052",
+          committee: "Committee on Public Works",
+          full: "Pagpapabilis sa konstruksyon ng mga bagong riles ng tren at modernisasyon ng sistema ng transportasyon sa Kalakhang Maynila. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Public Works at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b06",
+          title: "Teachers' Welfare Package",
+          desc: "Pagtaas ng sahod at pagbibigay ng mas malawak na health insurance at housing benefits para sa lahat ng mga guro sa pampublikong paaralan.",
+          author: "Hon. Antonio Cruz",
+          cat: "Edukasyon",
+          status: "pending",
+          ico: "ico-red",
+          icon: '<i class="fa-solid fa-clipboard-list"></i>',
+          date: "2025-02-01",
+          dateLabel: "Pebrero 1, 2025",
+          no: "SB No. 1059",
+          committee: "Committee on Basic Education",
+          full: "Pagtaas ng sahod at pagbibigay ng mas malawak na health insurance at housing benefits para sa lahat ng mga guro sa pampublikong paaralan. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Basic Education at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b07",
+          title: "Free College Internet Program",
+          desc: "Pagbibigay ng libreng pocket WiFi at data allowance sa mga iskolar ng state universities at colleges.",
+          author: "Hon. Mark Villanueva",
+          cat: "Edukasyon",
+          status: "debate",
+          ico: "ico-yellow",
+          icon: '<i class="fa-solid fa-wifi"></i>',
+          date: "2025-01-28",
+          dateLabel: "Enero 28, 2025",
+          no: "SB No. 1066",
+          committee: "Committee on Basic Education",
+          full: "Pagbibigay ng libreng pocket WiFi at data allowance sa mga iskolar ng state universities at colleges. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Basic Education at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b08",
+          title: "Barangay Health Workers Magna Carta",
+          desc: "Pagkilala at pagtaas ng honoraria ng mga barangay health workers bilang mahalagang bahagi ng primary health care.",
+          author: "Hon. Grace Navarro",
+          cat: "Kalusugan",
+          status: "approved",
+          ico: "ico-blue",
+          icon: '<i class="fa-solid fa-heart-pulse"></i>',
+          date: "2025-01-22",
+          dateLabel: "Enero 22, 2025",
+          no: "SB No. 1073",
+          committee: "Committee on Health and Demography",
+          full: "Pagkilala at pagtaas ng honoraria ng mga barangay health workers bilang mahalagang bahagi ng primary health care. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Health and Demography at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b09",
+          title: "National Cold Storage Network",
+          desc: "Pagtatayo ng mga cold storage facility sa bawat rehiyon upang mabawasan ang pagkasira ng ani ng mga magsasaka at mangingisda.",
+          author: "Hon. Roberto Garcia",
+          cat: "Agrikultura",
+          status: "impl",
+          ico: "ico-green",
+          icon: '<i class="fa-solid fa-snowflake"></i>',
+          date: "2025-01-15",
+          dateLabel: "Enero 15, 2025",
+          no: "SB No. 1080",
+          committee: "Committee on Agriculture and Food",
+          full: "Pagtatayo ng mga cold storage facility sa bawat rehiyon upang mabawasan ang pagkasira ng ani ng mga magsasaka at mangingisda. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Agriculture and Food at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b10",
+          title: "Philippine Cybersecurity Act",
+          desc: "Pagtatatag ng pambansang ahensya para sa cybersecurity at mas mabigat na parusa laban sa online scams at data breach.",
+          author: "Hon. Elena Santos",
+          cat: "Teknolohiya",
+          status: "pending",
+          ico: "ico-red",
+          icon: '<i class="fa-solid fa-shield-halved"></i>',
+          date: "2025-01-09",
+          dateLabel: "Enero 9, 2025",
+          no: "SB No. 1087",
+          committee: "Committee on Science and Technology",
+          full: "Pagtatatag ng pambansang ahensya para sa cybersecurity at mas mabigat na parusa laban sa online scams at data breach. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Science and Technology at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b11",
+          title: "Safe Schools Infrastructure Act",
+          desc: "Pagpapatibay ng mga gusali ng paaralan laban sa lindol at bagyo, kasama ang regular na structural audit.",
+          author: "Hon. Antonio Cruz",
+          cat: "Infrastraktura",
+          status: "approvedg",
+          ico: "ico-green",
+          icon: '<i class="fa-solid fa-school"></i>',
+          date: "2025-01-03",
+          dateLabel: "Enero 3, 2025",
+          no: "SB No. 1094",
+          committee: "Committee on Public Works",
+          full: "Pagpapatibay ng mga gusali ng paaralan laban sa lindol at bagyo, kasama ang regular na structural audit. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Public Works at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b12",
+          title: "Mental Health in Schools Act",
+          desc: "Pagkakaroon ng guidance counselor at libreng mental health services sa bawat pampublikong paaralan.",
+          author: "Hon. Grace Navarro",
+          cat: "Kalusugan",
+          status: "debate",
+          ico: "ico-yellow",
+          icon: '<i class="fa-solid fa-brain"></i>',
+          date: "2024-12-18",
+          dateLabel: "Disyembre 18, 2024",
+          no: "SB No. 1101",
+          committee: "Committee on Health and Demography",
+          full: "Pagkakaroon ng guidance counselor at libreng mental health services sa bawat pampublikong paaralan. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Health and Demography at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b13",
+          title: "Digital Bayanihan e-Gov Act",
+          desc: "Paglilipat ng lahat ng serbisyo ng gobyerno sa iisang online portal para sa mabilis at transparent na transaksyon.",
+          author: "Hon. Mark Villanueva",
+          cat: "Teknolohiya",
+          status: "approved",
+          ico: "ico-blue",
+          icon: '<i class="fa-solid fa-laptop-code"></i>',
+          date: "2024-12-10",
+          dateLabel: "Disyembre 10, 2024",
+          no: "SB No. 1108",
+          committee: "Committee on Science and Technology",
+          full: "Paglilipat ng lahat ng serbisyo ng gobyerno sa iisang online portal para sa mabilis at transparent na transaksyon. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Science and Technology at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b14",
+          title: "Farm-to-Market Roads Program",
+          desc: "Pagpapagawa ng mga kalsadang nagdudugtong sa mga sakahan at pamilihan upang mapababa ang gastos sa transportasyon ng ani.",
+          author: "Hon. David Lim",
+          cat: "Agrikultura",
+          status: "impl",
+          ico: "ico-blue",
+          icon: '<i class="fa-solid fa-road"></i>',
+          date: "2024-12-02",
+          dateLabel: "Disyembre 2, 2024",
+          no: "SB No. 1115",
+          committee: "Committee on Agriculture and Food",
+          full: "Pagpapagawa ng mga kalsadang nagdudugtong sa mga sakahan at pamilihan upang mapababa ang gastos sa transportasyon ng ani. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Agriculture and Food at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b15",
+          title: "Universal Pre-School Act",
+          desc: "Libreng pre-school education para sa lahat ng batang edad 3 hanggang 5 sa bawat barangay.",
+          author: "Hon. Sofia Reyes",
+          cat: "Edukasyon",
+          status: "pending",
+          ico: "ico-red",
+          icon: '<i class="fa-solid fa-children"></i>',
+          date: "2024-11-25",
+          dateLabel: "Nobyembre 25, 2024",
+          no: "SB No. 1122",
+          committee: "Committee on Basic Education",
+          full: "Libreng pre-school education para sa lahat ng batang edad 3 hanggang 5 sa bawat barangay. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Basic Education at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b16",
+          title: "Clean Water for All Act",
+          desc: "Pagtitiyak ng malinis at abot-kayang tubig sa bawat tahanan sa pamamagitan ng water district modernization.",
+          author: "Hon. Maria Clara",
+          cat: "Infrastraktura",
+          status: "debate",
+          ico: "ico-yellow",
+          icon: '<i class="fa-solid fa-droplet"></i>',
+          date: "2024-11-18",
+          dateLabel: "Nobyembre 18, 2024",
+          no: "SB No. 1129",
+          committee: "Committee on Public Works",
+          full: "Pagtitiyak ng malinis at abot-kayang tubig sa bawat tahanan sa pamamagitan ng water district modernization. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Public Works at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b17",
+          title: "Telemedicine Expansion Act",
+          desc: "Pagbibigay ng libreng online konsulta sa mga doktor para sa mga residente ng malalayong isla at bundok.",
+          author: "Hon. Elena Santos",
+          cat: "Kalusugan",
+          status: "approvedg",
+          ico: "ico-green",
+          icon: '<i class="fa-solid fa-stethoscope"></i>',
+          date: "2024-11-09",
+          dateLabel: "Nobyembre 9, 2024",
+          no: "SB No. 1136",
+          committee: "Committee on Health and Demography",
+          full: "Pagbibigay ng libreng online konsulta sa mga doktor para sa mga residente ng malalayong isla at bundok. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Health and Demography at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b18",
+          title: "Seed Bank and Crop Insurance Act",
+          desc: "Pagtatatag ng pambansang seed bank at libreng crop insurance para sa maliliit na magsasaka laban sa kalamidad.",
+          author: "Hon. Roberto Garcia",
+          cat: "Agrikultura",
+          status: "approved",
+          ico: "ico-blue",
+          icon: '<i class="fa-solid fa-seedling"></i>',
+          date: "2024-11-01",
+          dateLabel: "Nobyembre 1, 2024",
+          no: "SB No. 1143",
+          committee: "Committee on Agriculture and Food",
+          full: "Pagtatatag ng pambansang seed bank at libreng crop insurance para sa maliliit na magsasaka laban sa kalamidad. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Agriculture and Food at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b19",
+          title: "AI Ethics and Accountability Act",
+          desc: "Paglalatag ng mga patakaran sa responsableng paggamit ng Artificial Intelligence sa gobyerno at pribadong sektor.",
+          author: "Hon. Mark Villanueva",
+          cat: "Teknolohiya",
+          status: "debate",
+          ico: "ico-yellow",
+          icon: '<i class="fa-solid fa-robot"></i>',
+          date: "2024-10-24",
+          dateLabel: "Oktubre 24, 2024",
+          no: "SB No. 1150",
+          committee: "Committee on Science and Technology",
+          full: "Paglalatag ng mga patakaran sa responsableng paggamit ng Artificial Intelligence sa gobyerno at pribadong sektor. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Science and Technology at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b20",
+          title: "Public Library Modernization Act",
+          desc: "Pag-upgrade ng mga pampublikong aklatan bilang digital learning hubs na may libreng computer at internet.",
+          author: "Hon. Antonio Cruz",
+          cat: "Edukasyon",
+          status: "impl",
+          ico: "ico-blue",
+          icon: '<i class="fa-solid fa-book-open"></i>',
+          date: "2024-10-15",
+          dateLabel: "Oktubre 15, 2024",
+          no: "SB No. 1157",
+          committee: "Committee on Basic Education",
+          full: "Pag-upgrade ng mga pampublikong aklatan bilang digital learning hubs na may libreng computer at internet. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Basic Education at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b21",
+          title: "Bike Lane Network Act",
+          desc: "Paglalagay ng protektadong bike lanes sa mga pangunahing lansangan ng mga lungsod para sa ligtas na pagbibisikleta.",
+          author: "Hon. Sofia Reyes",
+          cat: "Infrastraktura",
+          status: "approvedg",
+          ico: "ico-green",
+          icon: '<i class="fa-solid fa-bicycle"></i>',
+          date: "2024-10-07",
+          dateLabel: "Oktubre 7, 2024",
+          no: "SB No. 1164",
+          committee: "Committee on Public Works",
+          full: "Paglalagay ng protektadong bike lanes sa mga pangunahing lansangan ng mga lungsod para sa ligtas na pagbibisikleta. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Public Works at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b22",
+          title: "Generic Medicines Access Act",
+          desc: "Pagpapababa ng presyo ng mga gamot sa pamamagitan ng mas malawak na paggamit ng generic medicines sa mga botika.",
+          author: "Hon. David Lim",
+          cat: "Kalusugan",
+          status: "pending",
+          ico: "ico-red",
+          icon: '<i class="fa-solid fa-pills"></i>',
+          date: "2024-09-29",
+          dateLabel: "Setyembre 29, 2024",
+          no: "SB No. 1171",
+          committee: "Committee on Health and Demography",
+          full: "Pagpapababa ng presyo ng mga gamot sa pamamagitan ng mas malawak na paggamit ng generic medicines sa mga botika. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Health and Demography at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b23",
+          title: "Fisherfolk Livelihood Act",
+          desc: "Pagbibigay ng modernong bangka, kagamitan at pautang na walang interes para sa mga maliliit na mangingisda.",
+          author: "Hon. Grace Navarro",
+          cat: "Agrikultura",
+          status: "debate",
+          ico: "ico-yellow",
+          icon: '<i class="fa-solid fa-fish"></i>',
+          date: "2024-09-20",
+          dateLabel: "Setyembre 20, 2024",
+          no: "SB No. 1178",
+          committee: "Committee on Agriculture and Food",
+          full: "Pagbibigay ng modernong bangka, kagamitan at pautang na walang interes para sa mga maliliit na mangingisda. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Agriculture and Food at bukas para sa mga komento ng publiko.",
+        },
+        {
+          id: "b24",
+          title: "Open Data Philippines Act",
+          desc: "Paglalathala ng lahat ng datos ng gobyerno sa machine-readable na format para sa transparency at pananaliksik.",
+          author: "Hon. Elena Santos",
+          cat: "Teknolohiya",
+          status: "approved",
+          ico: "ico-blue",
+          icon: '<i class="fa-solid fa-database"></i>',
+          date: "2024-09-12",
+          dateLabel: "Setyembre 12, 2024",
+          no: "SB No. 1185",
+          committee: "Committee on Science and Technology",
+          full: "Paglalathala ng lahat ng datos ng gobyerno sa machine-readable na format para sa transparency at pananaliksik. Ang panukalang ito ay kasalukuyang tinatalakay sa Committee on Science and Technology at bukas para sa mga komento ng publiko.",
+        },
+      ];
+    </script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
