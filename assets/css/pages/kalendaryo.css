@@ -13,8 +13,8 @@
 
 .cal-hero .hero-title {
   --h1: 96px;
-  line-height: .96;
-  margin-top: 30px!important;
+  line-height: 0.96;
+  margin-top: 30px !important;
 }
 
 .cal-hero .hero-lead {
@@ -24,7 +24,7 @@
   font-size: 21px;
   line-height: 1.55;
   max-width: 700px;
-  color: rgba(255,255,255,.55);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .cal-main {
@@ -48,7 +48,7 @@
 .calendar {
   background: #fff;
   border-radius: 56px;
-  box-shadow: 0 30px 60px -30px rgba(15,23,42,.25);
+  box-shadow: 0 30px 60px -30px rgba(15, 23, 42, 0.25);
   padding: 44px 40px 52px;
   font-family: var(--font-jakarta);
 }
@@ -75,7 +75,7 @@
   margin-top: 6px;
   font-size: 13.5px;
   font-weight: 600;
-  letter-spacing: .16em;
+  letter-spacing: 0.16em;
   color: #9aa0aa;
   text-transform: uppercase;
 }
@@ -93,7 +93,9 @@
   color: var(--navy);
   display: grid;
   place-items: center;
-  transition: background .2s,transform .2s;
+  transition:
+    background 0.2s,
+    transform 0.2s;
 }
 
 .calendar__nav button:hover {
@@ -103,20 +105,20 @@
 
 .calendar__dow {
   display: grid;
-  grid-template-columns: repeat(7,1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 16px;
   margin-top: 44px;
   text-align: center;
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   color: #c6cad1;
   text-transform: uppercase;
 }
 
 .calendar__grid {
   display: grid;
-  grid-template-columns: repeat(7,1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 16px;
   margin-top: 32px;
 }
@@ -133,7 +135,10 @@
   font-weight: 700;
   color: var(--navy);
   background: #f8f9fb;
-  transition: transform .25s var(--ease),background .2s,box-shadow .25s;
+  transition:
+    transform 0.25s var(--ease),
+    background 0.2s,
+    box-shadow 0.25s;
   cursor: pointer;
 }
 
@@ -156,7 +161,7 @@
 .cal-day small {
   font-size: 8.5px;
   font-weight: 700;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   margin-top: 6px;
 }
@@ -174,12 +179,12 @@
 .cal-day.is-election {
   background: var(--blue);
   color: #fff;
-  box-shadow: 0 22px 30px -14px rgba(0,56,168,.6);
+  box-shadow: 0 22px 30px -14px rgba(0, 56, 168, 0.6);
 }
 
 .cal-day.is-election small {
   font-size: 11px;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   margin-top: 8px;
 }
 
@@ -213,7 +218,7 @@
 .calendar__more {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(7,1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 16px;
   margin-top: 40px;
 }
@@ -231,12 +236,12 @@
   margin: 28px auto 0;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--blue);
   padding: 6px 12px;
   border-radius: 999px;
-  transition: background .2s;
+  transition: background 0.2s;
 }
 
 .calendar__toggle:hover {
@@ -259,7 +264,7 @@
 
 .cal-detail.is-open {
   display: block;
-  animation: fadeUp .3s var(--ease);
+  animation: fadeUp 0.3s var(--ease);
 }
 
 .upcoming h2 {
@@ -284,14 +289,16 @@
   background: #fff;
   border-radius: 40px;
   padding: 32px 32px 34px;
-  box-shadow: 0 22px 40px -28px rgba(15,23,42,.25);
+  box-shadow: 0 22px 40px -28px rgba(15, 23, 42, 0.25);
   font-family: var(--font-jakarta);
-  transition: transform .3s var(--ease),box-shadow .3s;
+  transition:
+    transform 0.3s var(--ease),
+    box-shadow 0.3s;
 }
 
 .event-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 28px 46px -26px rgba(15,23,42,.3);
+  box-shadow: 0 28px 46px -26px rgba(15, 23, 42, 0.3);
 }
 
 .event-date {
@@ -357,9 +364,9 @@
 .event-card--big {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg,#0038a8 0%,#0b2a7a 55%,#0a1d55 100%);
+  background: linear-gradient(135deg, #0038a8 0%, #0b2a7a 55%, #0a1d55 100%);
   color: #fff;
-  box-shadow: 0 30px 40px -24px rgba(0,56,168,.55);
+  box-shadow: 0 30px 40px -24px rgba(0, 56, 168, 0.55);
 }
 
 .event-card--big h3 {
@@ -367,12 +374,12 @@
 }
 
 .event-card--big p {
-  color: rgba(255,255,255,.85);
+  color: rgba(255, 255, 255, 0.85);
   margin-top: 10px;
 }
 
 .event-card--big .event-date {
-  background: rgba(255,255,255,.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .event-card--big .event-date small,
@@ -386,7 +393,7 @@
   top: -20px;
   width: 230px;
   height: 230px;
-  color: rgba(255,255,255,.08);
+  color: rgba(255, 255, 255, 0.08);
   pointer-events: none;
 }
 
@@ -405,7 +412,7 @@
   font-family: var(--font-jakarta);
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: .5em;
+  letter-spacing: 0.5em;
   color: var(--yellow);
   text-transform: uppercase;
 }
@@ -427,23 +434,25 @@
 .ban-grid {
   margin-top: 80px;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   text-align: left;
 }
 
 .ban-card {
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 52px;
   padding: 40px 40px 42px;
   font-family: var(--font-jakarta);
-  transition: transform .35s var(--ease),background .35s;
+  transition:
+    transform 0.35s var(--ease),
+    background 0.35s;
 }
 
 .ban-card:hover {
   transform: translateY(-6px);
-  background: rgba(255,255,255,.07);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .ban-card .ico {
@@ -465,16 +474,16 @@
   margin-top: 14px;
   font-size: 16.5px;
   line-height: 1.6;
-  color: rgba(255,255,255,.55);
+  color: rgba(255, 255, 255, 0.55);
   font-weight: 300;
 }
 
-.cal-layout>* {
+.cal-layout > * {
   min-width: 0;
 }
 
 /* ---------- Tablet & below (≤1199px) ---------- */
-@media (max-width:1199px) {
+@media (max-width: 1199px) {
   .cal-hero .container,
   .cal-main .container,
   .ban-section .container {
@@ -498,7 +507,7 @@
   }
 
   .upcoming__list {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
@@ -518,14 +527,14 @@
 }
 
 /* ---------- Small tablet (768–991px) ---------- */
-@media (max-width:991px) and (min-width:768px) {
+@media (max-width: 991px) and (min-width: 768px) {
   .upcoming__list {
     grid-template-columns: 1fr;
   }
 }
 
 /* ---------- Mobile (≤767px) ---------- */
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .cal-hero {
     min-height: 0;
     padding: 40px 0 50px;
@@ -539,14 +548,14 @@
 
   .cal-hero .hero-title {
     --h1: 38px;
-    margin-top: 28px!important;
+    margin-top: 28px !important;
     line-height: 1.15;
   }
 
   .cal-hero .hero-lead {
     margin-top: 24px;
     font-size: 16px;
-    color: rgba(255,255,255,.65);
+    color: rgba(255, 255, 255, 0.65);
   }
 
   .cal-main {
@@ -690,7 +699,7 @@
   }
 
   .event-card .m {
-    display: inline!important;
+    display: inline !important;
   }
 
   .event-card .d {
@@ -737,7 +746,7 @@
   }
 
   .ban-section .ban-sub {
-    display: block!important;
+    display: block !important;
     margin-top: 16px;
     font-size: 15px;
     color: #4b5563;
@@ -777,10 +786,18 @@
     margin: 0;
     font-size: 13px;
     line-height: 1.35;
-    color: rgba(255,255,255,.65);
+    color: rgba(255, 255, 255, 0.65);
   }
 
   .calendar.is-collapsed .cal-row-extra {
     display: flex;
+  }
+}
+
+/* ---------- Tablet: keep the hero text clear of the calendar card ---------- */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .cal-hero {
+    min-height: 0;
+    padding-bottom: 120px;
   }
 }

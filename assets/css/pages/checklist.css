@@ -13,7 +13,7 @@
 
 .chk-hero .hero-title {
   --h1: 64px;
-  margin-top: 34px!important;
+  margin-top: 34px !important;
 }
 
 .chk-hero .hero-lead {
@@ -22,7 +22,7 @@
   font-weight: 300;
   font-size: 20px;
   line-height: 1.6;
-  color: rgba(255,255,255,.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .offline-card {
@@ -33,7 +33,7 @@
   background: #fff;
   border-radius: 40px;
   padding: 32px 32px;
-  box-shadow: 0 30px 60px -30px rgba(15,23,42,.35);
+  box-shadow: 0 30px 60px -30px rgba(15, 23, 42, 0.35);
   display: flex;
   align-items: center;
   gap: 24px;
@@ -75,7 +75,7 @@
 
 .offline-card .btn i {
   font-size: 20px;
-  transition: transform .25s var(--ease);
+  transition: transform 0.25s var(--ease);
 }
 
 .offline-card .btn:hover i {
@@ -96,7 +96,7 @@
   gap: 72px;
 }
 
-.chk-row+.chk-row {
+.chk-row + .chk-row {
   margin-top: 96px;
 }
 
@@ -113,7 +113,7 @@
   margin-top: 30px;
   font-size: 42px;
   font-weight: 800;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   color: var(--ink);
 }
@@ -138,7 +138,10 @@
   border: 1px solid #f1f3f6;
   border-radius: 30px;
   padding: 32px 32px 32px;
-  transition: transform .3s var(--ease),box-shadow .3s,background .3s;
+  transition:
+    transform 0.3s var(--ease),
+    box-shadow 0.3s,
+    background 0.3s;
 }
 
 .chk-step:hover {
@@ -156,7 +159,7 @@
   place-items: center;
   color: var(--blue);
   font-size: 20px;
-  box-shadow: 0 2px 6px rgba(15,23,42,.06);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
 }
 
 .chk-step h3 {
@@ -185,7 +188,9 @@
   border-radius: 30px;
   padding: 32px 32px 34px;
   min-height: 252px;
-  transition: transform .3s var(--ease),box-shadow .3s;
+  transition:
+    transform 0.3s var(--ease),
+    box-shadow 0.3s;
 }
 
 .day-card:hover {
@@ -234,7 +239,7 @@
   top: 0;
   width: 410px;
   height: 410px;
-  color: rgba(255,255,255,.12);
+  color: rgba(255, 255, 255, 0.12);
   pointer-events: none;
 }
 
@@ -245,7 +250,7 @@
   gap: 16px;
   font-size: 40px;
   font-weight: 800;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
 }
 
 .steps-dark h2::before {
@@ -260,7 +265,7 @@
   position: relative;
   margin-top: 44px;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 40px;
 }
 
@@ -281,7 +286,7 @@
   margin-top: 24px;
   font-size: 14px;
   line-height: 1.48;
-  color: rgba(255,255,255,.65);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .warn-list {
@@ -298,8 +303,10 @@
   border: 1px solid #f1f2f5;
   border-radius: 30px;
   padding: 32px;
-  box-shadow: 0 10px 26px -22px rgba(15,23,42,.3);
-  transition: transform .3s var(--ease),box-shadow .3s;
+  box-shadow: 0 10px 26px -22px rgba(15, 23, 42, 0.3);
+  transition:
+    transform 0.3s var(--ease),
+    box-shadow 0.3s;
 }
 
 .warn-card:hover {
@@ -337,7 +344,7 @@
 }
 
 /* ---------- Tablet & below (≤1199px) ---------- */
-@media (max-width:1199px) {
+@media (max-width: 1199px) {
   .chk-hero .container {
     --gutter: 48px;
   }
@@ -366,7 +373,7 @@
 }
 
 /* ---------- Mobile (≤767px) ---------- */
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .chk-hero {
     min-height: 0;
     padding: 32px 0 34px;
@@ -378,7 +385,7 @@
 
   .chk-hero .hero-title {
     --h1: 32px;
-    margin-top: 18px!important;
+    margin-top: 18px !important;
     font-family: var(--font-sans);
     font-weight: 700;
   }
@@ -443,7 +450,7 @@
     gap: 20px;
   }
 
-  .chk-row+.chk-row {
+  .chk-row + .chk-row {
     margin-top: 40px;
   }
 
@@ -484,7 +491,7 @@
   }
 
   .chk-step h3 .n {
-    display: block!important;
+    display: block !important;
     font-size: 10px;
     color: var(--blue);
     font-weight: 800;
@@ -550,8 +557,8 @@
     margin-top: 24px;
   }
 
-  .steps-dark__grid>div {
-    border: 1px solid rgba(255,255,255,.1);
+  .steps-dark__grid > div {
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: 16px;
   }
@@ -600,5 +607,17 @@
     font-style: italic;
     font-weight: 400;
     color: var(--yellow);
+  }
+}
+
+/* ---------- Narrow tablet: voting steps in a 2×2 grid ---------- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .steps-dark__grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 32px;
+  }
+
+  .steps-dark .sun-deco {
+    opacity: 0.5;
   }
 }

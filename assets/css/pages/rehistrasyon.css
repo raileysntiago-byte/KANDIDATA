@@ -5,7 +5,7 @@
 .reg-hero {
   min-height: 500px;
   padding: 40px 0 40px;
-  background: linear-gradient(120deg,#08113f 0%,#0e1d5c 50%,#132a73 100%);
+  background: linear-gradient(120deg, #08113f 0%, #0e1d5c 50%, #132a73 100%);
 }
 
 .reg-hero .flag-deco {
@@ -25,14 +25,14 @@
   --h1: 61px;
   font-weight: 800;
   line-height: 1.08;
-  margin-top: 34px!important;
+  margin-top: 34px !important;
 }
 
 .reg-hero .hero-lead {
   margin-top: 28px;
   font-size: 19.5px;
   line-height: 1.6;
-  color: rgba(255,255,255,.9);
+  color: rgba(255, 255, 255, 0.9);
   max-width: 500px;
 }
 
@@ -53,13 +53,13 @@
 
 .reg-hero .btn-outline-light {
   min-width: 228px;
-  border: 1.5px solid rgba(255,255,255,.3);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
   color: #fff;
   background: transparent;
 }
 
 .reg-hero .btn-outline-light:hover {
-  background: rgba(255,255,255,.08);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .id-glass {
@@ -68,19 +68,19 @@
   height: 384px;
   margin-left: auto;
   border-radius: 30px;
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(6px);
   display: grid;
   place-items: center;
-  box-shadow: 0 30px 60px -30px rgba(0,0,0,.5);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.5);
 }
 
 .id-glass img {
   width: 256px;
   border-radius: 2px;
-  box-shadow: 0 10px 30px -10px rgba(0,0,0,.4);
-  transition: transform .6s var(--ease);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.6s var(--ease);
 }
 
 .id-glass:hover img {
@@ -100,7 +100,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  box-shadow: 0 26px 40px -20px rgba(206,17,38,.8);
+  box-shadow: 0 26px 40px -20px rgba(206, 17, 38, 0.8);
 }
 
 .ready-badge strong {
@@ -114,8 +114,8 @@
   display: block;
   margin-top: 6px;
   font-size: 10.5px;
-  letter-spacing: .16em;
-  color: rgba(255,255,255,.85);
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.85);
   text-transform: uppercase;
 }
 
@@ -144,7 +144,7 @@
   position: relative;
   margin-top: 64px;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
 }
 
@@ -172,7 +172,7 @@
   font-size: 28px;
   font-weight: 800;
   color: var(--blue);
-  box-shadow: 0 14px 22px -12px rgba(0,56,168,.5);
+  box-shadow: 0 14px 22px -12px rgba(0, 56, 168, 0.5);
 }
 
 .guide-step .card {
@@ -181,7 +181,10 @@
   border-radius: 30px;
   padding: 32px 24px 40px;
   min-height: 368px;
-  transition: transform .3s var(--ease),box-shadow .3s,background .3s;
+  transition:
+    transform 0.3s var(--ease),
+    box-shadow 0.3s,
+    background 0.3s;
 }
 
 .guide-step:hover .card {
@@ -233,7 +236,7 @@
 .docs h2 {
   font-size: 38px;
   font-weight: 700;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   line-height: 1.24;
 }
 
@@ -261,7 +264,10 @@
   gap: 16px;
   padding: 0 16px;
   font-size: 16.5px;
-  transition: background .25s,border-color .25s,transform .25s;
+  transition:
+    background 0.25s,
+    border-color 0.25s,
+    transform 0.25s;
 }
 
 .doc-item:hover {
@@ -303,7 +309,7 @@
 .docs-media .license {
   width: 552px;
   margin-left: auto;
-  box-shadow: 0 30px 60px -20px rgba(0,0,0,.6);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
 }
 
 .testimonial {
@@ -316,7 +322,7 @@
   border-radius: 30px;
   padding: 40px 32px 36px;
   border-top: 6px solid var(--yellow);
-  box-shadow: 0 30px 60px -20px rgba(0,0,0,.5);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.5);
 }
 
 .testimonial .q {
@@ -372,7 +378,7 @@
 .where h2 {
   font-size: 38px;
   font-weight: 800;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   color: var(--slate-900);
 }
 
@@ -387,7 +393,7 @@
   background: #fff;
   border-radius: 40px;
   padding: 16px;
-  box-shadow: 0 30px 60px -30px rgba(15,23,42,.25);
+  box-shadow: 0 30px 60px -30px rgba(15, 23, 42, 0.25);
   display: grid;
   grid-template-columns: 336px 1fr;
   gap: 24px;
@@ -412,7 +418,7 @@
   border-color: #e5e9f0;
 }
 
-.office-col .input-wrap>i {
+.office-col .input-wrap > i {
   left: 16px;
   right: auto;
   color: #94a3b8;
@@ -426,7 +432,7 @@
   background: #fff;
   border-radius: 16px;
   padding: 22px 20px;
-  transition: all .25s var(--ease);
+  transition: all 0.25s var(--ease);
 }
 
 .office:hover {
@@ -448,7 +454,7 @@
 .office .type {
   font-size: 12.5px;
   font-weight: 700;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   color: var(--blue);
   text-transform: uppercase;
 }
@@ -510,7 +516,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .6s var(--ease);
+  transition: transform 0.6s var(--ease);
 }
 
 .ph-map:hover img {
@@ -527,7 +533,7 @@
   display: flex;
   align-items: center;
   gap: 22px;
-  box-shadow: 0 20px 40px -20px rgba(0,0,0,.4);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.4);
 }
 
 .ph-loc .nav {
@@ -556,7 +562,7 @@
 }
 
 /* ---------- Tablet & below (≤1199px) ---------- */
-@media (max-width:1199px) {
+@media (max-width: 1199px) {
   .reg-hero__grid {
     grid-template-columns: 1fr 340px;
   }
@@ -580,7 +586,7 @@
 }
 
 /* ---------- Small tablet (768–991px) ---------- */
-@media (max-width:991px) and (min-width:768px) {
+@media (max-width: 991px) and (min-width: 768px) {
   .where__panel {
     grid-template-columns: 1fr;
   }
@@ -599,7 +605,7 @@
 }
 
 /* ---------- Mobile (≤767px) ---------- */
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .reg-hero {
     min-height: 0;
     padding: 34px 0 30px;
@@ -611,7 +617,7 @@
 
   .reg-hero .hero-title {
     --h1: 34px;
-    margin-top: 22px!important;
+    margin-top: 22px !important;
   }
 
   .reg-hero .hero-lead {
@@ -635,7 +641,7 @@
   }
 
   .ready-badge-m {
-    display: flex!important;
+    display: flex !important;
     margin-top: 20px;
     height: 72px;
     border-radius: 10px;
@@ -655,7 +661,7 @@
     margin-top: 6px;
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: .1em;
+    letter-spacing: 0.1em;
   }
 
   .guide {
@@ -857,7 +863,7 @@
   .office .addr {
     margin-top: 4px;
     font-size: 12px;
-    font-style: normal!important;
+    font-style: normal !important;
   }
 
   .office .hrs {
@@ -874,7 +880,44 @@
     grid-template-columns: 1fr;
   }
 
-  .docs__grid>* {
+  .docs__grid > * {
     min-width: 0;
+  }
+}
+
+/* ---------- Narrow tablet (768–991px): 4 step cards don't fit in one row ---------- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .guide-steps {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+  }
+
+  .guide-steps::before {
+    display: none;
+  }
+
+  .guide-step .card {
+    min-height: 0;
+  }
+}
+
+.guide-step,
+.guide-step .card {
+  min-width: 0;
+}
+
+.guide-step h3 {
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Narrow tablet: stack the section heading and the view buttons ---------- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .where__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tab-switch button {
+    white-space: nowrap;
   }
 }

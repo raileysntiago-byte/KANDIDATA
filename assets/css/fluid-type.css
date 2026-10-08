@@ -1,0 +1,319 @@
+/* =========================================================
+   KandiDATA — Fluid typography
+   Large headings keep their exact design size at the reference
+   widths (1440 / 1024 / 390px) and scale proportionally in between,
+   so text never looks oversized on laptops, small tablets or
+   narrow phones. Loaded last so it refines the page styles.
+   ========================================================= */
+
+/* ---------- Desktop (scaled from the 1440px design) ---------- */
+@media (min-width: 1200px) {
+  .section-title {
+    font-size: clamp(31.7px, 3.056vw, 44px);
+  }
+
+  .stat-card__value {
+    font-size: clamp(18.7px, 1.806vw, 26px);
+  }
+
+  .cand-section .section-title {
+    font-size: clamp(27.4px, 2.639vw, 38px);
+  }
+
+  .modal h3 {
+    font-size: clamp(18.7px, 1.806vw, 26px);
+  }
+
+  .faq-sec h2 {
+    font-size: clamp(27.4px, 2.639vw, 38px);
+  }
+
+  .home-hero .hero-title {
+    font-size: clamp(69.1px, 6.667vw, 96px);
+  }
+
+  .home-hero .hero-title .l2 {
+    font-size: clamp(67px, 6.458vw, 93px);
+  }
+
+  .participate__copy .section-title {
+    font-size: clamp(36.7px, 3.542vw, 51px);
+  }
+
+  .meet__head .section-title {
+    font-size: clamp(35.3px, 3.403vw, 49px);
+  }
+
+  .info-hero .hero-title {
+    --h1: clamp(52.6px, 5.069vw, 73px);
+  }
+
+  .vote-guide .section-title {
+    font-size: clamp(36px, 3.472vw, 50px);
+  }
+
+  .quote-band blockquote {
+    font-size: clamp(33.1px, 3.194vw, 46px);
+  }
+
+  .cta-card h2 {
+    font-size: clamp(34.6px, 3.333vw, 48px);
+  }
+
+  .cal-hero .hero-title {
+    --h1: clamp(69.1px, 6.667vw, 96px);
+  }
+
+  .calendar__title {
+    font-size: clamp(22.3px, 2.153vw, 31px);
+  }
+
+  .upcoming h2 {
+    font-size: clamp(23.8px, 2.292vw, 33px);
+  }
+
+  .ban-section h2 {
+    font-size: clamp(36px, 3.472vw, 50px);
+  }
+
+  .list-hero .hero-title {
+    --h1: clamp(69.8px, 6.736vw, 97px);
+  }
+
+  .profile-name {
+    font-size: clamp(49px, 4.722vw, 68px);
+  }
+
+  .p-sec h2 {
+    font-size: clamp(22.3px, 2.153vw, 31px);
+  }
+
+  .dash-name {
+    font-size: clamp(34.6px, 3.333vw, 48px);
+  }
+
+  .dash-sec-head h2 {
+    font-size: clamp(22.3px, 2.153vw, 31px);
+  }
+
+  .bills-hero .hero-title {
+    --h1: clamp(51.8px, 5vw, 72px);
+  }
+
+  .bills-head .section-title {
+    font-size: clamp(27.4px, 2.639vw, 38px);
+  }
+
+  .auth-card h1 {
+    font-size: clamp(28.8px, 2.778vw, 40px);
+  }
+
+  .poll-hero .hero-title {
+    --h1: clamp(43.2px, 4.167vw, 60px);
+  }
+
+  .reg-cta__card h2 {
+    font-size: clamp(34.6px, 3.333vw, 48px);
+  }
+
+  .chk-hero .hero-title {
+    --h1: clamp(46.1px, 4.444vw, 64px);
+  }
+
+  .chk-copy h2 {
+    font-size: clamp(30.2px, 2.917vw, 42px);
+  }
+
+  .steps-dark h2 {
+    font-size: clamp(28.8px, 2.778vw, 40px);
+  }
+
+  .reg-hero .hero-title {
+    --h1: clamp(43.9px, 4.236vw, 61px);
+  }
+
+  .ready-badge strong {
+    font-size: clamp(21.6px, 2.083vw, 30px);
+  }
+
+  .guide .section-title {
+    font-size: clamp(27.4px, 2.639vw, 38px);
+  }
+
+  .docs h2 {
+    font-size: clamp(27.4px, 2.639vw, 38px);
+  }
+
+  .testimonial .q {
+    font-size: clamp(20.2px, 1.944vw, 28px);
+  }
+
+  .where h2 {
+    font-size: clamp(27.4px, 2.639vw, 38px);
+  }
+
+  .help-hero h1 {
+    font-size: clamp(36px, 3.472vw, 50px);
+  }
+
+  .help-sec h2 {
+    font-size: clamp(22.3px, 2.153vw, 31px);
+  }
+
+  .links-sec h2 {
+    font-size: clamp(27.4px, 2.639vw, 38px);
+  }
+
+  .ask__left h2 {
+    font-size: clamp(27.4px, 2.639vw, 38px);
+  }
+
+  .about-hero .hero-title {
+    --h1: clamp(51.8px, 5vw, 72px);
+  }
+
+  .mv-card h2 {
+    font-size: clamp(27.4px, 2.639vw, 38px);
+  }
+
+  .story__copy h2 {
+    font-size: clamp(34.6px, 3.333vw, 48px);
+  }
+
+  .values h2 {
+    font-size: clamp(34.6px, 3.333vw, 48px);
+  }
+}
+
+/* ---------- Tablet (scaled from the 1024px design) ---------- */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .home-hero .hero-title {
+    font-size: clamp(46.1px, 6.25vw, 64px);
+  }
+
+  .home-hero .hero-title .l2 {
+    font-size: clamp(46.1px, 6.25vw, 64px);
+  }
+
+  .participate__copy .section-title {
+    font-size: clamp(33.1px, 4.492vw, 46px);
+  }
+
+  .meet__head .section-title {
+    font-size: clamp(33.1px, 4.492vw, 46px);
+  }
+
+  .quote-band blockquote {
+    font-size: clamp(27.4px, 3.711vw, 38px);
+  }
+
+  .cal-hero .hero-title {
+    --h1: clamp(51.8px, 7.031vw, 72px);
+  }
+
+  .upcoming h2 {
+    font-size: clamp(20.2px, 2.734vw, 28px);
+  }
+
+  .list-hero .hero-title {
+    --h1: clamp(54.7px, 7.422vw, 76px);
+  }
+
+  .profile-name {
+    font-size: clamp(37.4px, 5.078vw, 52px);
+  }
+
+  .about-hero .hero-title {
+    --h1: clamp(46.1px, 6.25vw, 64px);
+  }
+}
+
+/* ---------- Narrow tablet ---------- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .bills-hero .hero-title {
+    --h1: clamp(44.8px, 6.222vw, 56px);
+  }
+}
+
+/* ---------- Mobile (scaled from the 390px design) ---------- */
+@media (max-width: 767px) {
+  .section-title {
+    font-size: clamp(23.4px, 7.692vw, 30px);
+  }
+
+  .cand-section .section-title {
+    font-size: clamp(25px, 8.205vw, 32px);
+  }
+
+  .home-hero .hero-title {
+    font-size: clamp(29.6px, 9.744vw, 38px);
+  }
+
+  .home-hero .hero-title .l2 {
+    font-size: clamp(29.6px, 9.744vw, 38px);
+  }
+
+  .meet__head .section-title {
+    font-size: clamp(21.8px, 7.179vw, 28px);
+  }
+
+  .participate__copy .section-title {
+    font-size: clamp(20.3px, 6.667vw, 26px);
+  }
+
+  .info-hero .hero-title {
+    --h1: clamp(29.6px, 9.744vw, 38px);
+  }
+
+  .vote-guide .section-title {
+    font-size: clamp(25px, 8.205vw, 32px);
+  }
+
+  .cta-card h2 {
+    font-size: clamp(26.5px, 8.718vw, 34px);
+  }
+
+  .cal-hero .hero-title {
+    --h1: clamp(29.6px, 9.744vw, 38px);
+  }
+
+  .upcoming h2 {
+    font-size: clamp(25px, 8.205vw, 32px);
+  }
+
+  .ban-section h2 {
+    font-size: clamp(25px, 8.205vw, 32px);
+  }
+
+  .list-hero .hero-title {
+    --h1: clamp(29.6px, 9.744vw, 38px);
+  }
+
+  .profile-name {
+    font-size: clamp(26.5px, 8.718vw, 34px);
+  }
+
+  .bills-hero .hero-title {
+    --h1: clamp(25px, 8.205vw, 32px);
+  }
+
+  .poll-hero .hero-title {
+    --h1: clamp(25px, 8.205vw, 32px);
+  }
+
+  .chk-hero .hero-title {
+    --h1: clamp(25px, 8.205vw, 32px);
+  }
+
+  .reg-hero .hero-title {
+    --h1: clamp(26.5px, 8.718vw, 34px);
+  }
+
+  .help-hero h1 {
+    font-size: clamp(23.4px, 7.692vw, 30px);
+  }
+
+  .about-hero .hero-title {
+    --h1: clamp(25px, 8.205vw, 32px);
+  }
+}

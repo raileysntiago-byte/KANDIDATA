@@ -9,8 +9,8 @@
 
 .list-hero .hero-title {
   --h1: 97px;
-  line-height: .9;
-  margin-top: 22px!important;
+  line-height: 0.9;
+  margin-top: 22px !important;
 }
 
 .list-hero .hero-lead {
@@ -19,7 +19,7 @@
   font-size: 20px;
   line-height: 1.55;
   max-width: 600px;
-  color: rgba(255,255,255,.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .filter-panel {
@@ -29,7 +29,7 @@
   background: #fff;
   border-radius: 40px;
   padding: 32px 32px 32px;
-  box-shadow: 0 30px 60px -30px rgba(15,23,42,.25);
+  box-shadow: 0 30px 60px -30px rgba(15, 23, 42, 0.25);
   display: grid;
   grid-template-columns: 377px 240px 240px 1fr;
   gap: 24px;
@@ -45,7 +45,7 @@
 }
 
 /* ---------- Tablet & below (≤1199px) ---------- */
-@media (max-width:1199px) {
+@media (max-width: 1199px) {
   .list-hero .hero-title {
     --h1: 76px;
   }
@@ -59,7 +59,7 @@
 }
 
 /* ---------- Mobile (≤767px) ---------- */
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .list-hero {
     min-height: 0;
     padding: 40px 0 44px;
@@ -67,7 +67,7 @@
 
   .list-hero .hero-title {
     --h1: 38px;
-    margin-top: 24px!important;
+    margin-top: 24px !important;
     line-height: 1.12;
   }
 
@@ -96,7 +96,7 @@
     border-radius: 10px;
   }
 
-  .filter-panel .input-wrap>i {
+  .filter-panel .input-wrap > i {
     display: none;
   }
 
@@ -104,5 +104,27 @@
     height: 46px;
     font-size: 15px;
     border-radius: 12px;
+  }
+}
+
+/* ---------- Narrow tablet: filters in two rows ---------- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .filter-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filter-panel > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .filter-panel .btn-primary {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- Small laptops (1200–1365px): flexible filter columns ---------- */
+@media (min-width: 1200px) and (max-width: 1365px) {
+  .filter-panel {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr) minmax(150px, 0.8fr);
   }
 }

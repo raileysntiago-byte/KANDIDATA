@@ -10,7 +10,7 @@
 .bills-hero .hero-title {
   --h1: 72px;
   line-height: 1.18;
-  margin-top: 10px!important;
+  margin-top: 10px !important;
 }
 
 .bills-hero .hero-lead {
@@ -19,7 +19,7 @@
   font-weight: 300;
   font-size: 20px;
   line-height: 1.6;
-  color: rgba(255,255,255,.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .bills-panel {
@@ -29,7 +29,7 @@
   background: #fff;
   border-radius: 40px;
   padding: 32px 32px 20px;
-  box-shadow: 0 34px 60px -30px rgba(15,23,42,.35);
+  box-shadow: 0 34px 60px -30px rgba(15, 23, 42, 0.35);
 }
 
 .bills-search {
@@ -45,7 +45,7 @@
   border-color: #e9ecf0;
 }
 
-.bills-search .input-wrap>i {
+.bills-search .input-wrap > i {
   left: 20px;
   right: auto;
   font-size: 18px;
@@ -79,7 +79,7 @@
   font-weight: 600;
   font-size: 14.5px;
   color: #374151;
-  transition: all .25s var(--ease);
+  transition: all 0.25s var(--ease);
 }
 
 .cat-chip:hover {
@@ -90,7 +90,7 @@
 .cat-chip.is-active {
   background: var(--blue);
   color: #fff;
-  box-shadow: 0 10px 20px -12px rgba(0,56,168,.8);
+  box-shadow: 0 10px 20px -12px rgba(0, 56, 168, 0.8);
 }
 
 .sort-row {
@@ -149,7 +149,7 @@
 .bill-grid {
   margin-top: 48px;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   align-items: start;
 }
@@ -159,15 +159,17 @@
   border: 1px solid #f1f2f5;
   border-radius: 34px;
   overflow: hidden;
-  box-shadow: 0 14px 30px -24px rgba(15,23,42,.3);
+  box-shadow: 0 14px 30px -24px rgba(15, 23, 42, 0.3);
   display: flex;
   flex-direction: column;
-  transition: transform .35s var(--ease),box-shadow .35s;
+  transition:
+    transform 0.35s var(--ease),
+    box-shadow 0.35s;
 }
 
 .bill-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 30px 50px -28px rgba(15,23,42,.35);
+  box-shadow: 0 30px 50px -28px rgba(15, 23, 42, 0.35);
 }
 
 .bill-card__body {
@@ -194,7 +196,7 @@
   font-size: 25px;
   font-weight: 800;
   line-height: 1.24;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   color: var(--ink);
 }
 
@@ -233,7 +235,7 @@
   display: block;
   font-size: 9.5px;
   font-weight: 700;
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
   color: #9aa0aa;
   text-transform: uppercase;
 }
@@ -255,19 +257,22 @@
   text-align: center;
   font-size: 14.5px;
   font-weight: 800;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   color: var(--blue);
   text-transform: uppercase;
-  transition: background .25s,color .25s,letter-spacing .25s;
+  transition:
+    background 0.25s,
+    color 0.25s,
+    letter-spacing 0.25s;
 }
 
 .bill-card__cta:hover {
   background: var(--blue);
   color: #fff;
-  letter-spacing: .18em;
+  letter-spacing: 0.18em;
 }
 
-.bill-grid--b .bill-card:nth-child(3n+2) {
+.bill-grid--b .bill-card:nth-child(3n + 2) {
   margin-top: -14px;
 }
 
@@ -277,7 +282,7 @@
 }
 
 /* ---------- Tablet & below (≤1199px) ---------- */
-@media (max-width:1199px) {
+@media (max-width: 1199px) {
   .bills-panel {
     margin-inline: 0;
   }
@@ -287,13 +292,13 @@
     gap: 24px;
   }
 
-  .bill-grid--b .bill-card:nth-child(3n+2) {
+  .bill-grid--b .bill-card:nth-child(3n + 2) {
     margin-top: 0;
   }
 }
 
 /* ---------- Mobile (≤767px) ---------- */
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .bills-hero {
     min-height: 0;
     padding: 32px 0 34px;
@@ -301,10 +306,10 @@
 
   .bills-hero .hero-title {
     --h1: 32px;
-    margin-top: 16px!important;
+    margin-top: 16px !important;
     font-family: var(--font-sans);
     font-weight: 700;
-    letter-spacing: -.01em;
+    letter-spacing: -0.01em;
   }
 
   .bills-hero .hero-title .y {
@@ -336,7 +341,7 @@
     border-radius: 10px;
   }
 
-  .bills-search .input-wrap>i {
+  .bills-search .input-wrap > i {
     left: 16px;
     font-size: 15px;
   }
@@ -443,5 +448,12 @@
   .bill-card__cta {
     padding: 14px 0;
     font-size: 13px;
+  }
+}
+
+/* ---------- Narrow tablet: smaller hero title so it wraps cleanly ---------- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .bills-hero .hero-title {
+    --h1: 56px;
   }
 }

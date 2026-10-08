@@ -9,13 +9,13 @@
 
 .home-hero .hero-title {
   font-size: 96px;
-  line-height: .86;
+  line-height: 0.86;
 }
 
 .home-hero .hero-title .l1 {
   font-family: var(--font-sans);
   font-weight: 800;
-  letter-spacing: -.025em;
+  letter-spacing: -0.025em;
 }
 
 .home-hero .hero-title .l2 {
@@ -30,7 +30,7 @@
   font-weight: 300;
   font-size: 22px;
   line-height: 1.55;
-  color: rgba(255,255,255,.82);
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .home-stats {
@@ -96,7 +96,10 @@
   border-radius: 22px;
   padding: 26px 24px 24px;
   min-height: 176px;
-  transition: transform .3s var(--ease),box-shadow .3s var(--ease),background .3s;
+  transition:
+    transform 0.3s var(--ease),
+    box-shadow 0.3s var(--ease),
+    background 0.3s;
 }
 
 .feature-card:hover {
@@ -157,7 +160,9 @@
   background: #fff;
   border-radius: 32px;
   padding: 30px 30px 34px;
-  box-shadow: 0 40px 60px -30px rgba(15,23,42,.35),0 4px 12px rgba(15,23,42,.05);
+  box-shadow:
+    0 40px 60px -30px rgba(15, 23, 42, 0.35),
+    0 4px 12px rgba(15, 23, 42, 0.05);
 }
 
 .stat-float__head {
@@ -170,7 +175,7 @@
   font-size: 20px;
   font-weight: 800;
   color: var(--navy);
-  letter-spacing: .02em;
+  letter-spacing: 0.02em;
 }
 
 .stat-float p {
@@ -211,7 +216,7 @@
 }
 
 /* ---------- Tablet & below (≤1199px) ---------- */
-@media (max-width:1199px) {
+@media (max-width: 1199px) {
   .home-hero {
     min-height: 520px;
     padding: 132px 0 150px;
@@ -282,11 +287,11 @@
 }
 
 /* ---------- Tablet only (768–1199px) ---------- */
-@media (min-width:768px) and (max-width:1199px) {
+@media (min-width: 768px) and (max-width: 1199px) {
   .home-hero .hero-title .l1 {
     font-family: var(--font-serif);
     font-weight: 900;
-    letter-spacing: -.01em;
+    letter-spacing: -0.01em;
   }
 
   .home-hero .hero-title .l2 {
@@ -294,12 +299,12 @@
   }
 
   .home-hero .hero-title {
-    line-height: .95;
+    line-height: 0.95;
   }
 }
 
 /* ---------- Small tablet (768–991px) ---------- */
-@media (max-width:991px) and (min-width:768px) {
+@media (max-width: 991px) and (min-width: 768px) {
   .participate__grid {
     grid-template-columns: 1fr;
   }
@@ -315,7 +320,7 @@
 }
 
 /* ---------- Mobile (≤767px) ---------- */
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .home-hero {
     min-height: 0;
     padding: 48px 0 52px;
@@ -364,7 +369,7 @@
     padding: 16px 10px 18px;
     border-radius: 12px;
     scroll-snap-align: start;
-    box-shadow: 0 10px 20px -12px rgba(15,23,42,.35);
+    box-shadow: 0 10px 20px -12px rgba(15, 23, 42, 0.35);
   }
 
   .home-stats .stat-card__icon {
@@ -378,7 +383,7 @@
 
   .home-stats .stat-card__label {
     font-size: 9.5px;
-    letter-spacing: .06em;
+    letter-spacing: 0.06em;
   }
 
   .home-stats .stat-card__value {
@@ -522,7 +527,7 @@
   }
 
   .meet-all {
-    display: flex!important;
+    display: flex !important;
     margin-top: 32px;
     height: 50px;
     border-radius: 14px;
@@ -544,5 +549,33 @@
   .meet__head .lead {
     font-size: 14px;
     line-height: 1.55;
+  }
+}
+
+/* ---------- Mobile: stat cards as a 2×2 grid (no sideways overflow) ---------- */
+@media (max-width: 767px) {
+  .home-stats .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    overflow: visible;
+    padding: 0;
+  }
+
+  .home-stats .stat-card {
+    flex: none;
+    min-width: 0;
+  }
+}
+
+/* ---------- Small laptops (1200–1365px): fluid columns instead of fixed 568px ---------- */
+@media (min-width: 1200px) and (max-width: 1365px) {
+  .participate__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .participate__media,
+  .participate__photo {
+    width: 100%;
   }
 }

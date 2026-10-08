@@ -20,7 +20,7 @@
   border: 4px solid #fff;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 20px 30px -16px rgba(0,0,0,.6);
+  box-shadow: 0 20px 30px -16px rgba(0, 0, 0, 0.6);
   flex-shrink: 0;
 }
 
@@ -40,7 +40,7 @@
 .dash-name {
   font-size: 48px;
   font-weight: 800;
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
   line-height: 1.1;
 }
 
@@ -52,7 +52,7 @@
   color: var(--navy);
   font-size: 10.5px;
   font-weight: 800;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
@@ -64,7 +64,7 @@
   flex-wrap: wrap;
   gap: 22px;
   font-size: 15px;
-  color: rgba(255,255,255,.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .dash-meta span {
@@ -101,7 +101,7 @@
 .dash-sec-head h2 {
   font-size: 31px;
   font-weight: 800;
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
   color: var(--ink);
 }
 
@@ -119,7 +119,7 @@
 .dash-check-grid {
   margin-top: 26px;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 26px;
 }
 
@@ -128,8 +128,10 @@
   border: 1px solid #f1f2f5;
   border-radius: 30px;
   padding: 22px 24px 22px;
-  box-shadow: 0 10px 24px -20px rgba(15,23,42,.3);
-  transition: transform .3s var(--ease),box-shadow .3s;
+  box-shadow: 0 10px 24px -20px rgba(15, 23, 42, 0.3);
+  transition:
+    transform 0.3s var(--ease),
+    box-shadow 0.3s;
 }
 
 .dash-check:hover {
@@ -174,7 +176,7 @@
   font-weight: 700;
   font-size: 14.5px;
   color: var(--ink);
-  transition: background .2s;
+  transition: background 0.2s;
 }
 
 .dash-saved .chip-btn:hover {
@@ -182,7 +184,7 @@
 }
 
 .dash-saved .cand-grid {
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 26px;
   margin-top: 26px;
 }
@@ -215,12 +217,12 @@
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: .02em;
+  letter-spacing: 0.02em;
 }
 
 .is-managing .cand-card__remove {
   display: grid;
-  animation: fadeUp .25s var(--ease);
+  animation: fadeUp 0.25s var(--ease);
 }
 
 .activity-card {
@@ -228,13 +230,13 @@
   border: 1px solid #f1f2f5;
   border-radius: 44px;
   padding: 44px 32px 32px;
-  box-shadow: 0 10px 30px -24px rgba(15,23,42,.3);
+  box-shadow: 0 10px 30px -24px rgba(15, 23, 42, 0.3);
 }
 
 .activity-card h2 {
   font-size: 24px;
   font-weight: 800;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   color: var(--ink);
 }
 
@@ -289,14 +291,14 @@
   border-radius: 14px;
   font-size: 14.5px;
   font-weight: 700;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   color: #6b7280;
   text-transform: uppercase;
 }
 
 .quote-card {
   margin-top: 32px;
-  background: radial-gradient(120% 120% at 100% 100%,#0a3a9e 0%,#071040 38%,var(--navy) 60%);
+  background: radial-gradient(120% 120% at 100% 100%, #0a3a9e 0%, #071040 38%, var(--navy) 60%);
   color: #fff;
   border-radius: 48px;
   padding: 64px 40px;
@@ -310,7 +312,7 @@
   font-size: 23px;
   font-weight: 800;
   line-height: 1.36;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
 }
 
 .quote-card em {
@@ -328,7 +330,7 @@
 }
 
 /* ---------- Tablet & below (≤1199px) ---------- */
-@media (max-width:1199px) {
+@media (max-width: 1199px) {
   .dash-layout {
     grid-template-columns: 1fr 300px;
     gap: 24px;
@@ -344,14 +346,14 @@
 }
 
 /* ---------- Small tablet (768–991px) ---------- */
-@media (max-width:991px) and (min-width:768px) {
+@media (max-width: 991px) and (min-width: 768px) {
   .dash-layout {
     grid-template-columns: 1fr;
   }
 }
 
 /* ---------- Mobile (≤767px) ---------- */
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .dash-hero {
     min-height: 0;
     padding: 24px 0 34px;
@@ -529,7 +531,7 @@
     border-radius: 0;
     padding: 30px 20px;
     min-height: 0;
-    background: radial-gradient(80% 120% at 100% 80%,#0a3a9e 0%,var(--navy) 50%);
+    background: radial-gradient(80% 120% at 100% 80%, #0a3a9e 0%, var(--navy) 50%);
   }
 
   .quote-card p {
@@ -538,7 +540,7 @@
     font-size: 19px;
   }
 
-  .dash-hero__row>div:last-child {
+  .dash-hero__row > div:last-child {
     display: contents;
   }
 
@@ -555,5 +557,12 @@
     margin-top: 4px;
     font-size: 14px;
     grid-column: 1/-1;
+  }
+}
+
+/* ---------- Small laptops (1200–1365px): fluid main column ---------- */
+@media (min-width: 1200px) and (max-width: 1365px) {
+  .dash-layout {
+    grid-template-columns: minmax(0, 1fr) 320px;
   }
 }

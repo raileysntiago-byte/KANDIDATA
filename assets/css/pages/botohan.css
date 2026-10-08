@@ -9,13 +9,13 @@
 
 .poll-hero .eyebrow {
   font-size: 10px;
-  letter-spacing: .32em;
+  letter-spacing: 0.32em;
 }
 
 .poll-hero .hero-title {
   --h1: 60px;
   line-height: 1.2;
-  margin-top: 30px!important;
+  margin-top: 30px !important;
 }
 
 .poll-hero .hero-lead {
@@ -24,7 +24,7 @@
   font-weight: 300;
   font-size: 19px;
   line-height: 1.6;
-  color: rgba(255,255,255,.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .poll-search {
@@ -34,7 +34,7 @@
   background: #fff;
   border-radius: 44px;
   padding: 24px;
-  box-shadow: 0 30px 60px -30px rgba(15,23,42,.35);
+  box-shadow: 0 30px 60px -30px rgba(15, 23, 42, 0.35);
   display: grid;
   grid-template-columns: 1fr 290px 220px;
   gap: 24px;
@@ -49,7 +49,7 @@
   border-color: #e6e9ee;
 }
 
-.poll-search .input-wrap>i {
+.poll-search .input-wrap > i {
   left: 20px;
   right: auto;
   color: #9ca3af;
@@ -67,7 +67,9 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  transition: background .25s,transform .25s;
+  transition:
+    background 0.25s,
+    transform 0.25s;
 }
 
 .poll-search .btn-loc:hover {
@@ -86,7 +88,7 @@
   padding: 64px 0 0;
 }
 
-.poll-layout>div:first-child {
+.poll-layout > div:first-child {
   padding-top: 0;
 }
 
@@ -105,7 +107,7 @@
 .poll-list-head h2 {
   font-size: 24.5px;
   font-weight: 800;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   color: var(--ink);
 }
 
@@ -134,8 +136,11 @@
   border: 1.5px solid #f1f2f5;
   border-radius: 28px;
   padding: 24px 24px 22px;
-  box-shadow: 0 12px 26px -22px rgba(15,23,42,.3);
-  transition: transform .3s var(--ease),box-shadow .3s,border-color .3s;
+  box-shadow: 0 12px 26px -22px rgba(15, 23, 42, 0.3);
+  transition:
+    transform 0.3s var(--ease),
+    box-shadow 0.3s,
+    border-color 0.3s;
 }
 
 .place-card:hover {
@@ -151,7 +156,7 @@
 .place-card .near {
   font-size: 10.5px;
   font-weight: 800;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   color: var(--blue);
   text-transform: uppercase;
   margin-bottom: 6px;
@@ -160,7 +165,7 @@
 .place-card h3 {
   font-size: 20.5px;
   font-weight: 800;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   color: var(--ink);
 }
 
@@ -205,8 +210,8 @@
   color: var(--green);
   font-size: 20px;
   opacity: 0;
-  transform: scale(.6);
-  transition: all .25s var(--ease);
+  transform: scale(0.6);
+  transition: all 0.25s var(--ease);
 }
 
 .place-card.is-active .tick {
@@ -228,7 +233,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  transition: all .25s;
+  transition: all 0.25s;
 }
 
 .show-all:hover {
@@ -248,7 +253,7 @@
 .map-canvas {
   position: absolute;
   inset: 0;
-  transition: transform .5s var(--ease);
+  transition: transform 0.5s var(--ease);
   transform-origin: 50% 35%;
 }
 
@@ -260,12 +265,12 @@
 
 .map-pin {
   position: absolute;
-  transform: translate(-50%,-100%);
+  transform: translate(-50%, -100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  transition: transform .3s var(--ease);
+  transition: transform 0.3s var(--ease);
 }
 
 .map-pin .lbl {
@@ -275,7 +280,7 @@
   font-weight: 700;
   padding: 8px 14px;
   border-radius: 12px;
-  box-shadow: 0 10px 20px -10px rgba(206,17,38,.8);
+  box-shadow: 0 10px 20px -10px rgba(206, 17, 38, 0.8);
   white-space: nowrap;
 }
 
@@ -297,8 +302,8 @@
   font-size: 18px;
   display: grid;
   place-items: center;
-  box-shadow: 0 8px 20px -10px rgba(15,23,42,.3);
-  transition: all .2s;
+  box-shadow: 0 8px 20px -10px rgba(15, 23, 42, 0.3);
+  transition: all 0.2s;
 }
 
 .map-zoom button:hover {
@@ -325,7 +330,7 @@
   background: #fff;
   border-radius: 28px;
   padding: 24px 24px;
-  box-shadow: 0 30px 40px -24px rgba(15,23,42,.4);
+  box-shadow: 0 30px 40px -24px rgba(15, 23, 42, 0.4);
   display: flex;
   align-items: center;
   gap: 16px;
@@ -341,7 +346,7 @@
   display: block;
   font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: .18em;
+  letter-spacing: 0.18em;
   color: #9aa0aa;
   text-transform: uppercase;
 }
@@ -386,7 +391,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 56px;
-  background: linear-gradient(90deg,#0038a8,#1a3b8f);
+  background: linear-gradient(90deg, #0038a8, #1a3b8f);
   color: #fff;
   padding: 88px 64px 80px;
   display: grid;
@@ -398,7 +403,7 @@
 .reg-cta__card h2 {
   font-size: 48px;
   font-weight: 800;
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
   line-height: 1.1;
 }
 
@@ -406,7 +411,7 @@
   margin-top: 30px;
   font-size: 19.5px;
   line-height: 1.45;
-  color: rgba(255,255,255,.88);
+  color: rgba(255, 255, 255, 0.88);
   max-width: 610px;
 }
 
@@ -431,15 +436,15 @@
 }
 
 .reg-cta__card .btn-ghost {
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #fff;
   min-width: 300px;
   font-weight: 700;
 }
 
 .reg-cta__card .btn-ghost:hover {
-  background: rgba(255,255,255,.18);
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .reg-cta__card .cta-sun {
@@ -453,7 +458,7 @@
 }
 
 /* ---------- Tablet & below (≤1199px) ---------- */
-@media (max-width:1199px) {
+@media (max-width: 1199px) {
   .poll-search {
     margin-inline: 0;
     grid-template-columns: 1fr 1fr;
@@ -495,16 +500,16 @@
 }
 
 /* ---------- Small tablet (768–991px) ---------- */
-@media (max-width:991px) and (min-width:768px) {
+@media (max-width: 991px) and (min-width: 768px) {
   .poll-layout {
     grid-template-columns: 1fr;
   }
 }
 
 /* ---------- Mobile (≤767px) ---------- */
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .poll-hero .eyebrow {
-    letter-spacing: .14em;
+    letter-spacing: 0.14em;
   }
 
   .poll-hero {
@@ -514,7 +519,7 @@
 
   .poll-hero .hero-title {
     --h1: 32px;
-    margin-top: 18px!important;
+    margin-top: 18px !important;
     font-family: var(--font-sans);
     font-weight: 700;
   }
@@ -547,7 +552,7 @@
     border-radius: 10px;
   }
 
-  .poll-search .input-wrap>i {
+  .poll-search .input-wrap > i {
     left: 14px;
     font-size: 15px;
   }
@@ -661,7 +666,7 @@
   }
 
   .map-acts-m {
-    display: flex!important;
+    display: flex !important;
     gap: 10px;
     margin-top: 10px;
   }
