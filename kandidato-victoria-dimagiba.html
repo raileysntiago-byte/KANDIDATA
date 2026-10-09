@@ -1,269 +1,467 @@
 <!doctype html>
 <html lang="tl">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Victoria Dimagiba | KandiDATA</title>
-  <meta name="description" content="Profile, track record at plataporma ni Victoria Dimagiba.">
-  <meta name="theme-color" content="#050a30">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/fonts.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/pages/home.css">
-  <link rel="stylesheet" href="assets/css/pages/impormasyon.css">
-  <link rel="stylesheet" href="assets/css/pages/kalendaryo.css">
-  <link rel="stylesheet" href="assets/css/pages/kandidato.css">
-  <link rel="stylesheet" href="assets/css/pages/profile.css">
-  <link rel="stylesheet" href="assets/css/pages/dashboard.css">
-  <link rel="stylesheet" href="assets/css/pages/panukala.css">
-  <link rel="stylesheet" href="assets/css/pages/auth.css">
-  <link rel="stylesheet" href="assets/css/pages/botohan.css">
-  <link rel="stylesheet" href="assets/css/pages/checklist.css">
-  <link rel="stylesheet" href="assets/css/pages/rehistrasyon.css">
-  <link rel="stylesheet" href="assets/css/pages/faq.css">
-</head>
-
-<body class="profile-page" data-page="candidate">
-  <a class="sr-only" href="#main">Lumaktaw sa nilalaman</a>
-  <header class="site-header">
-    <div class="site-header__inner"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
-          class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-            <polygon
-              points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
-              fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
-            <circle cx="50" cy="50" r="21" fill="#0038A8" />
-            <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
-          </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
-      <nav class="main-nav" aria-label="Pangunahing navigation">
-        <ul>
-          <li><a href="index.html">Dashboard</a></li>
-          <li><a href="impormasyon.html">Impormasyon</a></li>
-          <li><a href="kalendaryo.html">Kalendaryo</a></li>
-          <li><a href="mga-kandidato.html" class="is-active" aria-current="page">Mga Kandidato</a></li>
-          <li><a href="mga-panukala.html">Mga Panukala</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions"><button type="button" class="icon-btn" data-open-search
-          aria-label="Maghanap (Ctrl+K)"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <div class="header-guest" data-auth="guest"><a class="btn-auth btn-auth--outline"
-            href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
-        <div class="user-menu is-hidden" data-auth="user"><button type="button" class="avatar-btn" aria-haspopup="true"
-            aria-expanded="false" aria-label="Account menu"><img src="assets/img/user-avatar-large.jpg" alt=""></button>
-          <div class="user-dropdown" role="menu">
-            <div class="user-dropdown__head"><strong data-user-name>John Guerrero</strong><span data-user-email></span>
-            </div><a href="profile.html" role="menuitem"><i class="fa-regular fa-user"></i> Aking Dashboard</a><a
-              href="checklist.html" role="menuitem"><i class="fa-regular fa-clipboard"></i> Checklist ng Botante</a><a
-              href="faq.html" role="menuitem"><i class="fa-regular fa-circle-question"></i> Tulong at FAQ</a><button
-              type="button" role="menuitem" data-logout><i class="fa-solid fa-right-from-bracket"></i>
-              Mag-logout</button>
-          </div>
-        </div>
-      </div><button type="button" class="menu-toggle" aria-label="Buksan ang menu" aria-expanded="false"
-        aria-controls="mobile-menu"><i class="fa-solid fa-bars"></i></button>
-    </div>
-  </header>
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <div class="mobile-menu__backdrop"></div>
-    <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
-      <div class="mobile-menu__top"><a class="brand" href="index.html" aria-label="KandiDATA — Home"><span
-            class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Victoria Dimagiba | KandiDATA</title>
+    <meta name="description" content="Profile, track record at plataporma ni Victoria Dimagiba." />
+    <meta name="theme-color" content="#050a30" />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages/home.css" />
+    <link rel="stylesheet" href="assets/css/pages/impormasyon.css" />
+    <link rel="stylesheet" href="assets/css/pages/kalendaryo.css" />
+    <link rel="stylesheet" href="assets/css/pages/kandidato.css" />
+    <link rel="stylesheet" href="assets/css/pages/profile.css" />
+    <link rel="stylesheet" href="assets/css/pages/dashboard.css" />
+    <link rel="stylesheet" href="assets/css/pages/panukala.css" />
+    <link rel="stylesheet" href="assets/css/pages/auth.css" />
+    <link rel="stylesheet" href="assets/css/pages/botohan.css" />
+    <link rel="stylesheet" href="assets/css/pages/checklist.css" />
+    <link rel="stylesheet" href="assets/css/pages/rehistrasyon.css" />
+    <link rel="stylesheet" href="assets/css/pages/faq.css" />
+    <link rel="stylesheet" href="assets/css/pages/tungkol.css" />
+    <link rel="stylesheet" href="assets/css/fluid-type.css" />
+  </head>
+  <body class="profile-page" data-page="candidate">
+    <a class="sr-only" href="#main">Lumaktaw sa nilalaman</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="index.html" aria-label="KandiDATA — Home">
+          <span class="brand__icon">
+            <svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
               <polygon
                 points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
-                fill="#FCD116" stroke="#FCD116" stroke-width="7" stroke-linejoin="round" />
+                fill="#FCD116"
+                stroke="#FCD116"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
               <circle cx="50" cy="50" r="21" fill="#0038A8" />
-              <circle cx="50" cy="50" r="15.5" fill="#FCD116" />
-            </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a><button type="button"
-          class="mobile-menu__close" aria-label="Isara ang menu"><i class="fa-solid fa-xmark"></i></button></div>
-      <nav aria-label="Mobile navigation"><a href="index.html">Dashboard</a><a href="impormasyon.html">Impormasyon</a><a
-          href="kalendaryo.html">Kalendaryo</a><a href="mga-kandidato.html" class="is-active">Mga Kandidato</a><a
-          href="mga-panukala.html">Mga Panukala</a></nav>
-      <div class="mobile-menu__auth" data-auth="guest"><a class="btn-auth btn-auth--outline"
-          href="login.html">Mag-login</a><a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a></div>
-      <div class="mobile-menu__auth is-hidden" data-auth="user"><a class="btn-auth btn-auth--outline"
-          href="profile.html">Aking Dashboard</a><button type="button" class="btn-auth btn-auth--solid"
-          data-open-search>Maghanap</button><button type="button" class="btn-auth btn-auth--outline"
-          data-logout>Mag-logout</button></div>
-    </div>
-  </div>
-  <main id="main">
-
-    <section class="hero profile-hero">
-      <div class="container hero__inner">
-        <div class="profile-hero__grid">
-          <div class="profile-photo"><img src="assets/img/cand-victoria.jpg" alt="Victoria Dimagiba"></div>
-          <div class="profile-hero__info">
-            <span class="eyebrow">Kandidato sa Pagka-Senador</span>
-            <h1 class="profile-name">Victoria Dimagiba</h1>
-            <p class="profile-motto">"Katarungan para sa Lahat, Kinabukasan ng Bawat Pilipino"</p>
-            <p class="profile-party">Aksyon Demokratiko (AKSYON)</p>
-            <a class="back-link" href="mga-kandidato.html"><i class="fa-solid fa-arrow-left"></i> Bumalik sa
-              Listahan</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="container">
-      <div class="profile-stats">
-        <div><small>Edad</small><strong>52 Taong Gulang</strong></div>
-        <div><small>Edukasyon</small><strong>UP Diliman - College of Law</strong></div>
-        <div><small>Serbisyo Publiko</small><strong>18 na Taon</strong></div>
-      </div>
-    </div>
-    <section class="profile-body">
-      <div class="container profile-layout">
-        <div class="profile-main">
-          <section class="p-sec bio-sec">
-            <h2>Tungkol sa Kandidato</h2><span class="bar"></span>
-            <div class="bio">
-              <p>Si Victoria Dimagiba ay isang tanyag na human rights lawyer na naglaan ng halos dalawang dekada sa
-                pagtatanggol sa mga karapatan ng mga manggagawa at mga biktima ng kawalang-katarungan. Bilang isang
-                iskolar mula sa University of the Philippines, naging mitsa ng kanyang pagnanasa sa serbisyo publiko ang
-                kanyang mga karanasan sa paglilingkod sa mga komunidad sa probinsya.</p>
-              <p>Naniniwala si Victoria na ang tunay na pag-unlad ay nagsisimula sa isang matatag na pundasyon ng batas
-                na kumikiling sa mga nangangailangan. Ang kanyang kampanya ay nakasentro sa pagbibigay ng boses sa mga
-                sektor na madalas makalimutan sa usapin ng pambansang polisiya.</p>
-            </div>
-          </section>
-          <section class="p-sec">
-            <h2>Karanasan at Track Record</h2><span class="bar"></span>
-            <div class="track-list">
-              <article class="track-card reveal"><span class="ico"><i class="fa-solid fa-landmark"></i></span>
-                <div>
-                  <h3>Chairperson, National Legal Aid Committee</h3>
-                  <p class="yr">2018 - Kasalukuyan</p>
-                </div>
-                <p style="grid-column:2">Namuno sa pagpapalawak ng mga pro-bono legal services sa buong bansa, na
-                  nakatulong sa mahigit 50,000 pamilyang Pilipino sa mga usaping sibil at kriminal.</p>
-              </article>
-              <article class="track-card reveal"><span class="ico"><i class="fa-solid fa-map-location-dot"></i></span>
-                <div>
-                  <h3>Undersecretary, Department of Justice</h3>
-                  <p class="yr">2012 - 2016</p>
-                </div>
-                <p style="grid-column:2">Nagpatupad ng mga reporma sa sistemang pangkulungan at pinangunahan ang Task
-                  Force Against Human Trafficking na nagbunga ng pinakamataas na conviction rate sa kasaysayan ng bansa.
-                </p>
-              </article>
-            </div>
-          </section>
-          <section class="p-sec">
-            <h2>Plataporma at Prayoridad</h2><span class="bar"></span>
-            <div class="platform-grid">
-              <article class="platform-card reveal"><i class="fa-solid fa-chart-line"></i>
-                <h3>Ligal na Proteksyon sa Manggagawa</h3>
-                <p>Pagpasa ng mga batas na magwawakas sa 'Endo' at pagtitiyak ng livable wage para sa lahat ng mga
-                  manggagawa sa pampubliko at pribadong sektor.</p>
-              </article>
-              <article class="platform-card reveal"><i class="fa-solid fa-graduation-cap"></i>
-                <h3>Modernisasyon ng Hustisya</h3>
-                <p>Digitalization ng court records at pagpapabilis ng pagdinig sa mga kaso upang mapaluwag ang mga
-                  barado nating mga korte at kulungan.</p>
-              </article>
-              <article class="platform-card reveal"><i class="fa-solid fa-heart-pulse"></i>
-                <h3>Kalingang Panlipunan</h3>
-                <p>Pagpapalakas ng mental health coverage sa PhilHealth at pagtatatag ng mga community-based
-                  rehabilitation centers sa bawat munisipyo.</p>
-              </article>
-              <article class="platform-card reveal"><i class="fa-solid fa-gavel"></i>
-                <h3>Anti-Corruption Commission</h3>
-                <p>Paglikha ng isang independent body na may kapangyarihang mag-audit sa lahat ng procurement contracts
-                  ng gobyerno nang walang pasubali.</p>
-              </article>
-            </div>
-          </section>
-        </div>
-        <aside class="profile-aside">
-          <button type="button" class="save-card" data-save-candidate="victoria-dimagiba" aria-pressed="false">
-            <div class="save-card__top"><i class="fa-regular fa-bookmark"></i><span>Senatoriable</span></div>
-            <h3>I-SAVE ANG KANDIDATANG ITO</h3>
-            <p>Suriin at ihambing ang profile na ito sa iba pang mga opisyal na kandidato.</p>
+              <circle cx="50" cy="50" r="15.5" fill="#FCD116" /></svg
+          ></span>
+          <span class="brand__word">Kandi<b>DATA</b></span>
+        </a>
+        <nav class="main-nav" aria-label="Pangunahing navigation">
+          <ul>
+            <li>
+              <a href="index.html">Dashboard</a>
+            </li>
+            <li>
+              <a href="impormasyon.html">Impormasyon</a>
+            </li>
+            <li>
+              <a href="kalendaryo.html">Kalendaryo</a>
+            </li>
+            <li>
+              <a href="mga-kandidato.html" class="is-active" aria-current="page">Mga Kandidato</a>
+            </li>
+            <li>
+              <a href="mga-panukala.html">Mga Panukala</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="icon-btn" data-open-search aria-label="Maghanap (Ctrl+K)">
+            <i class="fa-solid fa-magnifying-glass"></i>
           </button>
-          <div class="share">
-            <h4>Ibahagi o Sundan</h4>
-            <ul>
-              <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" data-share="instagram"><i
-                    class="fa-brands fa-instagram"></i> Instagram</a></li>
-              <li><a href="https://twitter.com/" target="_blank" rel="noopener" data-share="twitter"><i
-                    class="fa-brands fa-twitter"></i> Twitter / X</a></li>
-              <li><a href="https://www.facebook.com/" target="_blank" rel="noopener" data-share="facebook"><i
-                    class="fa-brands fa-facebook-f"></i> Facebook</a></li>
-            </ul>
+          <div class="header-guest" data-auth="guest">
+            <a class="btn-auth btn-auth--outline" href="login.html">Mag-login</a>
+            <a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a>
           </div>
-        </aside>
+          <div class="user-menu is-hidden" data-auth="user">
+            <button
+              type="button"
+              class="avatar-btn"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Account menu"
+            >
+              <img src="assets/img/user-avatar-large.jpg" alt="" />
+            </button>
+            <div class="user-dropdown" role="menu">
+              <div class="user-dropdown__head">
+                <strong data-user-name>John Guerrero</strong><span data-user-email></span>
+              </div>
+              <a href="profile.html" role="menuitem">
+                <i class="fa-regular fa-user"></i> Aking Dashboard</a
+              >
+              <a href="checklist.html" role="menuitem">
+                <i class="fa-regular fa-clipboard"></i> Checklist ng Botante</a
+              >
+              <a href="faq.html" role="menuitem">
+                <i class="fa-regular fa-circle-question"></i> Tulong at FAQ</a
+              >
+              <button type="button" role="menuitem" data-logout>
+                <i class="fa-solid fa-right-from-bracket"></i> Mag-logout
+              </button>
+            </div>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="menu-toggle"
+          aria-label="Buksan ang menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-about"><a class="brand brand--light" href="index.html" aria-label="KandiDATA — Home"><span
-              class="brand__icon"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+    </header>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu__backdrop"></div>
+      <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+        <div class="mobile-menu__top">
+          <a class="brand" href="index.html" aria-label="KandiDATA — Home">
+            <span class="brand__icon">
+              <svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
                 <polygon
                   points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
-                  fill="#0038A8" stroke="#0038A8" stroke-width="7" stroke-linejoin="round" />
-                <circle cx="50" cy="50" r="21" fill="#fff" />
-                <circle cx="50" cy="50" r="15.5" fill="#0038A8" />
-              </svg></span><span class="brand__word">Kandi<b>DATA</b></span></a>
-          <p>Isang inisyatibo upang mapataas ang kamalayan ng bawat Pilipino sa kanilang karapatang bumoto nang matalino
-            at mapayapa.</p>
-          <div class="socials"><a href="https://www.facebook.com/" target="_blank" rel="noopener"
-              aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://twitter.com/"
-              target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a><a
-              href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i
-                class="fa-brands fa-instagram"></i></a></div>
+                  fill="#FCD116"
+                  stroke="#FCD116"
+                  stroke-width="7"
+                  stroke-linejoin="round"
+                />
+                <circle cx="50" cy="50" r="21" fill="#0038A8" />
+                <circle cx="50" cy="50" r="15.5" fill="#FCD116" /></svg
+            ></span>
+            <span class="brand__word">Kandi<b>DATA</b></span>
+          </a>
+          <button type="button" class="mobile-menu__close" aria-label="Isara ang menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
-        <div class="footer-col">
-          <h4><button type="button" aria-expanded="false">Pangunahing Link <i
-                class="fa-solid fa-chevron-down"></i></button></h4>
-          <ul>
-            <li><a href="tungkol.html">Tungkol sa Amin</a></li>
-            <li><a href="mga-panukala.html">Mga Panukala</a></li>
-            <li><a href="lugar-ng-botohan.html">Lugar ng Botohan</a></li>
-          </ul>
+        <nav aria-label="Mobile navigation">
+          <a href="index.html">Dashboard</a>
+          <a href="impormasyon.html">Impormasyon</a>
+          <a href="kalendaryo.html">Kalendaryo</a>
+          <a href="mga-kandidato.html" class="is-active">Mga Kandidato</a>
+          <a href="mga-panukala.html">Mga Panukala</a>
+        </nav>
+        <div class="mobile-menu__auth" data-auth="guest">
+          <a class="btn-auth btn-auth--outline" href="login.html">Mag-login</a>
+          <a class="btn-auth btn-auth--solid" href="signup.html">Mag-signup</a>
         </div>
-        <div class="footer-col">
-          <h4><button type="button" aria-expanded="false">Impormasyon <i class="fa-solid fa-chevron-down"></i></button>
-          </h4>
-          <ul>
-            <li><a href="faq.html">FAQs</a></li>
-            <li><a href="kalendaryo.html#mga-pagbabawal">Mga Ipinagbabawal</a></li>
-            <li><a href="checklist.html#mga-paalala">Mga Paalala</a></li>
-          </ul>
-        </div>
-        <div class="footer-col contact">
-          <h4>Kontak</h4>
-          <ul class="footer-contact">
-            <li><i class="fa-solid fa-envelope"></i><a href="mailto:info@botopinoy.gov.ph">info@botopinoy.gov.ph</a>
-            </li>
-            <li><i class="fa-solid fa-phone"></i><a href="tel:+63288881234">+63 (02) 8888 1234</a></li>
-            <li><i class="fa-solid fa-location-dot"></i><a href="https://maps.google.com/?q=Angeles+City,+Pampanga"
-                target="_blank" rel="noopener">Angeles City, Pampanga</a></li>
-          </ul>
+        <div class="mobile-menu__auth is-hidden" data-auth="user">
+          <a class="btn-auth btn-auth--outline" href="profile.html">Aking Dashboard</a>
+          <button type="button" class="btn-auth btn-auth--solid" data-open-search>Maghanap</button>
+          <button type="button" class="btn-auth btn-auth--outline" data-logout>Mag-logout</button>
         </div>
       </div>
-      <div class="footer-bottom">© 2026 KandiDATA.<span class="full"> Lahat ng karapatan ay rizerbado.</span></div>
     </div>
-  </footer>
-  <div class="search-overlay" aria-hidden="true" role="dialog" aria-label="Maghanap sa KandiDATA">
-    <div class="search-box"><label class="search-box__field"><i class="fa-solid fa-magnifying-glass"></i><input
-          type="search" placeholder="Maghanap ng kandidato, pahina o impormasyon…"
-          aria-label="Maghanap"><kbd>Esc</kbd></label>
-      <div class="search-results"></div>
+    <main id="main">
+      <section class="hero profile-hero">
+        <div class="container hero__inner">
+          <div class="profile-hero__grid">
+            <div class="profile-photo">
+              <img src="assets/img/cand-victoria.jpg" alt="Victoria Dimagiba" />
+            </div>
+            <div class="profile-hero__info">
+              <span class="eyebrow">Kandidato sa Pagka-Senador</span>
+              <h1 class="profile-name">Victoria Dimagiba</h1>
+              <p class="profile-motto">"Katarungan para sa Lahat, Kinabukasan ng Bawat Pilipino"</p>
+              <p class="profile-party">Aksyon Demokratiko (AKSYON)</p>
+              <a class="back-link" href="mga-kandidato.html">
+                <i class="fa-solid fa-arrow-left"></i> Bumalik sa Listahan</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <div class="profile-stats">
+          <div><small>Edad</small><strong>52 Taong Gulang</strong></div>
+          <div><small>Edukasyon</small><strong>UP Diliman - College of Law</strong></div>
+          <div><small>Serbisyo Publiko</small><strong>18 na Taon</strong></div>
+        </div>
+      </div>
+      <section class="profile-body">
+        <div class="container profile-layout">
+          <div class="profile-main">
+            <section class="p-sec bio-sec">
+              <h2>Tungkol sa Kandidato</h2>
+              <span class="bar"></span>
+              <div class="bio">
+                <p>
+                  Si Victoria Dimagiba ay isang tanyag na human rights lawyer na naglaan ng halos
+                  dalawang dekada sa pagtatanggol sa mga karapatan ng mga manggagawa at mga biktima
+                  ng kawalang-katarungan. Bilang isang iskolar mula sa University of the
+                  Philippines, naging mitsa ng kanyang pagnanasa sa serbisyo publiko ang kanyang mga
+                  karanasan sa paglilingkod sa mga komunidad sa probinsya.
+                </p>
+                <p>
+                  Naniniwala si Victoria na ang tunay na pag-unlad ay nagsisimula sa isang matatag
+                  na pundasyon ng batas na kumikiling sa mga nangangailangan. Ang kanyang kampanya
+                  ay nakasentro sa pagbibigay ng boses sa mga sektor na madalas makalimutan sa
+                  usapin ng pambansang polisiya.
+                </p>
+              </div>
+            </section>
+            <section class="p-sec">
+              <h2>Karanasan at Track Record</h2>
+              <span class="bar"></span>
+              <div class="track-list">
+                <article class="track-card reveal">
+                  <span class="ico"> <i class="fa-solid fa-landmark"></i></span>
+                  <div>
+                    <h3>Chairperson, National Legal Aid Committee</h3>
+                    <p class="yr">2018 - Kasalukuyan</p>
+                  </div>
+                  <p style="grid-column: 2">
+                    Namuno sa pagpapalawak ng mga pro-bono legal services sa buong bansa, na
+                    nakatulong sa mahigit 50,000 pamilyang Pilipino sa mga usaping sibil at
+                    kriminal.
+                  </p>
+                </article>
+                <article class="track-card reveal">
+                  <span class="ico"> <i class="fa-solid fa-map-location-dot"></i></span>
+                  <div>
+                    <h3>Undersecretary, Department of Justice</h3>
+                    <p class="yr">2012 - 2016</p>
+                  </div>
+                  <p style="grid-column: 2">
+                    Nagpatupad ng mga reporma sa sistemang pangkulungan at pinangunahan ang Task
+                    Force Against Human Trafficking na nagbunga ng pinakamataas na conviction rate
+                    sa kasaysayan ng bansa.
+                  </p>
+                </article>
+              </div>
+            </section>
+            <section class="p-sec">
+              <h2>Plataporma at Prayoridad</h2>
+              <span class="bar"></span>
+              <div class="platform-grid">
+                <article class="platform-card reveal">
+                  <i class="fa-solid fa-chart-line"></i>
+                  <h3>Ligal na Proteksyon sa Manggagawa</h3>
+                  <p>
+                    Pagpasa ng mga batas na magwawakas sa 'Endo' at pagtitiyak ng livable wage para
+                    sa lahat ng mga manggagawa sa pampubliko at pribadong sektor.
+                  </p>
+                </article>
+                <article class="platform-card reveal">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                  <h3>Modernisasyon ng Hustisya</h3>
+                  <p>
+                    Digitalization ng court records at pagpapabilis ng pagdinig sa mga kaso upang
+                    mapaluwag ang mga barado nating mga korte at kulungan.
+                  </p>
+                </article>
+                <article class="platform-card reveal">
+                  <i class="fa-solid fa-heart-pulse"></i>
+                  <h3>Kalingang Panlipunan</h3>
+                  <p>
+                    Pagpapalakas ng mental health coverage sa PhilHealth at pagtatatag ng mga
+                    community-based rehabilitation centers sa bawat munisipyo.
+                  </p>
+                </article>
+                <article class="platform-card reveal">
+                  <i class="fa-solid fa-gavel"></i>
+                  <h3>Anti-Corruption Commission</h3>
+                  <p>
+                    Paglikha ng isang independent body na may kapangyarihang mag-audit sa lahat ng
+                    procurement contracts ng gobyerno nang walang pasubali.
+                  </p>
+                </article>
+              </div>
+            </section>
+          </div>
+          <aside class="profile-aside">
+            <button
+              type="button"
+              class="save-card"
+              data-save-candidate="victoria-dimagiba"
+              aria-pressed="false"
+            >
+              <div class="save-card__top">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>Senatoriable</span>
+              </div>
+              <h3>I-SAVE ANG KANDIDATANG ITO</h3>
+              <p>Suriin at ihambing ang profile na ito sa iba pang mga opisyal na kandidato.</p>
+            </button>
+            <div class="share">
+              <h4>Ibahagi o Sundan</h4>
+              <ul>
+                <li>
+                  <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener"
+                    data-share="instagram"
+                  >
+                    <i class="fa-brands fa-instagram"></i> Instagram</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://twitter.com/"
+                    target="_blank"
+                    rel="noopener"
+                    data-share="twitter"
+                  >
+                    <i class="fa-brands fa-twitter"></i> Twitter / X</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener"
+                    data-share="facebook"
+                  >
+                    <i class="fa-brands fa-facebook-f"></i> Facebook</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <a class="brand brand--light" href="index.html" aria-label="KandiDATA — Home">
+              <span class="brand__icon">
+                <svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                  <polygon
+                    points="50.00,2.00 63.01,18.59 83.94,16.06 81.41,36.99 98.00,50.00 81.41,63.01 83.94,83.94 63.01,81.41 50.00,98.00 36.99,81.41 16.06,83.94 18.59,63.01 2.00,50.00 18.59,36.99 16.06,16.06 36.99,18.59"
+                    fill="#0038A8"
+                    stroke="#0038A8"
+                    stroke-width="7"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="50" cy="50" r="21" fill="#fff" />
+                  <circle cx="50" cy="50" r="15.5" fill="#0038A8" /></svg
+              ></span>
+              <span class="brand__word">Kandi<b>DATA</b></span>
+            </a>
+            <p>
+              Isang inisyatibo upang mapataas ang kamalayan ng bawat Pilipino sa kanilang karapatang
+              bumoto nang matalino at mapayapa.
+            </p>
+            <div class="socials">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>
+              <button type="button" aria-expanded="false">
+                Pangunahing Link <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </h4>
+            <ul>
+              <li>
+                <a href="tungkol.html">Tungkol sa Amin</a>
+              </li>
+              <li>
+                <a href="mga-panukala.html">Mga Panukala</a>
+              </li>
+              <li>
+                <a href="lugar-ng-botohan.html">Lugar ng Botohan</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>
+              <button type="button" aria-expanded="false">
+                Impormasyon <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </h4>
+            <ul>
+              <li>
+                <a href="faq.html">FAQs</a>
+              </li>
+              <li>
+                <a href="kalendaryo.html#mga-pagbabawal">Mga Ipinagbabawal</a>
+              </li>
+              <li>
+                <a href="checklist.html#mga-paalala">Mga Paalala</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col contact">
+            <h4>Kontak</h4>
+            <ul class="footer-contact">
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:info@kandidata.gov.ph">info@kandidata.gov.ph</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+63288881234">+63 (02) 8888 1234</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot"></i>
+                <a
+                  href="https://maps.google.com/?q=Angeles+City,+Pampanga"
+                  target="_blank"
+                  rel="noopener"
+                  >Angeles City, Pampanga</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © 2026 KandiDATA.<span class="full"> Lahat ng karapatan ay rizerbado.</span>
+        </div>
+      </div>
+    </footer>
+    <div class="search-overlay" aria-hidden="true" role="dialog" aria-label="Maghanap sa KandiDATA">
+      <div class="search-box">
+        <label class="search-box__field">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="search"
+            placeholder="Maghanap ng kandidato, pahina o impormasyon…"
+            aria-label="Maghanap"
+          /><kbd>Esc</kbd></label
+        >
+        <div class="search-results"></div>
+      </div>
     </div>
-  </div>
-  <div class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal__box"><button type="button" class="modal__close" aria-label="Isara"><i
-          class="fa-solid fa-xmark"></i></button>
-      <div class="modal__content"></div>
+    <div
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal__box">
+        <button type="button" class="modal__close" aria-label="Isara">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal__content"></div>
+      </div>
     </div>
-  </div>
-  <script src="assets/js/data.js"></script>
+    <script src="assets/js/data.js"></script>
 
-  <script src="assets/js/main.js"></script>
-</body>
-
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
